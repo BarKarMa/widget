@@ -23,7 +23,7 @@ app.use(bodyParser.json())
 users = [];
 //connections = [];
 
-app.use(express.static('C:/Users/Bezuglov/Desktop/wgt2/widget/assets/'))
+app.use(express.static('/assets'))
 //app.use(express.static(__dirname + '/assets'))
 
 
@@ -31,7 +31,7 @@ app.use(express.static('C:/Users/Bezuglov/Desktop/wgt2/widget/assets/'))
 
 app.get("/", (req, res) => {
   console.log("1");
-  res.sendFile('C:/xampp/htdocs/dashboard/index.html')
+  res.sendFile('/index.html')
   //console.log(req.body)
   
 
