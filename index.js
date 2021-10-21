@@ -31,7 +31,7 @@ app.use(express.static('/assets'))
 
 app.get("/", (req, res) => {
   console.log("1");
-  res.sendFile('/index.html')
+  res.sendFile('index.html')
   //console.log(req.body)
   
 
