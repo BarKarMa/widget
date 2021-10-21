@@ -24,8 +24,8 @@ app.use(bodyParser.json())
 users = [];
 //connections = [];
 
-app.use(express.static('/assets'))
-//app.use(express.static(__dirname + '/assets'))
+//app.use(express.static('/assets'))
+app.use(express.static(__dirname + '/assets'))
 
 
 
