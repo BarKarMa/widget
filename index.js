@@ -1,6 +1,7 @@
 
 const express = require('express')
 const app = express();
+const path = require('path');
 const http = require('http').createServer(app)
 const io = require('socket.io')(http)
 const bodyParser = require('body-parser')
@@ -31,7 +32,7 @@ app.use(express.static('/assets'))
 
 app.get("/", (req, res) => {
   console.log("1");
-  res.sendFile(path.join(__dirname, '../public/index.html'))
+  res.sendFile(path.join(__dirname, '/index.html'))
   //console.log(req.body)
   
 
