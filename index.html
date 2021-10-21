@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chat bot</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+  
+
+</head>
+<body>
+    <div class="messages" id="li"></div>
+	<form action="http://localhost:3000/test" method="POST">
+        <div class="container">
+            <div id="name" class="name" >Roman</div> 
+		    <input id="numbers" name="numbers" class="input" type="text" id=nub autocomplete="off" >
+		    <button id="number_btn_area" type="submit">submit</button>
+        </div>
+    </form>
+
+
+
+
+<script>
+    //$("#.number-area").keypress(function(e) {
+    //    if(e.which == 13)
+    //        getResponse();
+        
+    //})
+    
+    </script>
+
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<script src="/socket.io/socket.io.js"></script>
+
+</script>
+
+<script src="./main.js"></script>
+
+<style>
+
+.messages {
+    margin-bottom: 100px;
+}
+
+
+
+.chat-log {
+    position: fixed;
+    right: 200px;
+    bottom: 100px;
+    font: 1rem 'Fira Sans', sans-serif;
+}
+
+.name
+{
+	position: fixed;
+	right: 250px; 
+	bottom: 80px;
+}
+
+.input {
+    position: absolute;
+	right: 40px; 
+	bottom: 80px;
+    height: 50px;
+    width: 180px;
+}
+
+#nub
+{
+	position: fixed;
+	right: 40px; 
+	bottom: 50px;
+}
+
+#li
+{
+	position: fixed;
+	right: 200px; 
+	bottom: 100px;
+}
+
+#number_btn_area {
+	position: fixed;
+	right: 40px; 
+	bottom: 30px;
+    background-color: rgb(255, 255, 255);
+}
+
+
+label {
+    display: block;
+    font: 1rem 'Fira Sans', sans-serif;
+    position: absolute;
+    width: 200px;
+    height: 50px;
+	color: black;
+    margin: .4rem 0;
+}
+
+
+#userInput {
+    width: 75%;
+}
+
+.input-box {
+    float: left;
+    border: none;
+    box-sizing: border-box;
+    width: 100%;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 16px;
+    color: #000;
+    background-color: white;
+    outline: none
+}
+
+.submit {
+    color: #000;
+}
+</style>
+
+
+<script>
+
+
+</script>
+ 
+
+</html>
