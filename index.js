@@ -63,8 +63,8 @@ io.on('connection', (socket) => {
   })
 })
 // req is request and res is response
-
-http.listen(port, () => {
+http.listen(process.env.PORT || 3000, () => {
+//http.listen(port, () => {
   console.log(`server launched on port ${port}`);
 });
 
