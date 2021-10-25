@@ -6,6 +6,7 @@ const http = require('http').createServer(app)
 const io = require('socket.io')(http)
 const cors = require('cors')
 const bodyParser = require('body-parser')
+var timeout = require('connect-timeout')
 
 
 
@@ -42,7 +43,7 @@ app.get("/", (req, res) => {
 
 
 // за допомогою експресу імітувати створення чату ?
-app.post("/test", (req, res) => {
+app.post("/test", timeout('5s'), ( (req, res) => {
   //console.log(res.json({"message": "message recieved"}))
   //if(!req.body) return res.sendStatus(400);
   console.log("2");
