@@ -38,31 +38,6 @@ document.addEventListener('submit', (e) =>{
     }
 })
 
-document.addEventListener('click', (e) =>{
-    e.preventDefault()
-
-    // частина де відправляються дані на сервер через експрес
-    const name = userName;
-    const numbers = $("#numbers").val();
-
-    const data = {
-        name,
-        numbers
-      }
-      $.post('/test', data, function() {
-          console.log('server recieved data')
-      });
-
-      // частина де відправляються сокети
-    if(input.value){
-        socket.emit('chat message', { 
-          message: input.value,
-          name: userName
-        })
-        input.value = ''
-
-    }
-})
 
 
 socket.on('chat message', (data) => {
