@@ -51,12 +51,8 @@ app.post("/test", (req, res) => {
   
   console.log("2");
   console.log(req.body);
-  console.log(io.socket.id);
-  
-  
-   
-  // body came with body-parser
-  // numbers is name of textarea
+
+
 });
 
 app.post("/test/:id", (req, res) => {
