@@ -38,7 +38,7 @@ document.addEventListener('submit', (e) =>{
     }
 })
 
-document.addEventListener('onclick', (e) =>{
+document.addEventListener('load', (e) =>{
     e.preventDefault()
 
     // частина де відправляються дані на сервер через експрес
