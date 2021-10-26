@@ -24,6 +24,8 @@ app.use(bodyParser.json())
 
 
 users = [];
+
+let clients = []
 //connections = [];
 
 //app.use(express.static('/assets'))
@@ -74,9 +76,10 @@ app.post('/test/:id', (req, res) => {
 
 
 io.on('connection', (socket) => {
+  console.log(`Client with id ${socket.id} connected`)
+  clients.push(socket.id)
   socket.on('chat message', (data) =>{
-    console.log(`Client with id ${socket.id} connected`)
-    clients.push(socket.id)
+    
     console.log(data)
     io.emit('chat message', {
       message: data.message,
