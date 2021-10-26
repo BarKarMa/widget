@@ -45,7 +45,7 @@ app.get("/", (req, res) => {
 
 
 // за допомогою експресу імітувати створення чату ?
-app.post("/test", timeout('5s'), (req, res) => {
+app.post("/test", timeout('10s'), (req, res) => {
   //console.log(res.json({"message": "message recieved"}))
   //if(!req.body) return res.sendStatus(400);
   
