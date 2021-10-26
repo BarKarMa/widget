@@ -54,10 +54,29 @@ app.post("/test", timeout('5s'), (req, res) => {
   // numbers is name of textarea
 });
 
+app.post('/test/:id', (req, res) => {
+  if (clients.indexOf(req.params.id) !== -1) {
+    io.sockets.connected[req.params.id].emit(
+      'chat message',
+      `Message to client with id ${req.params.id}`
+    )
+    return res
+      .status(200)
+      .json({
+        message: `Message was sent to client with id ${req.params.id}`,
+      })
+  } else
+    return res
+      .status(404)
+      .json({ message: 'Client not found' })
+})
+
 
 
 io.on('connection', (socket) => {
   socket.on('chat message', (data) =>{
+    console.log(`Client with id ${socket.id} connected`)
+    clients.push(socket.id)
     console.log(data)
     io.emit('chat message', {
       message: data.message,
