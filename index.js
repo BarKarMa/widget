@@ -46,19 +46,6 @@ app.get("/", (req, res) => {
 app.post("/test", timeout('5s'), (req, res) => {
   //console.log(res.json({"message": "message recieved"}))
   //if(!req.body) return res.sendStatus(400);
-  const name = req.body.name
-  const numbers = req.body.message
-  
-  const data = {
-        name,
-        numbers
-      }
-  socket.on('chat message', (data) => {
-    const item = document.createElement('div')
-    item.innerHTML = `<span>${data.name}</span>: ${data.message}`
-    messages.appendChild(item)
-    window.scrollTo(0,document.body.scrollHeight)
-  })
   
   console.log("2");
   console.log(req.body);
