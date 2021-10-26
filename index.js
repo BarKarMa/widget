@@ -51,9 +51,8 @@ app.post("/test", (req, res) => {
   
   console.log("2");
   console.log(req.body);
-  socket.on("connect", () => {
-    console.log(socket.id); // "G5p5...
-  });
+  console.log(io.socket.id);
+  
   
    
   // body came with body-parser
