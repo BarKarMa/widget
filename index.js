@@ -77,13 +77,15 @@ io.on('connection', (socket) => {
   console.log(`Client with id ${socket.id} connected`)
   clients.push(socket.id)
   
-  clients.on('posreq', function (postdata) {
-    request.post("http://localhost:3000/book", {
+  //
+  sockets.on('posreq', function (postdata) {
+    request.post("http://pofsdvmlks.herokuapp.com/test/", {
       body: postdata
     }, function (res) {
       console.log(res);
-      clients.send("post req called",postdata);
-    });
+      sockets.send("post req called" ,postdata);
+    })
+  //  
     
   socket.on('chat message', (data) =>{
     
