@@ -76,6 +76,15 @@ app.post("/test/:id", (req, res) => {
 io.on('connection', (socket) => {
   console.log(`Client with id ${socket.id} connected`)
   clients.push(socket.id)
+  
+  clients.on('posreq', function (postdata) {
+    request.post("http://localhost:3000/book", {
+      body: postdata
+    }, function (res) {
+      console.log(res);
+      clients.send("post req called",postdata);
+    });
+    
   socket.on('chat message', (data) =>{
     
     console.log(data)
