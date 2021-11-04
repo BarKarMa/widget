@@ -85,11 +85,6 @@ io.on('connection', (socket) => {
     })
     
   })
-  client.on('posreq', function (postdata) {
-    request.post('https://pofsdvmlks.herokuapp.com/test/', {body: postdata }, function (res) {
-   console.log(res);
-   client.send("post req called", postdata);
- });
 })
 // req is request and res is response
 http.listen(process.env.PORT || 3000, () => {
