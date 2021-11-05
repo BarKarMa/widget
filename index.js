@@ -19,14 +19,31 @@ const port = 3000;
 
 app.use(cors())
 app.use(bodyParser.urlencoded({extended: false}));
-
 app.use(bodyParser.json())
 
 
 users = [];
-
-let clients = []
+clients = []
 //connections = [];
+
+
+io.on('connection', (socket) => {
+  console.log(`Client with id ${socket.id} connected`)
+  console.log(`/////////////////////////////////////////`)
+  clients.push(socket.id)
+  console.log(`/////////////////////////////////////////`)
+    
+  socket.on('chat message', (data) =>{
+    
+    console.log(data)
+    io.emit('chat message', {
+      message: data.message,
+      name: data.name
+    })
+    
+  })
+})
+
 
 //app.use(express.static('/assets'))
 app.use(express.static(__dirname + '/assets'))
@@ -80,22 +97,6 @@ app.get('/clients-count', (req, res) => {
 
 
 
-io.on('connection', (socket) => {
-  console.log(`Client with id ${socket.id} connected`)
-  console.log(`/////////////////////////////////////////`)
-  clients.push(socket.id)
-  console.log(`/////////////////////////////////////////`)
-    
-  socket.on('chat message', (data) =>{
-    
-    console.log(data)
-    io.emit('chat message', {
-      message: data.message,
-      name: data.name
-    })
-    
-  })
-})
 // req is request and res is response
 http.listen(process.env.PORT || 3000, () => {
 //http.listen(port, () => {
