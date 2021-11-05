@@ -68,7 +68,8 @@ app.post("/test", (req, res) => {
   
   console.log("2");
   console.log(req.body);
-  console.log(req);
+  io.emit('chat message', req.body);
+  res.sendStatus(200);
   
 
 });
