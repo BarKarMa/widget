@@ -76,16 +76,6 @@ app.post("/test/:id", (req, res) => {
 io.on('connection', (socket) => {
   console.log(`Client with id ${socket.id} connected`)
   clients.push(socket.id)
-  
-  //
-  sockets.on('posreq', function (postdata) {
-    request.post("http://pofsdvmlks.herokuapp.com/test/", {
-      body: postdata
-    }, function (res) {
-      console.log(res);
-      sockets.send("post req called" ,postdata);
-    })
-  //  
     
   socket.on('chat message', (data) =>{
     
