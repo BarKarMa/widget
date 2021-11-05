@@ -52,11 +52,7 @@ app.post("/test", (req, res) => {
   console.log("2");
   console.log(req.body);
   console.log(req);
-  socket.on('chat', message => {
-    // console.log('From client: ', message)
-    io.emit('chat', message)
-  })
-
+  
 
 });
 
