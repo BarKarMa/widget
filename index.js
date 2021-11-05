@@ -52,6 +52,10 @@ app.post("/test", (req, res) => {
   console.log("2");
   console.log(req.body);
   console.log(req);
+  socket.on('chat', message => {
+    // console.log('From client: ', message)
+    io.emit('chat', message)
+  })
 
 
 });
@@ -72,10 +76,19 @@ app.post("/test/:id", (req, res) => {
 })
 
 
+app.get('/clients-count', (req, res) => {
+  res.json({
+    count: io.clients().server.engine.clientsCount,
+  })
+})
+
+
 
 io.on('connection', (socket) => {
   console.log(`Client with id ${socket.id} connected`)
+  console.log(`/////////////////////////////////////////`)
   clients.push(socket.id)
+  console.log(`/////////////////////////////////////////`)
     
   socket.on('chat message', (data) =>{
     
