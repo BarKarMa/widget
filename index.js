@@ -51,7 +51,7 @@ app.post("/test", (req, res) => {
   
   console.log("2");
   console.log(req.body);
-  console.log(req.method);
+  console.log(req);
 
 
 });
