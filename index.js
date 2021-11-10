@@ -69,12 +69,12 @@ app.get("/", (req, res) => {
 app.post("/test", (req, res) => {
   //console.log(res.json({"message": "message recieved"}))
   //if(!req.body) return res.sendStatus(400);
-  
+  var contype = req.headers['content-type'];
+
   console.log("2");
-  console.log('body output')
   console.log(req.body);
   console.log('header output')
-  console.log(req.headers.content-type)
+  console.log(contype)
 
   //if (res.contentType('application/json')) {
   //  io.emit('chat message', req.body);
