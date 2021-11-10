@@ -44,7 +44,7 @@ io.on('connection', (socket) => {
     
   })
 
-  socket.on('private message', (data) =>{
+  socket.on('chat message', (data) =>{
     
     console.log(data)
     io.emit('private message', {
@@ -80,7 +80,7 @@ app.post("/test", (req, res) => {
   console.log("2");
   console.log('full output')
   console.log(req.body);
-  io.emit("private message", req.body);
+  io.emit('private message', req.body);
   // сдесь иф который будет отправлять только когда идет запрос через АПИ
   //io.emit('chat message', req.body)
   res.sendStatus(200);
