@@ -75,7 +75,7 @@ app.post("/test", (req, res) => {
   console.log('full output')
   console.log(req.body);
   
-  if (!contype || contype.indexOf('application/json') !== 0)
+  if (!contype || contype.indexOf('application/json') !== 1)
     io.emit('chat message', req.body);
     return res.sendStatus(200);
   next();
