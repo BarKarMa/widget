@@ -54,7 +54,7 @@ socket.on('chat message', (data) => {
     window.scrollTo(0,document.body.scrollHeight)
   }
   else {
-    item.innerHTML = `<span style="color:red;">${data.name}</span>: ${data.message}`
+    item.innerHTML = `${data.name}: <span style="color:red; text-align:right">${data.message}</span>`
     messages.appendChild(item)
     window.scrollTo(0,document.body.scrollHeight)
   }
