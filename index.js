@@ -75,8 +75,11 @@ app.post("/test", (req, res) => {
   console.log('full output')
   console.log(req.body);
   
-  
-  io.emit('chat message', req.body);
+  if (!contype || contype.indexOf('application/json') !== 0)
+    io.emit('chat message', req.body);
+    return res.sendStatus(200);
+  next();
+  //io.emit('chat message', req.body);
   // сдесь иф который будет отправлять только когда идет запрос через АПИ
   //io.emit('chat message', req.body)
   res.sendStatus(200);
