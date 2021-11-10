@@ -45,7 +45,7 @@ io.on('connection', (socket) => {
   socket.on('private message', (data) =>{
     
     console.log(data)
-    io.emit('chat message', {
+    io.emit('private message', {
       message: data.message,
       name: data.name
     })
