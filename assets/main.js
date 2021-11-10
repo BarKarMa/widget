@@ -44,7 +44,7 @@ document.addEventListener('submit', (e) =>{
 socket.on('chat message', (data) => {
     
   const item = document.createElement('div')
-  if (data.name == 'server'){
+  if (data.name === "server"){
     input.style.float = "left"
     input.style.marginLeft = "5px"
     item.innerHTML = `<p>${formattedTime}</p><span>${data.name}</span>: ${data.message}`
