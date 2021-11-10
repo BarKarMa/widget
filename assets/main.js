@@ -39,12 +39,19 @@ document.addEventListener('submit', (e) =>{
 })
 
 
-
-
 socket.on('chat message', (data) => {
   const item = document.createElement('div')
   item.innerHTML = `<span>${data.name}</span>: ${data.message}`
   messages.appendChild(item)
   window.scrollTo(0,document.body.scrollHeight)
 
-})
+}
+)
+socket.on('private message', (data) => {
+  const item = document.createElement('div')
+  item.innerHTML = `<span>${data.name}</span>: ${data.message}`
+  messages.appendChild(item)
+  window.scrollTo(0,document.body.scrollHeight)
+
+}
+)
