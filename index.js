@@ -74,7 +74,7 @@ app.post("/test", (req, res) => {
   console.log('body output')
   console.log(req.body);
   console.log('header output')
-  console.log(req.headers.Content-Type)
+  console.log(req.headers)
 
   //if (res.contentType('application/json')) {
   //  io.emit('chat message', req.body);
