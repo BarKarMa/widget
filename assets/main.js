@@ -7,7 +7,7 @@ const nameBlock = document.querySelector('.name')
 const userName = prompt('Ваше імя:')
 
 const time = new Date();
-const formattedTime = time.toLocaleString("en-US", { hour: "numeric", minute: "numeric" });
+const formattedTime = time.toLocaleString("en-US", { hour: "numeric", minute: "numeric", second: "numeric" });
 
 nameBlock.innerHTML = `${userName}`
 
@@ -54,7 +54,7 @@ socket.on('chat message', (data) => {
     window.scrollTo(0,document.body.scrollHeight)
   }
   else {
-    item.innerHTML = `${data.name}: <span style="color:red;">${data.message}</span>`
+    item.innerHTML = `${data.name}: <span id=right; style="color:red;">${data.message}</span>`
     messages.appendChild(item)
     window.scrollTo(0,document.body.scrollHeight)
   }
