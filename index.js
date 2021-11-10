@@ -71,11 +71,17 @@ app.post("/test", (req, res) => {
   //if(!req.body) return res.sendStatus(400);
   
   console.log("2");
-  console.log('full output')
+  console.log('body output')
   console.log(req.body);
-  io.emit('chat message', req.body);
+  console.log('header output')
+  console.log(req.headers.Content-Type)
+
+  //if (res.contentType('application/json')) {
+  //  io.emit('chat message', req.body);
+  //} 
+  
   // сдесь иф который будет отправлять только когда идет запрос через АПИ
-  //io.emit('chat message', req.body)
+  io.emit('chat message', req.body)
   res.sendStatus(200);
   
 
