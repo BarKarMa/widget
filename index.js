@@ -33,6 +33,13 @@ io.on('connection', (socket) => {
   console.log(`/////////////////////////////////////////`)
   clients.push(socket.id)
   console.log(`/////////////////////////////////////////`)
+
+
+  socket.on("new user", function (data) {
+    socket.userId = data;
+    activeUsers.add(data);
+    io.emit("new user", [...activeUsers]);
+  });
     
   socket.on('chat message', (data) =>{
     
