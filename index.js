@@ -42,15 +42,17 @@ io.on('connection', (socket) => {
     })
     
   })
-  socket.on('private message', (data) =>{
+
+})
+
+socket.on('private message', (data) =>{
     
-    console.log(data)
-    io.emit('private message', {
-      message: data.message,
-      name: data.name
-    })
-    
+  console.log(data)
+  io.emit('private message', {
+    message: data.message,
+    name: data.name
   })
+  
 })
 
 
