@@ -69,19 +69,16 @@ app.get("/", (req, res) => {
 app.post("/test", (req, res) => {
   //console.log(res.json({"message": "message recieved"}))
   //if(!req.body) return res.sendStatus(400);
-  var contype = req.headers['content-type'];
-
-  console.log("2");
-  console.log(req.body);
-  console.log('header output')
-  console.log(contype)
-
-  //if (res.contentType('application/json')) {
-  //  io.emit('chat message', req.body);
-  //} 
+  var contype = req.headers['content-type']
   
+  console.log("2");
+  console.log('full output')
+  console.log(req.body);
+  
+  
+  io.emit('chat message', req.body);
   // сдесь иф который будет отправлять только когда идет запрос через АПИ
-  io.emit('chat message', req.body)
+  //io.emit('chat message', req.body)
   res.sendStatus(200);
   
 
