@@ -44,10 +44,23 @@ document.addEventListener('submit', (e) =>{
 socket.on('chat message', (data) => {
     
   const item = document.createElement('div')
-  
-  item.innerHTML = `<p>${formattedTime}</p><span>${data.name}</span>: ${data.message}`
-  messages.appendChild(item)
-  window.scrollTo(0,document.body.scrollHeight)
+  if (data.name == 'server'){
+    input.style.float = "left"
+    input.style.marginLeft = "5px"
+    item.innerHTML = `<p>${formattedTime}</p><span>${data.name}</span>: ${data.message}`
+    messages.appendChild(item)
+    window.scrollTo(0,document.body.scrollHeight)
+  }
+  else {
+    input.style.float = "right"
+    input.style.marginLeft = "5px"
+    item.innerHTML = `<p>${formattedTime}</p><span>${data.name}</span>: ${data.message}`
+    messages.appendChild(item)
+    window.scrollTo(0,document.body.scrollHeight)
+  }
+  //item.innerHTML = `<p>${formattedTime}</p><span>${data.name}</span>: ${data.message}`
+  //messages.appendChild(item)
+  //window.scrollTo(0,document.body.scrollHeight)
 
 }
 )
