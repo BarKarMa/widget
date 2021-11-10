@@ -43,14 +43,13 @@ document.addEventListener('submit', (e) =>{
 
 socket.on('chat message', (data) => {
   const item1 = document.createElement('div')
-  item1.innerHTML = `<p style="width:50%">${formattedTime}</p>`
-  //item1.innerHTML = `<p style="margin-left:100px">${formattedTime}</p>`
+  item1.innerHTML = `<p style="margin-left:150px">${formattedTime}</p>`
   
   messages.appendChild(item1)
   const item = document.createElement('div')
   if (data.name === "server"){
     
-    item.innerHTML = `${data.name}: <span style="color:blue; text-align:right">${data.message}</span>`
+    item.innerHTML = `${data.name}: <span style="color:blue; margin-left:300px:">${data.message}</span>`
     messages.appendChild(item)
     window.scrollTo(0,document.body.scrollHeight)
   }
