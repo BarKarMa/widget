@@ -43,7 +43,7 @@ document.addEventListener('submit', (e) =>{
 
 socket.on('chat message', (data) => {
   const item1 = document.createElement('div')
-  item1.innerHTML = `<p style="text-align:center;">${formattedTime}</p>`
+  item1.innerHTML = `<p style="margin-left:50px">${formattedTime}</p>`
   
   messages.appendChild(item1)
   const item = document.createElement('div')
