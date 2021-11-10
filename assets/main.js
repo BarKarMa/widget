@@ -42,19 +42,20 @@ document.addEventListener('submit', (e) =>{
 
 
 socket.on('chat message', (data) => {
-    
+  item.innerHTML = `<p>${formattedTime}</p>`
   const item = document.createElement('div')
   if (data.name === "server"){
     
-    item.innerHTML = `<p>${formattedTime}</p><span style="color:blue;">${data.name}</span>: ${data.message}`
-    messages.appendChild(item)
+    item.innerHTML = `<span style="color:blue;">${data.name}</span>: ${data.message}`
+    //messages.appendChild(item)
     window.scrollTo(0,document.body.scrollHeight)
   }
   else {
-    item.innerHTML = `<p>${formattedTime}</p><span style="color:red;">${data.name}</span>: ${data.message}`
-    messages.appendChild(item)
+    item.innerHTML = `<span style="color:red;">${data.name}</span>: ${data.message}`
+    //messages.appendChild(item)
     window.scrollTo(0,document.body.scrollHeight)
   }
+  messages.appendChild(item)
   //item.innerHTML = `<p>${formattedTime}</p><span>${data.name}</span>: ${data.message}`
   //messages.appendChild(item)
   //window.scrollTo(0,document.body.scrollHeight)
