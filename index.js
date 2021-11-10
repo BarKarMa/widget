@@ -14,6 +14,7 @@ const { connect, connection, connections } = require('mongoose');
 const { request } = require('http');
 const { urlencoded } = require('body-parser');
 const { send } = require('process');
+const { Console } = require('console');
 
 const port = 3000;
 
@@ -42,17 +43,6 @@ io.on('connection', (socket) => {
     })
     
   })
-
-})
-
-socket.on('private message', (data) =>{
-    
-  console.log(data)
-  io.emit('private message', {
-    message: data.message,
-    name: data.name
-  })
-  
 })
 
 
@@ -78,8 +68,9 @@ app.post("/test", (req, res) => {
   //if(!req.body) return res.sendStatus(400);
   
   console.log("2");
-  console.log(req.body);
-  io.emit('private message', req.body);
+  console.log('full output')
+  console.log('chat message', req.body);
+  io.emit('chat message', req.body);
   // сдесь иф который будет отправлять только когда идет запрос через АПИ
   //io.emit('chat message', req.body)
   res.sendStatus(200);
