@@ -45,16 +45,13 @@ socket.on('chat message', (data) => {
     
   const item = document.createElement('div')
   if (data.name === "server"){
-    input.style.float = "left"
-    input.style.marginLeft = "5px"
-    item.innerHTML = `<p>${formattedTime}</p><span>${data.name}</span>: ${data.message}`
+    
+    item.innerHTML = `<p>${formattedTime}</p><span style="color:blue;">${data.name}</span>: ${data.message}`
     messages.appendChild(item)
     window.scrollTo(0,document.body.scrollHeight)
   }
   else {
-    input.style.float = "right"
-    input.style.marginLeft = "5px"
-    item.innerHTML = `<p>${formattedTime}</p><span>${data.name}</span>: ${data.message}`
+    item.innerHTML = `<p>${formattedTime}</p><span style="color:red;">${data.name}</span>: ${data.message}`
     messages.appendChild(item)
     window.scrollTo(0,document.body.scrollHeight)
   }
