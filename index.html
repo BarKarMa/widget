@@ -14,12 +14,40 @@
 
 </head>
 <body>
-    <div class="basic-flow">
+    <div class="basic-flow" >
     
-        <div class="messages" id="li">
+        <div class="messages" id="li" style="">
 
         <!test commands>
 
+        <div class="time">
+        <p style="">6:09:40</p>
+        </div>
+        <div class="li" id="my-messages">
+            <p> andrii</p> 
+            <span style="">Тестове повідомлення 1</span>
+        </div>
+        <div class="time">
+        <p style="">6:09:40</p>
+        </div>
+        <div class="li" id="server-messages">
+            <p> Server </p>
+            <span style="">Тестове повідомлення 2  Тестове повідомлення 2 Тестове</span>
+        </div>
+        <div class="time">
+        <p style="">6:09:40</p>
+        </div>
+        <div class="li" id="my-messages">
+            <p> andrii</p> 
+            <span style="">Тестове повідомлення 1</span>
+        </div>
+        <div class="time">
+        <p style="">6:09:40</p>
+        </div>
+        <div class="li" id="server-messages">
+            <p> Server </p>
+            <span style="">Тестове повідомлення 2  Тестове повідомлення 2 Тестове</span>
+        </div>
         <div class="time">
         <p style="">6:09:40</p>
         </div>
@@ -64,9 +92,8 @@
  { 
     display: flex;
     background-color: #d1e0ed;
-    flex-direction: column;
-    box-sizing: border-box;
     position: absolute;
+
     left: ;
     right: 10px;
     top: auto;
@@ -75,7 +102,10 @@
     height: 80%;
     border-radius: 16px;
     font-family: 'Open Sans Condensed', sans-serif;
+    
+    
 );
+
     
 }
 
@@ -148,6 +178,16 @@
 	position: fixed;
 	right: 40px; 
 	bottom: 100px;
+
+    overflow:auto; 
+    overflow-x:hidden;
+    height: 380px;
+    
+  
+}
+
+#li::-webkit-scrollbar {
+  width: 0;
 }
 
 #number_btn_area {
