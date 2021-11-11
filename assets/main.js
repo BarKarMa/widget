@@ -13,8 +13,7 @@ nameBlock.innerHTML = `${userName}`
 
 
 //////
-var objDiv = document.getElementById("li");
-objDiv.scrollTop = objDiv.scrollHeight;
+
 /////
 
 
