@@ -11,34 +11,38 @@
 
 </head>
 <body>
-    <div class="messages" id="li">
+    <div class="basic-flow" id="d">
+    
+        <div class="messages" id="li">
 
-    <!test commands>
+        <!test commands>
 
-    <div class="time">
-       <p style="">6:09:40</p>
-    </div>
-    <div class="li" id="my-messages">
-        <p> andrii</p> 
-        <span style="">Тестове повідомлення 1</span>
-    </div>
-    <div class="time">
-       <p style="">6:09:40</p>
-    </div>
-    <div class="li" id="server-messages">
-        <p> Server </p>
-        <span style="">Тестове повідомлення 2  Тестове повідомлення 2 Тестове</span>
-    </div>
+        <div class="time">
+        <p style="">6:09:40</p>
+        </div>
+        <div class="li" id="my-messages">
+            <p> andrii</p> 
+            <span style="">Тестове повідомлення 1</span>
+        </div>
+        <div class="time">
+        <p style="">6:09:40</p>
+        </div>
+        <div class="li" id="server-messages">
+            <p> Server </p>
+            <span style="">Тестове повідомлення 2  Тестове повідомлення 2 Тестове</span>
+        </div>
+        
+        </div>
+
+        <form action="http://localhost:3000/test" method="POST">
+            <div class="container">
+                <div id="name" class="name" >Roman</div> 
+                <input id="numbers" name="numbers" class="input" type="text" id=nub autocomplete="off" >
+                <button id="number_btn_area" type="submit">submit</button>
+            </div>
+        </form>
     
     </div>
-
-	<form action="http://localhost:3000/test" method="POST">
-        <div class="container">
-            <div id="name" class="name" >Roman</div> 
-		    <input id="numbers" name="numbers" class="input" type="text" id=nub autocomplete="off" >
-		    <button id="number_btn_area" type="submit">submit</button>
-        </div>
-    </form>
 
 
 
@@ -63,21 +67,32 @@
 
 <style>
 
+.d
+ {
+    background-color: #d1e0ed;
+}
+
 .time {
     margin-left:200px;
     font-size: 10px;
 }
 
 #my-messages {
-    background-color: #DBD7D2;
-    color: #003153;
+    border-radius: 8px;
+    border: 1px solid black; /* Параметры рамки */
+    padding: 5px;
+    background-color: #79ace4;
+    color: #320907;
     text-align:left;
 }
 
 #server-messages 
 {
-    background-color: #0095B6;
-    color:#FFDEAD; 
+    border-radius: 8px;
+    border: 1px solid black; /* Параметры рамки */
+    padding: 5px;
+    background-color: #f8efed;
+    color:#320907; 
     text-align: right; 
 }
 
