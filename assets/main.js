@@ -59,7 +59,7 @@ socket.on('chat message', (data) => {
   messages.appendChild(item1)
   
   if (data.name === "server"){
-    const item = document.createElement('div')
+    const item = document.createElement('div style="text-align: right;"')
     //div.className = "alert";
     item.innerHTML = `<p>${data.name}: </p> <span id="server-messages" class="li" >${data.message}</span>`
     messages.appendChild(item)
