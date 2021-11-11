@@ -57,19 +57,17 @@ socket.on('chat message', (data) => {
   //item1.innerHTML = `<p style="margin-left:150px">${formattedTime}</p>`
   item1.innerHTML = `<p class="time">${formattedTime}</p>`
   messages.appendChild(item1)
-  //const item = document.createElement('div')
+  const item = document.createElement('div')
   if (data.name === "server"){
     //div.className = "alert";
-    const item2 = document.createElement('div')
-    item2.innerHTML = `<p>${data.name}: </p> <span id="server-messages" class="li" >${data.message}</span>`
-    messages.appendChild(item2)
+    item.innerHTML = `<p>${data.name}: </p> <span id="server-messages" class="li" style=" text-align:right; border-radius: 8px; border: 1px solid black; padding: 5px; background-color: #f8efed; color:#320907;>${data.message}</span>`
+    messages.appendChild(item)
     window.scrollTo(0,document.body.scrollHeight)
   }
   else {
-    const item3 = document.createElement('div')
-    item3.innerHTML = `<p >${data.name}:</p> <span id="my-messages"; style=" text-align: right;">${data.message}</span>`
+    item.innerHTML = `<p >${data.name}:</p> <span id="my-messages"; ">${data.message}</span>`
     
-    messages.appendChild(item3)
+    messages.appendChild(item)
     window.scrollTo(0,document.body.scrollHeight)
   }
   
