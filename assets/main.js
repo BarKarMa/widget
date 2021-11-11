@@ -20,6 +20,7 @@ nameBlock.innerHTML = `${userName}`
 
 document.addEventListener('submit', (e) =>{
     e.preventDefault()
+    targetElm.scrollIntoView()
 
     // частина де відправляються дані на сервер через експрес
     const name = userName;
