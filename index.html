@@ -11,7 +11,7 @@
 
 </head>
 <body>
-    <div class="basic-flow" id="d">
+    <div class="basic-flow">
     
         <div class="messages" id="li">
 
@@ -38,23 +38,13 @@
             <div class="container">
                 <div id="name" class="name" >Roman</div> 
                 <input id="numbers" name="numbers" class="input" type="text" id=nub autocomplete="off" >
-                <button id="number_btn_area" type="submit">submit</button>
+                <button id="number_btn_area" type="submit" hidden>submit</button>
             </div>
         </form>
     
     </div>
 
 
-
-
-<script>
-    //$("#.number-area").keypress(function(e) {
-    //    if(e.which == 13)
-    //        getResponse();
-        
-    //})
-    
-    </script>
 
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -67,9 +57,23 @@
 
 <style>
 
-.d
- {
+.basic-flow
+ { 
+    display: flex;
     background-color: #d1e0ed;
+    flex-direction: column;
+
+    box-sizing: border-box;
+    position: absolute;
+    left: ;
+    right: 10px;
+    top: auto;
+    bottom: 10px;
+    width: 35%;
+    height: 80%;
+    border-radius: 16px;
+);
+    
 }
 
 .time {
@@ -114,8 +118,8 @@
 .name
 {
 	position: fixed;
-	right: 250px; 
-	bottom: 80px;
+	right: 450px; 
+	bottom: 100px;
 }
 
 .input {
@@ -124,6 +128,7 @@
 	bottom: 80px;
     height: 50px;
     width: 380px;
+    border-radius: 8px;
 }
 
 
@@ -147,6 +152,7 @@
 	right: 40px; 
 	bottom: 30px;
     background-color: rgb(255, 255, 255);
+    
 }
 
 
