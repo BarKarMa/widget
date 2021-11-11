@@ -40,9 +40,10 @@ document.addEventListener('submit', (e) =>{
           name: userName
         })
         input.value = ''
+        targetElm.scrollIntoView()
 
     }
-    targetElm.scrollIntoView()
+    
 })
 
 
