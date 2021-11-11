@@ -58,7 +58,7 @@ app.use(express.static(__dirname + '/assets'))
 app.get("/", (req, res) => {
   console.log("1");
   res.sendFile(path.join(__dirname, '/index.html'))
-  return res.sendStatus(200);
+  
   //console.log(req.body)
   
 
