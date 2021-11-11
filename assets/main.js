@@ -13,13 +13,14 @@ nameBlock.innerHTML = `${userName}`
 
 
 //////
-
+var objDiv = document.getElementById("li");
+objDiv.scrollTop = objDiv.scrollHeight;
 /////
 
 
 
 document.addEventListener('submit', (e) =>{
-    targetElm.scrollIntoView()
+    
     e.preventDefault()
 
     // частина де відправляються дані на сервер через експрес
