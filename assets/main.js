@@ -19,6 +19,7 @@ nameBlock.innerHTML = `${userName}`
 
 
 document.addEventListener('submit', (e) =>{
+    targetElm.scrollIntoView()
     e.preventDefault()
 
     // частина де відправляються дані на сервер через експрес
@@ -40,7 +41,7 @@ document.addEventListener('submit', (e) =>{
           name: userName
         })
         input.value = ''
-        targetElm.scrollIntoView()
+        
 
     }
     
