@@ -11,7 +11,27 @@
 
 </head>
 <body>
-    <div class="messages" id="li"></div>
+    <div class="messages" id="li">
+
+    <!test commands>
+
+    <div class="time">
+       <p style="">6:09:40</p>
+    </div>
+    <div class="li" id="my-messages">
+        <p> andrii</p> 
+        <span style="">Тестове повідомлення 1</span>
+    </div>
+    <div class="time">
+       <p style="">6:09:40</p>
+    </div>
+    <div class="li" id="server-messages">
+        <p> Server </p>
+        <span style="">Тестове повідомлення 2  Тестове повідомлення 2 Тестове</span>
+    </div>
+    
+    </div>
+
 	<form action="http://localhost:3000/test" method="POST">
         <div class="container">
             <div id="name" class="name" >Roman</div> 
@@ -43,12 +63,22 @@
 
 <style>
 
-.messages {
-    margin-bottom: 100px;
-    max-width:200px; 
-    word-wrap:break-word;
+.time {
+    margin-left:200px;
+    font-size: 10px;
 }
 
+.my-messages {
+    color:blue;
+    margin-left:300px;
+}
+
+.messages {
+    margin-bottom: 100px;
+    max-width: 400px; 
+    word-wrap:break-word;
+    width:50%;
+}
 
 
 .chat-log {
@@ -70,11 +100,12 @@
 	right: 40px; 
 	bottom: 80px;
     height: 50px;
-    width: 180px;
+    width: 380px;
 }
 
-#right 
+#server-messages 
 {
+    color:red; 
     text-align: right; 
 }
 
@@ -88,7 +119,7 @@
 #li
 {
 	position: fixed;
-	right: 200px; 
+	right: 40px; 
 	bottom: 100px;
 }
 
