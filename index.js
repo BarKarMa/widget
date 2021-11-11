@@ -32,7 +32,7 @@ io.on('connection', (socket) => {
   console.log(`Client with id ${socket.id} connected`)
   console.log(`/////////////////////////////////////////`)
   clients.push(socket.id)
-  console.log(`/////////////////////////////////////////`)
+  
 
 
       
