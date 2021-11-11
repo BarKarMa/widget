@@ -13,7 +13,10 @@ nameBlock.innerHTML = `${userName}`
 
 
 //////
-
+function updateScroll(){
+  var element = document.getElementById("li");
+  element.scrollTop = element.scrollHeight;
+}
 /////
 
 
@@ -21,6 +24,7 @@ nameBlock.innerHTML = `${userName}`
 document.addEventListener('submit', (e) =>{
     
     e.preventDefault()
+    setInterval(updateScroll,1000);
 
     // частина де відправляються дані на сервер через експрес
     const name = userName;
