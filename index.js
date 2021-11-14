@@ -23,7 +23,7 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json())
 
 
-users = [];
+users = {};
 clients = []
 //connections = [];
 
@@ -33,7 +33,10 @@ io.on('connection', (socket) => {
   console.log(`/////////////////////////////////////////`)
   clients.push(socket.id)
   
-
+  socket.on('new-user', name => {
+    users[socket.id] = name;
+    socket.broadcast.emit('user-connected', name)
+    })
 
       
   socket.on('chat message', (data) =>{
@@ -41,11 +44,16 @@ io.on('connection', (socket) => {
     console.log(data)
     io.emit('chat message', {
       message: data.message,
-      name: data.name
+      name: data.name,
+      id: users[socket.id]
     })
     
   })
 
+  socket.on('disconnect', () => {
+    socket.broadcast.emit('user-disconnected', users[socket.id])
+    delete users[socket.id]
+    })
 })
 
 
