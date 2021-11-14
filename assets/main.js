@@ -13,6 +13,8 @@ nameBlock.innerHTML = `${userName}`
 
 appendMessage('You joined');
 
+
+
 //////
 function updateScroll(){
   var element = document.getElementById("li");
