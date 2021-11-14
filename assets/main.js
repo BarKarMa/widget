@@ -11,6 +11,8 @@ const formattedTime = time.toLocaleString("en-US", { hour: "numeric", minute: "n
 
 nameBlock.innerHTML = `${userName}`
 
+appendMessage('You joined');
+
 
 //////
 function updateScroll(){
@@ -53,6 +55,7 @@ document.addEventListener('submit', (e) =>{
 
 
 socket.on('chat message', (data) => {
+  
   const item1 = document.createElement('div')
   //item1.innerHTML = `<p style="margin-left:150px">${formattedTime}</p>`
   item1.innerHTML = `<p class="time">${formattedTime}</p>`
@@ -77,3 +80,17 @@ socket.on('chat message', (data) => {
 
 }
 )
+
+socket.on('user-connected', userName => {
+  appendMessage(`${userName} connected`)
+  })
+
+socket.on('user-disconnected', userName => {
+  appendMessage(`${UserName} disconnected`)
+  })
+
+  function appendMessage(message) {
+    const messageElement = document.createElement('div');
+    messageElement.innerText = message;
+    messageContainer.append(messageElement);
+    }
