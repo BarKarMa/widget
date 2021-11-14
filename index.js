@@ -45,7 +45,7 @@ io.on('connection', (socket) => {
     io.emit('chat message', {
       message: data.message,
       name: data.name,
-      //id: users[socket.id]
+      id: users[socket.id]
     })
     
   })
