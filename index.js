@@ -31,61 +31,16 @@ io.on('connection', (socket) => {
   console.log(`Client with id ${socket.id} connected`)
   console.log(`/////////////////////////////////////////`)
   clients.push(socket.id)
-
-  socket.on('signin', async ({user, room}, callback) => {
-    try {
-      // Record socket ID to user's name and chat room
-      addUser(socket.id, user, room);
-      // Call join to subscribe the socket to a given channel
-      socket.join(room);
-      // Emit notification event
-      socket.in(room).emit('notification', {
-        title: "Someone's here",
-        description: `${user} just entered the room`,
-      });
-      const messages = await getRoomFromCache(room);
-      // Use the callback to respond with the room's message history
-      // Callbacks are more commonly used for event listeners than promises
-      callback(null, messages);
-    } catch (err) {
-      callback(err, null);
-    }
-  });
   
-  socket.on('updateSocketId', async ({user, room}) => {
-    try {
-      addUser(socket.id, user, room);
-      socket.join(room);
-    } catch (err) {
-      console.error(err);
-    }
-  });
+  
       
-  socket.on('chat message', (data, callback) =>{
-
-    const {user, room} = getUser(socket.id);
-
-    if (room) {
-      const msg = {user, text: data};
-      // Push message to clients in chat room
-      io.in(room).emit('chat message', {
-        message: data.message,
-        name: data.name,
-      });
-      addMessageToCache(room, {
-        message: data.message,
-        name: data.name,
-      });
-      callback();
-    } else {
-      callback('User session not found.');
-    }
+  socket.on('chat message', (data) =>{
     
-    //console.log(data)
-    //io.emit('chat message', {
-    //  message: data.message,
-    //  name: data.name,
-    //})
+    console.log(data)
+    io.emit('chat message', {
+      message: data.message,
+      name: data.name,
+    })
     
   })
 
@@ -108,6 +63,7 @@ app.get("/", (req, res) => {
   
   //console.log(req.body)
   
+
 });
 
 
