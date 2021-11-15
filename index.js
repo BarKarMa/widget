@@ -112,7 +112,7 @@ app.post("/test/:id", (req, res) => {
 
 app.get('/clients-count', (req, res) => {
   res.json({
-    count: io.clients().server.engine.clientsCount,
+    count: clients().server.engine.clientsCount,
   })
 })
 
