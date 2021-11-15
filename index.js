@@ -23,7 +23,7 @@ app.use(bodyParser.json())
 
 
 users = []
-clients = []
+let clients = []
 //connections = [];
 
 
