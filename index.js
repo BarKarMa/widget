@@ -9,8 +9,6 @@ const bodyParser = require('body-parser')
 const timeout = require('connect-timeout')
 
 
-
-
 const { connect, connection, connections } = require('mongoose');
 const { request } = require('http');
 const { urlencoded } = require('body-parser');
@@ -24,7 +22,7 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json())
 
 
-users = {};
+users = []
 clients = []
 //connections = [];
 
@@ -34,11 +32,7 @@ io.on('connection', (socket) => {
   console.log(`/////////////////////////////////////////`)
   clients.push(socket.id)
   
-  socket.on('new-user', name => {
-    users[socket.id] = name;
-    socket.broadcast.emit('user-connected', name)
-    })
-
+  
       
   socket.on('chat message', (data) =>{
     
@@ -46,7 +40,6 @@ io.on('connection', (socket) => {
     io.emit('chat message', {
       message: data.message,
       name: data.name,
-      id: users[socket.id]
     })
     
   })
