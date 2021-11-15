@@ -111,9 +111,7 @@ app.post("/test/:id", (req, res) => {
 
 
 app.get('/clients-count', (req, res) => {
-  res.json({
-    count: clients().server.engine.clientsCount,
-  })
+  console.log(io.clients().server.engine.clientsCount)
 })
 
 
