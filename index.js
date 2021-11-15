@@ -44,6 +44,18 @@ io.on('connection', (socket) => {
     
   })
 
+
+  socket.on('new_user',function(userName){
+    console.log('new user:'+userName);
+       names[socket.id] = userName;
+       socket.nickname = userName;
+       usernames[socket.nickname] = socket;
+        sockets[userName]=socket.id;
+        socket.emit('update_personal', "you are now online");
+        io.emit('update_users',names);
+
+    });
+
   socket.on('disconnect', () => {
     socket.broadcast.emit('user-disconnected', users[socket.id])
     delete users[socket.id]
