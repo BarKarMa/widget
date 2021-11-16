@@ -7,8 +7,7 @@ const io = require('socket.io')(http)
 const cors = require('cors')
 const bodyParser = require('body-parser')
 const timeout = require('connect-timeout')
-var request = require('request')
-
+const request = require('request')
 
 
 const { connect, connection, connections } = require('mongoose');
@@ -80,10 +79,23 @@ app.post("/test", (req, res) => {
   console.log('full output')
   console.log(req.body);
 
+  
+
+
   if(!contype)
     return res.sendStatus(400)
   
   if (contype.indexOf('application/x-www-form-urlencoded; charset=UTF-8') !== 0)
+  ////
+    requests.post(
+      'https://balance.beesender.com/api/v1.0/sendmessage/5673e2ff-da23-4db4-8da1-963abfdf1395/39871eae-1695-46fe-b8e2-f91597c7a89a',
+      { json: {"sender": { "id": "413242354", "name": "+380992472015", "avatar": ""}, "message": {"type": "text", "text": "Вітаю"}} },
+      function (error, response, body) {
+          if (!error && response.statusCode == 200) {
+              console.log(body);
+          }
+      });
+    ///
     io.emit('chat message', req.body);
     console.log("2");
     return res.sendStatus(200);
@@ -103,17 +115,34 @@ app.post("/test", (req, res) => {
 
 app.post("/webhook", (req, res) => {
   try {
+    res.json({
 
-    request.post(
-      'https://balance.beesender.com/api/v1.0/sendmessage/5673e2ff-da23-4db4-8da1-963abfdf1395/39871eae-1695-46fe-b8e2-f91597c7a89a',
-      { json: {"sender": { "id": "413242354", "name": "+380992472015", "avatar": ""}, "message": {"type": "text", "text": "Вітаю"}} },
-      function (error, response, body) {
-          if (!error && response.statusCode == 200) {
-              console.log(body);
-          }
-      }
-  );
-    res.json({ "code": 200 });
+      "sender":
+    
+     
+     {
+     
+       "id": "4",
+     
+         "name": "Test User",
+     
+       "avatar":
+     
+     "https://media.fox9.com/media.fox9.com/photo/2018/03/02/5%20P%20MISSING%20DOG%20FOUND%20DEAD_00.00.06.04_1520042792006.png_5029487_ver1.0_640_360.jpg"
+     
+               },
+     
+      "message":
+     
+     {
+     
+                          "type": "text",
+     
+                          "text": "Test text"
+     
+               }
+     
+     });
   
     return res.sendStatus(200);
   }  catch(error) {
