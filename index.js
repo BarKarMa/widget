@@ -76,6 +76,7 @@ app.get("/", (req, res) => {
 
 // за допомогою експресу імітувати створення чату ?
 app.post("/test", (req, res) => {
+  try {
   //console.log(res.json({"message": "message recieved"}))
   //if(!req.body) return res.sendStatus(400);
   var contype = req.headers['content-type']
@@ -90,6 +91,9 @@ app.post("/test", (req, res) => {
     io.emit('chat message', req.body);
     console.log("2");
     return res.sendStatus(200);
+  }  catch(error) {
+    
+  }
   
   
   //io.emit('chat message', req.body);
