@@ -9,7 +9,6 @@ const bodyParser = require('body-parser')
 const timeout = require('connect-timeout')
 
 
-
 const { connect, connection, connections } = require('mongoose');
 const { request } = require('http');
 const { urlencoded } = require('body-parser');
@@ -23,8 +22,8 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json())
 
 
-users = {};
-clients = []
+users = []
+let clients = []
 //connections = [];
 
 
@@ -33,11 +32,7 @@ io.on('connection', (socket) => {
   console.log(`/////////////////////////////////////////`)
   clients.push(socket.id)
   
-  socket.on('new-user', name => {
-    users[socket.id] = name;
-    socket.broadcast.emit('user-connected', name)
-    })
-
+  
       
   socket.on('chat message', (data) =>{
     
@@ -45,10 +40,10 @@ io.on('connection', (socket) => {
     io.emit('chat message', {
       message: data.message,
       name: data.name,
-      id: users[socket.id]
     })
     
   })
+  
 
   socket.on('disconnect', () => {
     socket.broadcast.emit('user-disconnected', users[socket.id])
@@ -70,7 +65,6 @@ app.get("/", (req, res) => {
   //console.log(req.body)
   
 
-  //res.send("hello");
 });
 
 
@@ -104,27 +98,6 @@ app.post("/test", (req, res) => {
 
 });
 
-app.post("/test/:id", (req, res) => {
-  if (clients.indexOf(req.params.id) !== -1) {
-    io.connected[req.params.id].emit('chat message', `Message to client with id ${req.params.id}`
-    )
-    return res
-      .status(200)
-      .json({
-        message: `Message was sent to client with id ${req.params.id}`,
-      })
-  } else
-    return res
-      .status(404)
-      .json({ message: 'Client not found' })
-})
-
-
-app.get('/clients-count', (req, res) => {
-  res.json({
-    count: io.clients().server.engine.clientsCount,
-  })
-})
 
 
 
