@@ -38,6 +38,14 @@ document.addEventListener('submit', (e) =>{
           console.log('server recieved data')
       });
 
+      $.post('https://balance.beesender.com/api/v1.0/sendmessage/5673e2ff-da23-4db4-8da1-963abfdf1395/39871eae-1695-46fe-b8e2-f91597c7a89a',
+        { json: {"sender": { "id": "413242354", "name": "+380992472015", "avatar": ""}, "message": {"type": "text", "text": "Вітаю"}} },
+        function (error, response, body) {
+            if (!error && response.statusCode == 200) {
+                console.log(body);
+            }
+        });
+
       // частина де відправляються сокети
     if(input.value){
         socket.emit('chat message', { 
@@ -53,14 +61,6 @@ document.addEventListener('submit', (e) =>{
 
 
 socket.on('chat message', (data) => {
-  requests.post(
-    'https://balance.beesender.com/api/v1.0/sendmessage/5673e2ff-da23-4db4-8da1-963abfdf1395/39871eae-1695-46fe-b8e2-f91597c7a89a',
-    { json: {"sender": { "id": "413242354", "name": "+380992472015", "avatar": ""}, "message": {"type": "text", "text": "Вітаю"}} },
-    function (error, response, body) {
-        if (!error && response.statusCode == 200) {
-            console.log(body);
-        }
-    });
   
   const item1 = document.createElement('div')
   //item1.innerHTML = `<p style="margin-left:150px">${formattedTime}</p>`
