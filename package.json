@@ -1,5 +1,5 @@
 {
-  "name": "widget", 
+  "name": "widget",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -11,10 +11,11 @@
   "author": "Andrii Bezuhlov",
   "license": "MIT",
   "dependencies": {
-    "mongoose": "^6.0.0",
     "body-parser": "^1.19.0",
+    "connect-timeout": "^1.9.0",
     "express": "^4.17.1",
-    "socket.io": "^4.2.0",
-    "connect-timeout": "^1.9.0"
+    "mongoose": "^6.0.0",
+    "request": "^2.88.2",
+    "socket.io": "^4.2.0"
   }
 }
