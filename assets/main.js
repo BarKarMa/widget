@@ -4,7 +4,7 @@ const form = document.querySelector('.form')
 const input = document.querySelector('.input')
 const nameBlock = document.querySelector('.name')
 
-const requests = require('request')
+//const requests = require('request')
 
 const userName = prompt('Ваше імя:')
 
