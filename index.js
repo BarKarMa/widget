@@ -7,7 +7,8 @@ const io = require('socket.io')(http)
 const cors = require('cors')
 const bodyParser = require('body-parser')
 const timeout = require('connect-timeout')
-const request = require('request')
+var request = require('request')
+
 
 
 const { connect, connection, connections } = require('mongoose');
