@@ -47,27 +47,27 @@ io.on('connection', (socket) => {
   })
 
 
-  //{
+//   //{
 
-    "channel_id" : "28528776-3130-4C66-E811-08D55CEAB346",
+//     "channel_id" : "28528776-3130-4C66-E811-08D55CEAB346",
 
-    "receiver_id" : "123",
+//     "receiver_id" : "123",
 
-    "type" : "text",
+//     "type" : "text",
 
-    "content" :
+//     "content" :
 
-     {
+//      {
 
-         "text" : "test",
+//          "text" : "test",
 
-         "buttons" : []
+//          "buttons" : []
 
-    },
+//     },
 
-    "operatorInfo": ""
+//     "operatorInfo": ""
 
-}
+// }
   
 
   socket.on('disconnect', () => {
