@@ -39,11 +39,35 @@ io.on('connection', (socket) => {
     
     console.log(data)
     io.emit('chat message', {
-      message: data.message,
-      name: data.name,
+      //message: data.message,
+      message: data.content.text,
+      name: data.receiver_id,
     })
     
   })
+
+
+  //{
+
+    "channel_id" : "28528776-3130-4C66-E811-08D55CEAB346",
+
+    "receiver_id" : "123",
+
+    "type" : "text",
+
+    "content" :
+
+     {
+
+         "text" : "test",
+
+         "buttons" : []
+
+    },
+
+    "operatorInfo": ""
+
+}
   
 
   socket.on('disconnect', () => {
