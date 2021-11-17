@@ -44,7 +44,7 @@ document.addEventListener('submit', (e) =>{
         //contentType: "PostmanRuntime/7.28.4",
         //contentType:"application/json; charset=utf-8",
         dataType: "json",
-        contentType: "application/json"
+        contentType: "application/json",
         success: function(){ }
       })
       
