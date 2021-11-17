@@ -92,6 +92,8 @@ socket.on('chat message', (data) => {
   item1.innerHTML = `<p class="time">${formattedTime}</p>`
   messages.appendChild(item1)
   const item = document.createElement('div')
+
+  // вынести звідси код в окремий файл - ключ
   if (data.channel_id === "DCA20883-F093-4DA4-8FDC-9EAE03A51E18"){
     //div.className = "alert";
     item.innerHTML = `<p style="text-align: right;">${data.name}:</p> <span id="server-messages">${data.content.text}</span>`
