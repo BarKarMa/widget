@@ -5,7 +5,7 @@ const input = document.querySelector('.input')
 const nameBlock = document.querySelector('.name')
 
 const http = require('http')
-const io = require('socket.io')(http)
+
 
 //const requests = require('request')
 
