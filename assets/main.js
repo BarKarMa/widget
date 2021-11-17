@@ -39,9 +39,26 @@ document.addEventListener('submit', (e) =>{
       //    console.log('server recieved data')
       //});
       
+      let url='https://balance.beesender.com/api/v1.0/sendmessage/5673e2ff-da23-4db4-8da1-963abfdf1395/dca20883-f093-4da4-8fdc-9eae03a51e18';
 
 
-      $.post('https://balance.beesender.com/api/v1.0/sendmessage/5673e2ff-da23-4db4-8da1-963abfdf1395/dca20883-f093-4da4-8fdc-9eae03a51e18', {'sender': { 'id': '413242354', "name": '+380992472015', 'avatar': ''}, 'message': {'type': 'text', 'text': 'Вітаю'}}, function(){});
+      $.ajax({
+          type: 'POST',
+          url: url,
+          headers: {
+              "My-First-Header":"first value",
+              "My-Second-Header":"second value"
+          },
+          body: {
+            id: id,
+            name: body.name,
+            message: body.message
+          }
+      }).done(function(data) {
+          alert(data[0].request.httpMethod + ' was send - open chrome console> network to see it');
+      });
+
+      //$.post('https://balance.beesender.com/api/v1.0/sendmessage/5673e2ff-da23-4db4-8da1-963abfdf1395/dca20883-f093-4da4-8fdc-9eae03a51e18', {'sender': { 'id': '413242354', "name": '+380992472015', 'avatar': ''}, 'message': {'type': 'text', 'text': 'Вітаю'}}, function(){});
         
       //$.post('https://balance.beesender.com/api/v1.0/sendmessage/5673e2ff-da23-4db4-8da1-963abfdf1395/39871eae-1695-46fe-b8e2-f91597c7a89a',
         //{'sender': { 'id': '413242354', "name": '+380992472015', 'avatar': ''}, 'message': {'type': 'text', 'text': 'Вітаю'}},
