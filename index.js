@@ -39,35 +39,11 @@ io.on('connection', (socket) => {
     
     console.log(data)
     io.emit('chat message', {
-      //message: data.message,
-      message: data.messaget,
+      message: data.message,
       name: data.name,
     })
     
   })
-
-
-//   //{
-
-//     "channel_id" : "28528776-3130-4C66-E811-08D55CEAB346",
-
-//     "receiver_id" : "123",
-
-//     "type" : "text",
-
-//     "content" :
-
-//      {
-
-//          "text" : "test",
-
-//          "buttons" : []
-
-//     },
-
-//     "operatorInfo": ""
-
-// }
   
 
   socket.on('disconnect', () => {
@@ -135,24 +111,30 @@ app.post("/webhook", (req, res) => {
   try {
     res.json({
 
-     "channel_id" : res.channel_id,
-
-     "receiver_id" : "123",
-     "type" : "text",
-
-     "content" :
-
-      {
-
-          "text" : "test",
-
-          "buttons" : []
-
-     },
-
-     "operatorInfo": ""
-
+      "sender":
     
+     
+     {
+     
+       "id": "4",
+     
+         "name": "Test User",
+     
+       "avatar":
+     
+     "https://media.fox9.com/media.fox9.com/photo/2018/03/02/5%20P%20MISSING%20DOG%20FOUND%20DEAD_00.00.06.04_1520042792006.png_5029487_ver1.0_640_360.jpg"
+     
+               },
+     
+      "message":
+     
+     {
+     
+                          "type": "text",
+     
+                          "text": "Test text"
+     
+               }
      
      });
   
