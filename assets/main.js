@@ -39,14 +39,8 @@ document.addEventListener('submit', (e) =>{
       //    console.log('server recieved data')
       //});
       
-      $.post({
-        url:"https://balance.beesender.com/api/v1.0/sendmessage/5673e2ff-da23-4db4-8da1-963abfdf1395/dca20883-f093-4da4-8fdc-9eae03a51e18",
-        type:"POST",
-        data:data.val(),
-        contentType:"application/json; charset=utf-8",
-        dataType:"json",
-        success: function(){  }
-      })
+      $.post('https://balance.beesender.com/api/v1.0/sendmessage/5673e2ff-da23-4db4-8da1-963abfdf1395/dca20883-f093-4da4-8fdc-9eae03a51e18', data, function(){ console.log('server recieved data') }
+      )
 
       //$.post('https://balance.beesender.com/api/v1.0/sendmessage/5673e2ff-da23-4db4-8da1-963abfdf1395/dca20883-f093-4da4-8fdc-9eae03a51e18', {'sender': { 'id': '413242354', "name": '+380992472015', 'avatar': ''}, 'message': {'type': 'text', 'text': 'Вітаю'}}, function(){});
         
