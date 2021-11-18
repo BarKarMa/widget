@@ -48,15 +48,24 @@ io.on('connection', (socket) => {
     
   })
 
-  socket.on('typing', () => {
-    socket.broadcast.emit('typing', {
-      username: socket.username
+  socket.on('disconnect', (socket) => {
+    --numUsers;
+    console.log(`Num of users: ${numUsers}`)
+    socket.broadcast.emit('user-disconnected', users[socket.id])
+    delete users[socket.id]
     })
-  })
+
+  
   
 })
 
-io.on('disconnect', (socket) => {
+io.on('typing', () => {
+  socket.broadcast.emit('typing', {
+    username: socket.username
+  })
+})
+
+io.on('disconnect', () => {
   --numUsers;
   console.log(`Num of users: ${numUsers}`)
   socket.broadcast.emit('user-disconnected', users[socket.id])
