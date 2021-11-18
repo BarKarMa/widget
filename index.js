@@ -32,6 +32,8 @@ io.on('connection', (socket) => {
   console.log(`Client with id ${socket.id} connected`)
   console.log(`/////////////////////////////////////////`)
   clients.push(socket.id)
+  ++numUsers;
+  console.log(`Num of users: ${numUsers}`)
   
   
       
