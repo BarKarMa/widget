@@ -49,24 +49,7 @@ document.addEventListener('submit', (e) =>{
         success: function(){ }
       })
       
-      //$.post('/test', data, function() {
-      //    console.log('server recieved data')
-      //});
-
-      //let res = http.post('https://balance.beesender.com/api/v1.0/sendmessage/5673e2ff-da23-4db4-8da1-963abfdf1395/dca20883-f093-4da4-8fdc-9eae03a51e18', JSON.stringify(data), {
-      //  headers: { 'Content-Type': 'application/json' },
-      //});
-      //console.log(res.json());
-      
-      //$.post('http://balance.beesender.com/api/v1.0/sendmessage/5673e2ff-da23-4db4-8da1-963abfdf1395/dca20883-f093-4da4-8fdc-9eae03a51e18', {'sender': { 'id': '413242354', "name": '+380992472015', 'avatar': ''}, 'message': {'type': 'text', 'text': 'Вітаю'}}, function(){});
-        
-      //$.post('https://balance.beesender.com/api/v1.0/sendmessage/5673e2ff-da23-4db4-8da1-963abfdf1395/39871eae-1695-46fe-b8e2-f91597c7a89a',
-        //{'sender': { 'id': '413242354', "name": '+380992472015', 'avatar': ''}, 'message': {'type': 'text', 'text': 'Вітаю'}},
-        //function (error, response, body) {
-        //    if (!error && response.statusCode == 200) {
-        //        console.log(body);
-        //    }
-        //});
+    
 
       // частина де відправляються сокети
     if(input.value){
