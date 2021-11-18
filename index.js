@@ -51,7 +51,7 @@ io.on('connection', (socket) => {
   socket.on('disconnect', (data) => {
     --numUsers;
     console.log(`Num of users: ${numUsers}`)
-    io.broadcast.emit('user-disconnected', users[socket.id])
+    io.emit('user-disconnected', users[socket.id])
     delete users[socket.id]
     })
 
