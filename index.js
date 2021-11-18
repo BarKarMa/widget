@@ -45,12 +45,13 @@ io.on('connection', (socket) => {
     
   })
   
-
-  socket.on('disconnect', () => {
-    socket.broadcast.emit('user-disconnected', users[socket.id])
-    delete users[socket.id]
-    })
 })
+
+io.on('disconnect', () => {
+  socket.broadcast.emit('user-disconnected', users[socket.id])
+  delete users[socket.id]
+  })
+
 
 io.on('typing', () => {
   socket.broadcast.emit('typing', {
