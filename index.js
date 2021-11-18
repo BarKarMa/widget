@@ -56,7 +56,7 @@ io.on('connection', (socket) => {
   
 })
 
-io.on('disconnect', () => {
+io.on('disconnect', (socket) => {
   --numUsers;
   console.log(`Num of users: ${numUsers}`)
   socket.broadcast.emit('user-disconnected', users[socket.id])
