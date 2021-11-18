@@ -50,9 +50,10 @@ io.on('connection', (socket) => {
 
   socket.on('disconnect', (data) => {
     --numUsers;
-    console.log(`Num of users: ${numUsers}`)
+    console.log(`User disconnected. On server are: ${numUsers}`)
     io.emit('user-disconnected', users[socket.id])
     delete users[socket.id]
+    console.log(`'user-disconnected', users[socket.id] ${users[socket.id]}`)
     })
 
   
