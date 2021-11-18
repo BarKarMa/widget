@@ -53,7 +53,7 @@ io.on('connection', (socket) => {
     console.log(`User disconnected. On server are: ${numUsers}`)
     io.emit('user-disconnected', users[socket.id])
     delete users[socket.id]
-    console.log(`'user-disconnected', users[socket.id] ${users[socket.id]}`)
+    console.log(`'user-disconnected',  ${data[socket.id]}`)
     })
 
   
