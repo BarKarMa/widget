@@ -25,6 +25,7 @@ app.use(bodyParser.json())
 
 users = []
 let clients = []
+let numUsers = 0;
 //connections = [];
 
 
