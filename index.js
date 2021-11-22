@@ -36,13 +36,13 @@ io.on('connection', (socket) => {
   ++numUsers;
   console.log(`Num of users: ${numUsers}`)
   
-  socket.join(socket.id);
+  socket.join("room"+data.name);
   
   
   socket.on('chat message', (data) =>{
     
     console.log(data)
-    io.to(socket.id).emit('chat message', {
+    io.to("room"+data.name).emit('chat message', {
       message: data.message,
       name: data.name,
     })
@@ -63,7 +63,7 @@ io.on('connection', (socket) => {
     io.emit('user-disconnected', users[socket.id])
     delete users[socket.id]
     console.log(`'user-disconnected',  ${socket.id}`)
-    //socket.leave(socket.id);
+    ssocket.leave("room"+data.name);
     })
 
     socket.on('typing', () => {
@@ -110,16 +110,11 @@ app.post("/test", (req, res) => {
   console.log('full output')
   console.log(req.body);
 
-  
-
-
   if(!contype)
     return res.sendStatus(400)
   
   if (contype.indexOf('application/x-www-form-urlencoded; charset=UTF-8') !== 0)
-  ////
-    
-    ///
+
     io.emit('chat message', req.body);
     console.log("2");
     return res.sendStatus(200);
@@ -127,12 +122,7 @@ app.post("/test", (req, res) => {
     
   }
   
-  
-  //io.emit('chat message', req.body);
-  // сдесь иф который будет отправлять только когда идет запрос через АПИ
-  //io.emit('chat message', req.body)
-  //res.sendStatus(200);
-  
+
 
 });
 
