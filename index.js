@@ -120,7 +120,7 @@ app.post("/test", (req, res) => {
   
   if (contype.indexOf('application/x-www-form-urlencoded; charset=UTF-8') !== 0)
     console.log('room')
-    console.log(io.id)
+    console.log(clients)
     
     
     io.to('room'+socket.id).emit('chat message', req.body)
