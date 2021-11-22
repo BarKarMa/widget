@@ -66,7 +66,8 @@ document.addEventListener('submit', (e) =>{
 
 
 socket.on('chat message', (data) => {
-  
+  socket.join("room"+socket.id);
+   
 
 
   const item1 = document.createElement('div')
