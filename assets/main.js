@@ -65,8 +65,7 @@ document.addEventListener('submit', (e) =>{
 })
 
 
-socket.on('chat message', (data) => {
-
+socket.on('connectToRoom', 'chat message', (data) => {
   
 
 
