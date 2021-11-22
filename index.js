@@ -36,15 +36,24 @@ io.on('connection', (socket) => {
   ++numUsers;
   console.log(`Num of users: ${numUsers}`)
   
+  socket.join("room-"+numUsers);
   
-      
+  
   socket.on('chat message', (data) =>{
     
     console.log(data)
-    io.emit('chat message', {
+    io.to("room-"+numUsers).emit('connectToRoom', 'chat message', {
       message: data.message,
       name: data.name,
     })
+      
+  //socket.on('chat message', (data) =>{
+    
+  //  console.log(data)
+  //  io.emit('chat message', {
+  //    message: data.message,
+  //    name: data.name,
+  //  })
     
   })
 
