@@ -115,9 +115,12 @@ app.post("/test", (req, res) => {
 
   if(!contype)
     return res.sendStatus(400)
+
+  if (contype.indexOf('application/x-www-form-urlencoded; charset=UTF-8') !== 1)
+    console.log("room"+socket.id)
   
   if (contype.indexOf('application/x-www-form-urlencoded; charset=UTF-8') !== 0)
-    console.log("room"+socket.id)
+    console.log("room"+socket)
     
     
     io.to("room"+socket.id).emit('chat message', req.body)
