@@ -109,7 +109,9 @@ app.post("/test", (req, res) => {
   var contype = req.headers['content-type']
   
   console.log('full output')
-  console.log(req.body);
+  console.log(req.body)
+  console.log('---------- head ------------')
+  console.log(req.headers)
 
   if(!contype)
     return res.sendStatus(400)
