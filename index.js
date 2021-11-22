@@ -36,11 +36,11 @@ io.on('connection', (socket) => {
   ++numUsers;
   console.log(`Num of users: ${numUsers}`)
   
-  
+  socket.join("room"+numUsers);
   
   
   socket.on('chat message', (data) =>{
-    socket.join("room"+numUsers);
+    
     
     console.log(data)
     io.to("room"+numUsers).emit('chat message', {
