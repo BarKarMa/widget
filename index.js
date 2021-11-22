@@ -36,13 +36,13 @@ io.on('connection', (socket) => {
   ++numUsers;
   console.log(`Num of users: ${numUsers}`)
   
-  socket.join("room-"+socket.id);
+  socket.join(socket.id);
   
   
   socket.on('chat message', (data) =>{
     
     console.log(data)
-    io.to("room-"+socket.id).emit('chat message', {
+    io.to(socket.id).emit('chat message', {
       message: data.message,
       name: data.name,
     })
@@ -63,7 +63,7 @@ io.on('connection', (socket) => {
     io.emit('user-disconnected', users[socket.id])
     delete users[socket.id]
     console.log(`'user-disconnected',  ${socket.id}`)
-    socket.leave("room-"+socket.id);
+    //socket.leave(socket.id);
     })
 
     socket.on('typing', () => {
@@ -80,27 +80,6 @@ io.on('typing', () => {
     username: socket.username
   })
 })
-
-io.on('disconnect', () => {
-  --numUsers;
-  console.log(`Num of users: ${numUsers}`)
-  socket.broadcast.emit('user-disconnected', users[socket.id])
-  delete users[socket.id]
-  })
-
-
-io.on('typing', () => {
-  socket.broadcast.emit('typing', {
-    username: socket.username
-  })
-})
-
-io.on('stop typing', () => {
-  socket.broadcast.emit('stop typing', {
-    username: socket.username
-  });
-});
-
 
 
 
