@@ -40,10 +40,10 @@ io.on('connection', (socket) => {
   
   
   socket.on('chat message', (data) =>{
-    socket.join("room"+data.name);
+    socket.join("room"+numUsers);
     
     console.log(data)
-    io.to("room"+data.name).emit('chat message', {
+    io.to("room"+numUsers).emit('chat message', {
       message: data.message,
       name: data.name,
     })
@@ -64,7 +64,7 @@ io.on('connection', (socket) => {
     io.emit('user-disconnected', users[socket.id])
     delete users[socket.id]
     console.log(`'user-disconnected',  ${socket.id}`)
-    socket.leave("room"+data.name);
+    socket.leave("room"+numUsers);
     })
 
     socket.on('typing', () => {
