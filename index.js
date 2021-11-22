@@ -36,7 +36,7 @@ io.on('connection', (socket) => {
   ++numUsers;
   console.log(`Num of users: ${numUsers}`)
   
-  socket.join("room-"+numUsers);
+  socket.join("room-"+socket.id);
   
   
   socket.on('chat message', (data) =>{
@@ -63,7 +63,7 @@ io.on('connection', (socket) => {
     io.emit('user-disconnected', users[socket.id])
     delete users[socket.id]
     console.log(`'user-disconnected',  ${socket.id}`)
-    //socket.leave("room-"+numUsers);
+    socket.leave("room-"+socket.id);
     })
 
     socket.on('typing', () => {
