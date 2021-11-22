@@ -117,7 +117,7 @@ app.post("/test", (req, res) => {
     return res.sendStatus(400)
   
   if (contype.indexOf('application/x-www-form-urlencoded; charset=UTF-8') !== 0)
-    console.log(contype.indexOf('application/x-www-form-urlencoded; charset=UTF-8') !== 0);
+    console.log(true !== 0);
 
     io.emit('chat message', req.body);
     console.log("2");
