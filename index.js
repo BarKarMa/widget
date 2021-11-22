@@ -122,9 +122,9 @@ app.post("/test", (req, res) => {
 
     // не вийшло
   
-    console.log(req.transports)
+    console.log(req.id)
     console.log('try get sockets')
-    console.log(req.transport)
+    console.log(id)
     
     
     
