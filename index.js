@@ -119,7 +119,7 @@ app.post("/test", (req, res) => {
   
   
   if (contype.indexOf('application/x-www-form-urlencoded; charset=UTF-8') !== 0)
-    console.log(req)
+    console.log(req.transpotrs)
     
     
     
