@@ -29,7 +29,7 @@ let numUsers = 0;
 //connections = [];
 
 
-io.on('connection', (socket) => {
+io.on('connection', (socket, data) => {
   console.log(`Client with id ${socket.id} connected`)
   console.log(`/////////////////////////////////////////`)
   clients.push(socket.id)
