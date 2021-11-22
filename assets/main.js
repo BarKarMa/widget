@@ -69,7 +69,7 @@ document.addEventListener('submit', (e) =>{
 })
 
 
-socket.to("room"+socket.id).on('chat message', (data) => {
+socket.on('chat message', (data) => {
    
 
 
