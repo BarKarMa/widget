@@ -67,11 +67,11 @@ io.on('connection', (socket) => {
     socket.leave("room"+numUsers);
     })
 
-    socket.on('typing', () => {
-      socket.emit('typing', {
-        username: socket.username
-      })
+  socket.on('typing', () => {
+    socket.emit('typing', {
+      username: socket.username
     })
+  })
   
   
 })
@@ -116,7 +116,7 @@ app.post("/test", (req, res) => {
   
   if (contype.indexOf('application/x-www-form-urlencoded; charset=UTF-8') !== 0)
 
-    io.to("room"+req.body.name).emit('chat message', req.body);
+    io.emit('chat message', req.body);
     console.log("2");
     return res.sendStatus(200);
   }  catch(error) {
