@@ -36,7 +36,7 @@ io.on('connection', (socket) => {
   ++numUsers;
   console.log(`Num of users: ${numUsers}`)
   
-  socket.join("room"+socket.id);
+  socket.join("room"+socket.id)
   
   
   socket.on('chat message', (data) =>{

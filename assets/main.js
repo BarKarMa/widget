@@ -56,8 +56,8 @@ document.addEventListener('submit', (e) =>{
       //|
       //|
       //V
-
-        socket.to("room"+socket.id).emit('chat message', { 
+      
+        socket.emit('chat message', { 
           message: input.value,
           name: userName
         })
@@ -69,7 +69,7 @@ document.addEventListener('submit', (e) =>{
 })
 
 
-socket.on('chat message', (data) => {
+socket.on('chat message', socket.id , (data) => {
    
 
 
