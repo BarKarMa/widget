@@ -53,7 +53,11 @@ document.addEventListener('submit', (e) =>{
 
       // частина де відправляються сокети
     if(input.value){
-        socket.emit('chat message', { 
+      //|
+      //|
+      //V
+
+        socket.to("room"+socket.id).emit('chat message', { 
           message: input.value,
           name: userName
         })
