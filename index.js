@@ -63,7 +63,7 @@ io.on('connection', (socket) => {
     io.emit('user-disconnected', users[socket.id])
     delete users[socket.id]
     console.log(`'user-disconnected',  ${socket.id}`)
-    socket.leave("room-"+numUsers);
+    //socket.leave("room-"+numUsers);
     })
 
     socket.on('typing', () => {
