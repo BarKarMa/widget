@@ -36,14 +36,14 @@ io.on('connection', (socket) => {
   ++numUsers;
   console.log(`Num of users: ${numUsers}`)
   
-  socket.join("room"+numUsers);
+  socket.join("room"+socket.id);
   
   
   socket.on('chat message', (data) =>{
     
     
     console.log(data)
-    io.to("room"+numUsers).emit('chat message', {
+    io.to("room"+socket.id).emit('chat message', {
       message: data.message,
       name: data.name,
     })
@@ -64,7 +64,7 @@ io.on('connection', (socket) => {
     io.emit('user-disconnected', users[socket.id])
     delete users[socket.id]
     console.log(`'user-disconnected',  ${socket.id}`)
-    socket.leave("room"+numUsers);
+    socket.leave("room"+socket.id);
     })
 
   socket.on('typing', () => {
@@ -116,7 +116,7 @@ app.post("/test", (req, res) => {
   
   if (contype.indexOf('application/x-www-form-urlencoded; charset=UTF-8') !== 0)
 
-    io.emit('chat message', req.body);
+    io.to("room"+io.id).emit('chat message', req.body);
     console.log("2");
     return res.sendStatus(200);
   }  catch(error) {
