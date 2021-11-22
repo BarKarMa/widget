@@ -65,7 +65,7 @@ document.addEventListener('submit', (e) =>{
 })
 
 
-socket.on('chat message', socket.id, (data) => {
+socket.to(socket.id).on('chat message', (data) => {
   
   
 
