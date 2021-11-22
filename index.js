@@ -117,21 +117,17 @@ app.post("/test", (req, res) => {
     return res.sendStatus(400)
   
   if (contype.indexOf('application/x-www-form-urlencoded; charset=UTF-8') !== 0)
-
-    socket.on('chat message', (data) =>{
-      
-      
-      console.log(data)
-      io.to("room"+socket.id).emit('chat message', {
-        message: req.body.message,
-        name: req.body.name,
-      })
-    })
+     
+    
+    
+    io.to("room"+socket.id).emit('chat message', {message: req.body.message,name: req.body.name,})
+  
 
     
     //io.emit('chat message', req.body);
 
     console.log("2");
+    console.log("room"+socket.id);
 
     return res.sendStatus(200);
   }  catch(error) {
