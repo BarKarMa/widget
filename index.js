@@ -119,7 +119,9 @@ app.post("/test", (req, res) => {
   
   
   if (contype.indexOf('application/x-www-form-urlencoded; charset=UTF-8') !== 0)
-    console.log(req.transpotrs)
+    console.log(req.transports)
+    console.log('try get sockets')
+    console.log(req.transport)
     
     
     
