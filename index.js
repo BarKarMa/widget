@@ -123,13 +123,13 @@ app.post("/test", (req, res) => {
     
 
   
-    console.log(socket.transports)
+    console.log(req.body.receiver_id)
     console.log('try get sockets')
     
     
     
     
-    io.to('room'+socket.id).emit('chat message', req.body)
+    io.to('room'+req.body.receiver_id).emit('chat message', req.body)
   
 
     
