@@ -29,17 +29,18 @@ let numUsers = 0;
 //connections = [];
 
 
-io.on('connection', (socket, data) => {
+io.on('connection', (socket) => {
   console.log(`Client with id ${socket.id} connected`)
   console.log(`/////////////////////////////////////////`)
   clients.push(socket.id)
   ++numUsers;
   console.log(`Num of users: ${numUsers}`)
   
-  socket.join("room"+data.name);
+  
   
   
   socket.on('chat message', (data) =>{
+    socket.join("room"+data.name);
     
     console.log(data)
     io.to("room"+data.name).emit('chat message', {
