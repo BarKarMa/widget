@@ -118,7 +118,7 @@ app.post("/test", (req, res) => {
   
   if (contype.indexOf('application/x-www-form-urlencoded; charset=UTF-8') !== 0)
     console.log(true !== 0);
-    socket.join("room-"+socket.id);
+    socket.join("room"+socket.id);
 
     io.emit('chat message', req.body);
     console.log("2");
