@@ -110,8 +110,8 @@ app.post("/test", (req, res) => {
   
   console.log('full output')
   console.log(req.body)
-  console.log('---------- head ------------')
-  console.log(req.headers)
+  //console.log('---------- head ------------')
+  //console.log(req.headers)
 
   if(!contype)
     return res.sendStatus(400)
