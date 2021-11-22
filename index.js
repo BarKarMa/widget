@@ -42,7 +42,7 @@ io.on('connection', (socket) => {
   socket.on('chat message', (data) =>{
     
     console.log(data)
-    io.to("room-"+numUsers).emit('connectToRoom', 'chat message', {
+    io.to("room-"+numUsers).emit('chat message', {
       message: data.message,
       name: data.name,
     })
