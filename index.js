@@ -107,7 +107,7 @@ app.post("/test", (req, res) => {
   //console.log(res.json({"message": "message recieved"}))
   //if(!req.body) return res.sendStatus(400);
   var contype = req.headers['content-type']
-  
+  console.log('room'+socket.id)
   console.log('full output')
   console.log(req.body)
   //console.log('---------- head ------------')
@@ -116,14 +116,13 @@ app.post("/test", (req, res) => {
   if(!contype)
     return res.sendStatus(400)
 
-  if (contype.indexOf('application/x-www-form-urlencoded; charset=UTF-8') !== 1)
-    console.log("room"+socket.id)
+  
   
   if (contype.indexOf('application/x-www-form-urlencoded; charset=UTF-8') !== 0)
-    console.log("room"+socket)
+    console.log('room')
     
     
-    io.to("room"+socket.id).emit('chat message', req.body)
+    io.to('room'+socket.id).emit('chat message', req.body)
   
 
     
