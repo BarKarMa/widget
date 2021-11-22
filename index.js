@@ -120,7 +120,7 @@ app.post("/test", (req, res) => {
      
     
     
-    io.to("room"+socket.id).emit('chat message', {message: req.body.message,name: req.body.name,})
+    io.to("room"+socket.id).emit('chat message', req.body)
   
 
     
