@@ -121,9 +121,9 @@ app.post("/test", (req, res) => {
   if (contype.indexOf('application/x-www-form-urlencoded; charset=UTF-8') !== 0)
 
     
-    socket.on('connect', function (data) {
-      console.log(data.id)
-      socket.emit('join', data.id);
+    socket.on('connect', function () {
+      console.log(req.id)
+      socket.emit('join', req.id);
     });
   
     console.log(req.id)
