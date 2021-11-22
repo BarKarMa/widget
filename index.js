@@ -120,11 +120,15 @@ app.post("/test", (req, res) => {
   
   if (contype.indexOf('application/x-www-form-urlencoded; charset=UTF-8') !== 0)
 
-    // не вийшло
+    
+    socket.on('connect', function (data) {
+      console.log(data.id)
+      socket.emit('join', data.id);
+    });
   
     console.log(req.id)
     console.log('try get sockets')
-    console.log(id)
+    
     
     
     
