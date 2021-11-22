@@ -65,8 +65,10 @@ document.addEventListener('submit', (e) =>{
 })
 
 
-socket.to("room"+socket.id).on('chat message', (data) => {
+socket.on('chat message', (data) => {
   
+  
+
 
   const item1 = document.createElement('div')
   //item1.innerHTML = `<p style="margin-left:150px">${formattedTime}</p>`
