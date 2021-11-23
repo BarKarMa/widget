@@ -46,7 +46,7 @@
     
     </div>
     <form > 
-        <button  class="btn_primary" id="btn_open" >Розпочати чат</button>
+        <button  class="btn_primary" id="btn_open" onclick="darkmessage()">Розпочати чат</button>
     </form>
 
     
@@ -56,10 +56,10 @@
 <script>
     function darkmessage() {
         var b = document.querySelector('.basic-flow');
-        if (b.style.display == 'flex')
-            b.style.display = 'none';
+        if (b.style.display == 'none')
+            b.style.display = 'flex';
         else
-            b.style.display = 'flex'
+            b.style.display = 'none'
         }
     
 </script>
