@@ -48,14 +48,6 @@ io.on('connection', (socket) => {
       name: data.name,
     })
       
-  //socket.on('chat message', (data) =>{
-    
-  //  console.log(data)
-  //  io.emit('chat message', {
-  //    message: data.message,
-  //    name: data.name,
-  //  })
-    
   })
 
   socket.on('disconnect', (data) => {
@@ -82,9 +74,6 @@ io.on('typing', () => {
   })
 })
 
-
-
-//app.use(express.static('/assets'))
 app.use(express.static(__dirname + '/assets'))
 
 
@@ -93,12 +82,7 @@ app.use(express.static(__dirname + '/assets'))
 app.get("/", (req, res) => {
   console.log("1");
   res.sendFile(path.join(__dirname, '/index.html'))
-  
-  //console.log(req.body)
-  
-
 });
-
 
 
 // за допомогою експресу імітувати створення чату ?
@@ -121,22 +105,9 @@ app.post("/test", (req, res) => {
   if (contype.indexOf('application/x-www-form-urlencoded; charset=UTF-8') !== 0)
 
     
-
-  
-    console.log(req.body.receiver_id)
-    console.log('try get sockets')
-    
-    
-    
-    
     io.to('room'+req.body.receiver_id).emit('chat message', req.body)
-  
-
-    
-    //io.emit('chat message', req.body);
 
     console.log("2");
-    
 
     return res.sendStatus(200);
   }  catch(error) {
@@ -144,45 +115,6 @@ app.post("/test", (req, res) => {
   }
   
 
-
-});
-
-
-app.post("/webhook", (req, res) => {
-  try {
-    res.json({
-
-      "channel_id" : "28528776-3130-4C66-E811-08D55CEAB346",
-
-      "receiver_id" : "123",
-
-      "type" : "text",
-
-      "content" :
-
-       {
-
-           "text" : "test",
-
-           "buttons" : []
-
-      },
-
-      "operatorInfo": ""
-
-});
-  
-    return res.sendStatus(200);
-  }  catch(error) {
-    
-  }
-  
-  
-  //io.emit('chat message', req.body);
-  // сдесь иф который будет отправлять только когда идет запрос через АПИ
-  //io.emit('chat message', req.body)
-  //res.sendStatus(200);
-  
 
 });
 
