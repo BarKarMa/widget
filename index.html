@@ -6,6 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Chat bot</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -39,15 +42,23 @@
                 <input id="numbers" name="numbers" class="input" type="text" id=nub autocomplete="off" >
                 <button id="number_btn_area" type="submit" hidden>submit</button>
                 
+                
             </div>
+            
                 
         </form>
-        
+           
     
     </div>
-    <form > 
-        <button  class="btn_primary" id="btn_open" onclick="darkmessage()">Розпочати чат</button>
-    </form>
+    
+        <div class="click-box" onclick="darkmessage()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="grey" class="bi bi-messenge" viewBox="0 0 16 16">
+                <path d="M0 7.76C0 3.301 3.493 0 8 0s8 3.301 8 7.76-3.493 7.76-8 7.76c-.81 0-1.586-.107-2.316-.307a.639.639 0 0 0-.427.03l-1.588.702a.64.64 0 0 1-.898-.566l-.044-1.423a.639.639 0 0 0-.215-.456C.956 12.108 0 10.092 0 7.76zm5.546-1.459-2.35 3.728c-.225.358.214.761.551.506l2.525-1.916a.48.48 0 0 1 .578-.002l1.869 1.402a1.2 1.2 0 0 0 1.735-.32l2.35-3.728c.226-.358-.214-.761-.551-.506L9.728 7.381a.48.48 0 0 1-.578.002L7.281 5.98a1.2 1.2 0 0 0-1.735.32z"/>
+              </svg>
+        <!-- <button  class="btn_primary" id="btn_open" hidden>ЧАТ</button> -->
+        </div>
+    
+
 
     
 
@@ -74,6 +85,19 @@
 
 <style>
 
+.click-box {
+    margin-top: 50%;
+    margin-left: 94.5%;
+    position: absolute;
+
+}
+
+.bi-messenger {
+    width: 32px;
+    height: 32px;   
+
+}
+
 .btn_primary {
     border: 1px dotted #000;
     background-color: rgb(255, 255, 255);
@@ -82,7 +106,7 @@
     position: absolute;
     margin-top: 50%;
     margin-left: 85.5%;
-    border-radius: 16px;
+    border-radius: 50%;
     border: 1px solid rgb(29, 31, 170);
     
 }
