@@ -56,10 +56,10 @@
 <script>
     function darkmessage() {
         var b = document.querySelector('.basic-flow');
-        if (b.style.display == 'none')
-            b.style.display = 'flex';
+        if (b.style.display == 'flex')
+            b.style.display = 'none';
         else
-            b.style.display = 'none'
+            b.style.display = 'flex'
         }
     
 </script>
@@ -89,7 +89,7 @@
 
 .basic-flow
  { 
-    display: flex;
+    display: none;
     background-color: #d1e0ed;
     position: absolute;
     
