@@ -11,15 +11,16 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap" rel="stylesheet">
   
- <link rel="shortcut icon" type="image/png" href="/favicon.png"/>
-
+  <link rel="shortcut icon" type="image/png" href="/favicon.png"/>
+  
 </head>
 <body>
-    <div class="basic-flow" >
+    <div class="basic-flow" id="flow">
     
-        <div class="messages" id="li" style="">
+        <div class="messages" id="li">
         
-
+        <!-- 
+            
         <!test commands>
         
         <div>
@@ -29,32 +30,38 @@
             <p>andrii:</p>
             <span id="my-messages" ;="" "="">hello</span>
         </div>
-        
+        -->  
+    </div>
 
-        
-        </div>
-
-        <form action="/test" method="POST">
-            <div class="container">
+        <form action="/test" method="POST" >
+            <div class="container" >
                 <div id="name" class="name" >Roman</div> 
                 <input id="numbers" name="numbers" class="input" type="text" id=nub autocomplete="off" >
                 <button id="number_btn_area" type="submit" hidden>submit</button>
+                
             </div>
+                
         </form>
-
         
     
     </div>
+    <form action=""> 
+        <button class="btn_primary" id="btn_open">Розпочати чат</button>
+    </form>
+    <form action=""> 
+        <button class="btn_primary"  id="btn_close">X</button>
+    </form>
 
-    <button class="btn_primary">Розпочати чат</button>
-
+    
 
 </body>
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="/socket.io/socket.io.js"></script>
-<script src="./main.js"></script>
+<script async src="./main.js"></script>
+
+
 
 
 <style>
@@ -65,9 +72,9 @@
     padding: 20px;
     color: #000;
     position: absolute;
-    margin-top: 48%;
-    margin-left: 88%;
-    border-radius: 30px;
+    margin-top: 56%;
+    margin-left: 85.5%;
+    border-radius: 16px;
     border: 1px solid rgb(29, 31, 170);
     
 }
@@ -77,7 +84,6 @@
     display: flex;
     background-color: #d1e0ed;
     position: absolute;
-
     
     right: 2%;
     top: auto;
@@ -122,8 +128,6 @@
     
      
 }
-
-
 
 .messages {
     margin-bottom: 100px;
