@@ -31,7 +31,7 @@
             <span id="my-messages" ;="" "="">hello</span>
         </div>
         -->  
-    </div>
+        </div>
 
         <form action="/test" method="POST" >
             <div class="container" >
@@ -45,16 +45,24 @@
         
     
     </div>
-    <form action=""> 
-        <button class="btn_primary" id="btn_open">Розпочати чат</button>
-    </form>
-    <form action=""> 
-        <button class="btn_primary"  id="btn_close">X</button>
+    <form > 
+        <button  class="btn_primary" id="btn_open" >Розпочати чат</button>
     </form>
 
     
 
 </body>
+
+<script>
+    function darkmessage() {
+        var b = document.querySelector('.basic-flow');
+        if (b.style.display == 'flex')
+            b.style.display = 'none';
+        else
+            b.style.display = 'flex'
+        }
+    
+</script>
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
