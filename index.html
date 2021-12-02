@@ -22,7 +22,7 @@
     
         <div class="messages" id="li">
         
-        <!-- 
+         
             
         <!test commands>
         
@@ -31,14 +31,18 @@
         </div>
         <div>
             <p>andrii:</p>
-            <span id="my-messages" ;="" "="">hello</span>
+            <span id="my-messages" >hello</span>
         </div>
-        -->  
+        <div>
+            <p class="operator-name" style="text-align: right;">Оператор:</p> <span id="server-messages">hello</span>
+        </div>
+          
+
         </div>
 
         <form action="/test" method="POST" >
             <div class="container" >
-                <div id="name" class="name" >Roman</div> 
+                <div id="name" class="name" hidden >Roman</div> 
                 <input id="numbers" name="numbers" class="input" type="text" id=nub autocomplete="off" >
                 <button id="number_btn_area" type="submit" hidden>submit</button>
                 
@@ -52,7 +56,7 @@
     </div>
     
         <div class="click-box" onclick="darkmessage()">
-            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="grey" class="bi bi-messenge" viewBox="0 0 16 16">
+            <svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" fill="grey" class="bi bi-messenge" viewBox="0 0 16 16">
                 <path d="M0 7.76C0 3.301 3.493 0 8 0s8 3.301 8 7.76-3.493 7.76-8 7.76c-.81 0-1.586-.107-2.316-.307a.639.639 0 0 0-.427.03l-1.588.702a.64.64 0 0 1-.898-.566l-.044-1.423a.639.639 0 0 0-.215-.456C.956 12.108 0 10.092 0 7.76zm5.546-1.459-2.35 3.728c-.225.358.214.761.551.506l2.525-1.916a.48.48 0 0 1 .578-.002l1.869 1.402a1.2 1.2 0 0 0 1.735-.32l2.35-3.728c.226-.358-.214-.761-.551-.506L9.728 7.381a.48.48 0 0 1-.578.002L7.281 5.98a1.2 1.2 0 0 0-1.735.32z"/>
               </svg>
         <!-- <button  class="btn_primary" id="btn_open" hidden>ЧАТ</button> -->
@@ -121,11 +125,11 @@
     background-color: #d1e0ed;
     position: fixed;
     
-    right: 2%;
+    right: 3%;
     top: auto;
-    bottom: 10px;
-    width: 35%;
-    height: 86%;
+    bottom: 80px;
+    width: 30%;
+    height: 80%;
     border-radius: 16px;
     font-family: 'Open Sans Condensed', sans-serif;
     
@@ -150,7 +154,9 @@
     color: #320907;
     text-align:left;
     margin-top: 2%;
+    
 }
+
 
 #server-messages
 {
@@ -161,17 +167,22 @@
     padding: 5px;
     background-color: #f8efed;
     color:#320907;
-    margin-right: 1%; 
+    margin-right: 3%; 
     float: right;
-    margin-top: 2%;    
+    margin-top: 2%;
+       
      
 }
 
+
+
 .messages {
     margin-bottom: 100px;
-    max-width: 30%; 
+    max-width: 26%; 
     word-wrap:break-word;
     width:50%;
+    
+    
 }
 
 
@@ -192,9 +203,9 @@
 .input {
     position: fixed;
 	right: 5%; 
-	bottom: 80px;
+	bottom: 130px;
     height: 75px;
-    width: 27%;
+    width: 26%;
     border-radius: 8px;
 }
 
@@ -210,12 +221,12 @@
 {
 	position: fixed;
     
-	right: 40px; 
+	right: 38px; 
 	bottom: 100px;
 
     overflow:auto; 
     overflow-x:hidden;
-    height: 50%;
+    height: 30%;
     /* display:flex;
     flex-direction: column-reverse; */
     
