@@ -5,18 +5,21 @@ const input = document.querySelector('.input')
 const nameBlock = document.querySelector('.name')
 
 
-//const requests = require('request')
 
-const userName = prompt('Ваше імя:')
+//const userName = prompt('Ваше імя:')
 
 const time = new Date();
 const formattedTime = time.toLocaleString("en-US", { hour: "numeric", minute: "numeric", second: "numeric" });
 
-nameBlock.innerHTML = `${userName}`
+//nameBlock.innerHTML = `${userName}`
 
 const item0 = document.createElement('div')
 //item1.innerHTML = `<p style="margin-left:150px">${formattedTime}</p>`
 item0.innerHTML = `<p class="time">${formattedTime}</p>`
+messages.appendChild(item0)
+const item00 = document.createElement('div')
+item00.innerHTML = `<p>"Твоє ім'я":</p> <span id="my-messages"; ">${data.message}</span>`
+messages.appendChild(item00)
 
 //////
 function updateScroll(){
