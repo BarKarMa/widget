@@ -47,7 +47,8 @@ document.addEventListener('submit', (e) =>{
       $.ajax({
         type:"POST",
         url: "https://balance.beesender.com/api/v1.0/sendmessage/5673e2ff-da23-4db4-8da1-963abfdf1395/dca20883-f093-4da4-8fdc-9eae03a51e18",
-        data: JSON.stringify({'sender': { 'id': socket.id, "name": data.name, 'avatar': ''}, 'message': {'type': 'text', 'text': data.numbers}}),
+        data: JSON.stringify({'sender': { 'id': socket.id, "name": socket.id, 'avatar': ''}, 'message': {'type': 'text', 'text': data.numbers}}),
+    //data: JSON.stringify({'sender': { 'id': socket.id, "name": data.name, 'avatar': ''}, 'message': {'type': 'text', 'text': data.numbers}}),
     
         //contentType: "PostmanRuntime/7.28.4",
         //contentType:"application/json; charset=utf-8",
@@ -66,7 +67,7 @@ document.addEventListener('submit', (e) =>{
       
         socket.emit('chat message', { 
           message: input.value,
-          name: userName
+          //name: userName
         })
         input.value = ''
         
@@ -95,7 +96,7 @@ socket.on('chat message', (data) => {
     window.scrollTo(0,document.body.scrollHeight)
   }
   else {
-    item.innerHTML = `<p>${data.name}:</p> <span id="my-messages"; ">${data.message}</span>`
+    item.innerHTML = `<p>${socket.id}:</p> <span id="my-messages"; ">${data.message}</span>`
     
     messages.appendChild(item)
     window.scrollTo(0,document.body.scrollHeight)
