@@ -14,6 +14,10 @@ const formattedTime = time.toLocaleString("en-US", { hour: "numeric", minute: "n
 
 nameBlock.innerHTML = `${userName}`
 
+const item0 = document.createElement('div')
+//item1.innerHTML = `<p style="margin-left:150px">${formattedTime}</p>`
+item0.innerHTML = `<p class="time">${formattedTime}</p>`
+
 //////
 function updateScroll(){
   var element = document.getElementById("li");
@@ -25,7 +29,7 @@ function updateScroll(){
 document.addEventListener('submit', (e) =>{
     
     e.preventDefault()
-    setInterval(updateScroll,1000);
+    setInterval(updateScroll,500);
 
     // частина де відправляються дані на сервер через експрес
     const name = userName;
@@ -82,7 +86,7 @@ socket.on('chat message', (data) => {
   // вынести звідси код в окремий файл - ключ
   if (data.channel_id === "DCA20883-F093-4DA4-8FDC-9EAE03A51E18"){
     //div.className = "alert";
-    item.innerHTML = `<p style="text-align: right;">Оператор Олекса:</p> <span id="server-messages">${data.content.text}</span>`
+    item.innerHTML = `<p style="text-align: right;">Оператор:</p> <span id="server-messages">${data.content.text}</span>`
     //item.innerHTML = `<p style="text-align: right;">${data.name}:</p> <span id="server-messages">${data.content.text}</span>`
     messages.appendChild(item)
     window.scrollTo(0,document.body.scrollHeight)
@@ -94,9 +98,7 @@ socket.on('chat message', (data) => {
     window.scrollTo(0,document.body.scrollHeight)
   }
   
-  //item.innerHTML = `<p>${formattedTime}</p><span>${data.name}</span>: ${data.message}`
-  //messages.appendChild(item)
-  //window.scrollTo(0,document.body.scrollHeight)
+
 
 }
 )
