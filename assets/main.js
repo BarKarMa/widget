@@ -18,7 +18,7 @@ const item0 = document.createElement('div')
 item0.innerHTML = `<p class="time">${formattedTime}</p>`
 messages.appendChild(item0)
 const item00 = document.createElement('div')
-item00.innerHTML = `<p>"Твоє ім'я":</p> <span id="my-messages"; ">${data.message}</span>`
+item00.innerHTML = `<p>"Твоє ім'я":</p> <span id="my-messages"; ">Вітаємо вас у контактному центрі!</span>`
 messages.appendChild(item00)
 
 //////
