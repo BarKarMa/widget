@@ -83,7 +83,7 @@
 #li {
   position: fixed;
   border-radius: 8px;
-  right: 5px;
+  right: 5%;
   bottom: 130px;
   overflow: auto;
   overflow-x: hidden;
