@@ -75,7 +75,8 @@ io.on('typing', () => {
 })
 
 app.use(express.static(__dirname + '/assets'))
-app.use("/styles", express.static(__dirname));
+app.use(express.static(path.join(__dirname)));
+app.use("/styles", express.static(__dirname + '/styles'));
 
 
 
