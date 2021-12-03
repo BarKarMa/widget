@@ -30,7 +30,7 @@
             <p class="time">2:13:06 PM</p>
         </div>
         <div>
-            <p>andrii:</p>
+            <p class="user-name">andrii:</p>
             <span id="my-messages" >hello</span>
         </div>
         <div>
@@ -43,6 +43,7 @@
 
         <form action="/test" method="POST" >
             <div class="container" >
+                <a href="#" class="close" onclick="darkmessage()"></a>
                 <div id="name" class="name" hidden >Roman</div> 
                 <input id="numbers" name="numbers" class="input" type="text" id=nub autocomplete="off" >
                 <button id="number_btn_area" type="submit" hidden>submit</button>
@@ -52,12 +53,10 @@
             
                 
         </form>
-           
-    
+            
     </div>
-    
         <div class="click-box" onclick="darkmessage()">
-            <svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" fill="grey" class="bi bi-messenge" viewBox="0 0 16 16">
+            <svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" fill="rgb(119,190,252)" class="bi bi-messenge" viewBox="0 0 16 16">
                 <path d="M0 7.76C0 3.301 3.493 0 8 0s8 3.301 8 7.76-3.493 7.76-8 7.76c-.81 0-1.586-.107-2.316-.307a.639.639 0 0 0-.427.03l-1.588.702a.64.64 0 0 1-.898-.566l-.044-1.423a.639.639 0 0 0-.215-.456C.956 12.108 0 10.092 0 7.76zm5.546-1.459-2.35 3.728c-.225.358.214.761.551.506l2.525-1.916a.48.48 0 0 1 .578-.002l1.869 1.402a1.2 1.2 0 0 0 1.735-.32l2.35-3.728c.226-.358-.214-.761-.551-.506L9.728 7.381a.48.48 0 0 1-.578.002L7.281 5.98a1.2 1.2 0 0 0-1.735.32z"/>
               </svg>
         <!-- <button  class="btn_primary" id="btn_open" hidden>ЧАТ</button> -->
@@ -94,11 +93,7 @@
 .click-box {
     bottom:20px; 
     right: 40px;
-    /* margin-top: 50% !important;
-    margin-left: 94.5% !important; */
-
     position: fixed;
-
 }
 
 .bi-messenger {
@@ -123,9 +118,8 @@
 .basic-flow
  { 
     display: none;
-    background-color: #d1e0ed;
+    background-color: #c2e2fe;
     position: fixed;
-    
     right: 3%;
     top: auto;
     bottom: 80px;
@@ -138,26 +132,31 @@
 }
 
 .time {
-    
     font-size: 10px;
-    
     margin-top: 5%;
     text-align: center; 
-    
+}
+
+.user-name {
+    /* margin-left: 10px; */
 }
 
 
 #my-messages {
+    background-color: #77fcf8;
     border-radius: 8px;
     border: 1px solid black; /* Параметры рамки */
     padding: 5px;
-    background-color: #79ace4;
+    background-color: 18b6e1;
     color: #320907;
     text-align:left;
     margin-top: 2%;
     
 }
 
+.operator-name{
+    margin-right: 15px;
+}
 
 #server-messages
 {
@@ -166,24 +165,22 @@
     border-radius: 8px;
     border: 1px solid black; /* Параметры рамки */
     padding: 5px;
-    background-color: #f8efed;
+    background-color: #777cfc;
     color:#320907;
-    margin-right: 3%; 
+    margin-right: 4%; 
     float: right;
-    margin-top: 2%;
-       
+    margin-top: 2%;      
      
 }
 
 
-
 .messages {
     margin-bottom: 100px;
-    max-width: 26%; 
+    max-width: 26%;
+    margin-left: 10px; 
     word-wrap:break-word;
     width:50%;
-    
-    
+       
 }
 
 
@@ -221,21 +218,18 @@
 #li
 {
 	position: fixed;
-    
-	right: 38px; 
+    border-radius: 8px; 
+	/* right: 38px;  */
 	bottom: 130px;
-
     overflow:auto; 
     overflow-x:hidden;
-    height: 60%;
-    /* display:flex;
-    flex-direction: column-reverse; */
+    height: 54%;
     
   
 }
 
 #li::-webkit-scrollbar {
-  width: 0;
+  width: 20px;
 }
 
 #number_btn_area {
@@ -278,6 +272,34 @@ label {
 .submit {
     color: #000;
 }
+
+.close {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  width: 32px;
+  height: 32px;
+  opacity: 0.3;
+}
+.close:hover {
+  opacity: 1;
+}
+.close:before, .close:after {
+  position: absolute;
+  left: 15px;
+  content: ' ';
+  height: 33px;
+  width: 2px;
+  background-color: #333;
+}
+.close:before {
+  transform: rotate(45deg);
+}
+.close:after {
+  transform: rotate(-45deg);
+}
+
+
 </style>
 
  
