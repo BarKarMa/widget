@@ -1,0 +1,188 @@
+.click-box {
+  bottom: 20px;
+  right: 40px;
+  position: fixed;
+}
+
+.bi-messenger {
+  width: 32px;
+  height: 32px;
+}
+
+.btn_primary {
+  border: 1px dotted #000;
+  background-color: rgb(255, 255, 255);
+  padding: 20px;
+  color: #000;
+  position: absolute;
+  margin-top: 50%;
+  margin-left: 85.5%;
+  border-radius: 50%;
+  border: 1px solid rgb(29, 31, 170);
+}
+
+.basic-flow {
+  display: none;
+  background-color: #c2e2fe;
+  position: fixed;
+  right: 3%;
+  top: auto;
+  bottom: 80px;
+  width: 30%;
+  height: 80%;
+  border-radius: 16px;
+  font-family: "Open Sans Condensed", sans-serif;
+}
+
+.time {
+  font-size: 10px;
+  margin-top: 5%;
+  text-align: center;
+}
+
+.user-name {
+  /* margin-left: 10px; */
+}
+
+#my-messages {
+  background-color: #77fcf8;
+  border-radius: 8px;
+  border: 1px solid black; /* Параметры рамки */
+  padding: 5px;
+  background-color: 18b6e1;
+  color: #320907;
+  text-align: left;
+  margin-top: 2%;
+}
+
+.operator-name {
+  margin-right: 15px;
+}
+
+#server-messages {
+  text-align: right;
+  display: block;
+  border-radius: 8px;
+  border: 1px solid black; /* Параметры рамки */
+  padding: 5px;
+  background-color: #777cfc;
+  color: #320907;
+  margin-right: 4%;
+  float: right;
+  margin-top: 2%;
+}
+
+.messages {
+  margin-bottom: 100px;
+  max-width: 26%;
+  margin-left: 10px;
+  word-wrap: break-word;
+  width: 50%;
+}
+
+.chat-log {
+  position: fixed;
+  right: 200px;
+  bottom: 100px;
+  font: 1rem "Fira Sans", sans-serif;
+}
+
+.name {
+  position: fixed;
+  right: 33%;
+  bottom: 100px;
+}
+
+.input {
+  position: fixed;
+  right: 5%;
+  bottom: 130px;
+  height: 75px;
+  width: 26%;
+  border-radius: 8px;
+}
+
+#nub {
+  position: fixed;
+  right: 40px;
+  bottom: 50px;
+}
+
+#li {
+  position: fixed;
+  border-radius: 8px;
+  right: 48px;
+  bottom: 130px;
+  overflow: auto;
+  overflow-x: hidden;
+  height: 54%;
+}
+
+#li::-webkit-scrollbar {
+  width: 20px;
+}
+
+#number_btn_area {
+  position: fixed;
+  right: 40px;
+  bottom: 30px;
+  background-color: rgb(255, 255, 255);
+}
+
+label {
+  display: block;
+  font: 1rem "Fira Sans", sans-serif;
+  position: absolute;
+  width: 200px;
+  height: 50px;
+  color: black;
+  margin: 0.4rem 0;
+}
+
+#userInput {
+  width: 75%;
+}
+
+.input-box {
+  float: left;
+  border: none;
+  box-sizing: border-box;
+  width: 100%;
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 16px;
+  color: #000;
+  background-color: white;
+  outline: none;
+}
+
+.submit {
+  color: #000;
+}
+
+.close {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  width: 32px;
+  height: 32px;
+  opacity: 0.3;
+}
+.close:hover {
+  opacity: 1;
+}
+.close:before,
+.close:after {
+  position: absolute;
+  left: 15px;
+  content: " ";
+  height: 33px;
+  width: 2px;
+  background-color: #333;
+}
+.close:before {
+  transform: rotate(45deg);
+}
+.close:after {
+  transform: rotate(-45deg);
+}
