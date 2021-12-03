@@ -12,10 +12,6 @@ const time = new Date();
 const formattedTime = time.toLocaleString("en-US", { hour: "numeric", minute: "numeric", second: "numeric" });
 
 //nameBlock.innerHTML = `${userName}`
-
-const item0 = document.createElement('div')
-//item1.innerHTML = `<p style="margin-left:150px">${formattedTime}</p>`
-
 const item00 = document.createElement('div')
 item00.innerHTML = `<p style="text-align: right;">Оператор:</p> <span id="server-messages">Вітаємо вас у контактному центрі!</span>`
 messages.appendChild(item00)
@@ -48,23 +44,14 @@ document.addEventListener('submit', (e) =>{
         type:"POST",
         url: "https://balance.beesender.com/api/v1.0/sendmessage/5673e2ff-da23-4db4-8da1-963abfdf1395/dca20883-f093-4da4-8fdc-9eae03a51e18",
         data: JSON.stringify({'sender': { 'id': socket.id, "name": data.name, 'avatar': ''}, 'message': {'type': 'text', 'text': data.numbers}}),
-    //data: JSON.stringify({'sender': { 'id': socket.id, "name": data.name, 'avatar': ''}, 'message': {'type': 'text', 'text': data.numbers}}),
-    
-        //contentType: "PostmanRuntime/7.28.4",
-        //contentType:"application/json; charset=utf-8",
+
         dataType: "json",
         contentType: "application/json",
         success: function(){ }
-      })
-      
-    
+      })    
 
-      // частина де відправляються сокети
     if(input.value){
-      //|
-      //|
-      //V
-      
+
         socket.emit('chat message', { 
           message: input.value,
           //name: userName
@@ -79,7 +66,6 @@ document.addEventListener('submit', (e) =>{
 
 
 socket.on('chat message', (data) => {
-   
 
 
   const item1 = document.createElement('div')
