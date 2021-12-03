@@ -23,11 +23,19 @@
     margin-left: 10px;
   }
 
+  .my-messages {
+    margin-right: 0%;
+  }
+
   #server-messages {
-    margin-right: 5%;
+    margin-right: 12%;
   }
 
   #li {
-    right: 20px;
+    right: 1%;
+  }
+
+  .operator-name {
+    margin-right: 12%;
   }
 }
