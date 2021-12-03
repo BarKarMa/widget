@@ -76,6 +76,8 @@ io.on('typing', () => {
 
 app.use(express.static(__dirname + '/assets'))
 app.use(express.static(__dirname + '/styles'))
+app.use(express.static(__dirname + '/styles/styles.css'))
+
 
 
 
@@ -83,9 +85,6 @@ app.use(express.static(__dirname + '/styles'))
 app.get("/", (req, res) => {
   console.log("1");
   res.sendFile(path.join(__dirname, '/index.html'))
-  res.sendFile(path.join(__dirname, '/styles/styles.css'))
-  res.sendFile(path.join(__dirname, '/styles/media.css'))
-
 });
 
 
