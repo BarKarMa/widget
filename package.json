@@ -8,7 +8,6 @@
     "test": "echo \"Error: no test specified\" && exit 1"
     
   },
-  "styles": ["/styles/styles.css", "public/styles/styles.css" ],
 
   "keywords": [],
   "author": "Andrii Bezuhlov",
