@@ -1,6 +1,6 @@
 .click-box {
   bottom: 20px;
-  right: 20px;
+  right: 40px;
   position: fixed;
 }
 
@@ -28,8 +28,8 @@
   right: 3%;
   top: auto;
   bottom: 80px;
-  width: 95%;
-  height: 85%;
+  width: 30%;
+  height: 80%;
   border-radius: 16px;
   font-family: "Open Sans Condensed", sans-serif;
 }
@@ -74,20 +74,10 @@
 
 .messages {
   margin-bottom: 100px;
-  max-width: 100%;
+  max-width: 26%;
   margin-left: 10px;
   word-wrap: break-word;
-  width: 95%;
-}
-
-#li {
-  position: fixed;
-  border-radius: 8px;
-  right: 5px;
-  bottom: 130px;
-  overflow: auto;
-  overflow-x: hidden;
-  height: 54%;
+  width: 50%;
 }
 
 .chat-log {
@@ -108,7 +98,7 @@
   right: 5%;
   bottom: 130px;
   height: 75px;
-  width: 91%;
+  width: 26%;
   border-radius: 8px;
 }
 
@@ -116,6 +106,16 @@
   position: fixed;
   right: 40px;
   bottom: 50px;
+}
+
+#li {
+  position: fixed;
+  border-radius: 8px;
+  right: 48px;
+  bottom: 130px;
+  overflow: auto;
+  overflow-x: hidden;
+  height: 54%;
 }
 
 #li::-webkit-scrollbar {
@@ -140,7 +140,7 @@ label {
 }
 
 #userInput {
-  width: 95%;
+  width: 75%;
 }
 
 .input-box {

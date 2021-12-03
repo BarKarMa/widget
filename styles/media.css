@@ -1,0 +1,33 @@
+@media (min-width: 600px) {
+  .basic-flow {
+    width: 30%;
+    height: 80%;
+  }
+
+  .click-box {
+    bottom: 20px;
+    right: 40px;
+  }
+
+  .input {
+    width: 26%;
+  }
+
+  .time {
+    margin-top: 5%;
+    text-align: center;
+  }
+
+  .messages {
+    width: 30%;
+    margin-left: 10px;
+  }
+
+  #server-messages {
+    margin-right: 5%;
+  }
+
+  #li {
+    right: 20px;
+  }
+}
