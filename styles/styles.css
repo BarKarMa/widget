@@ -44,6 +44,13 @@
   /* margin-left: 10px; */
 }
 
+.hello-messages {
+  background-color: #ffffff;
+  border-radius: 8px;
+  border: 1px solid black; /* Параметры рамки */
+  padding: 5px;
+}
+
 #my-messages {
   background-color: #77fcf8;
   border-radius: 8px;
@@ -56,7 +63,7 @@
 }
 
 .operator-name {
-  margin-right: 15px;
+  margin-right: 1%;
 }
 
 #server-messages {
