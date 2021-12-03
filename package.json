@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js styles/styles.css",
+    "start": "nodemon index.js",
+    "lint:css": "node_modules/csslint/cli.js styles/; exit 0",
     "test": "echo \"Error: no test specified\" && exit 1"
     
   },
