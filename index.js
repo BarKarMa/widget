@@ -87,45 +87,29 @@ app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, '/index.html'))
 });
 
-
-// за допомогою експресу імітувати створення чату ?
 app.post("/test", (req, res) => {
   try {
-  //console.log(res.json({"message": "message recieved"}))
-  //if(!req.body) return res.sendStatus(400);
+
   var contype = req.headers['content-type']
   
   console.log('full output')
   console.log(req.body)
-  //console.log('---------- head ------------')
-  //console.log(req.headers)
 
   if(!contype)
     return res.sendStatus(400)
-
-  
-  
   if (contype.indexOf('application/x-www-form-urlencoded; charset=UTF-8') !== 0)
-
-    
     io.to('room'+req.body.receiver_id).emit('chat message', req.body)
-
     console.log("2");
-
     return res.sendStatus(200);
   }  catch(error) {
     
   }
-  
-
 
 });
 
 
-
-// req is request and res is response
 http.listen(process.env.PORT || 3000, () => {
-//http.listen(port, () => {
+
   console.log(`server launched on port ${port}`);
 });
 
