@@ -32,7 +32,7 @@ function updateScroll(){
 document.addEventListener('submit', (e) =>{
     
     e.preventDefault()
-    setInterval(updateScroll,500);
+    setInterval(updateScroll,5000);
 
     // частина де відправляються дані на сервер через експрес
     //const name = userName;
