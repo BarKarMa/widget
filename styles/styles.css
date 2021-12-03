@@ -77,13 +77,13 @@
   max-width: 100%;
   margin-left: 10px;
   word-wrap: break-word;
-  width: 95%;
+  width: 90%;
 }
 
 #li {
   position: fixed;
   border-radius: 8px;
-  right: 5%;
+  /* right: 5%; */
   bottom: 130px;
   overflow: auto;
   overflow-x: hidden;
