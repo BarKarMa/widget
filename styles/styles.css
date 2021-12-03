@@ -65,7 +65,7 @@
   border-radius: 8px;
   border: 1px solid black; /* Параметры рамки */
   padding: 5px;
-  background-color: gray;
+  background-color: rgb(202, 202, 202);
   color: #320907;
   margin-right: 1%;
   float: right;

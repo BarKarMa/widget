@@ -15,10 +15,9 @@ const formattedTime = time.toLocaleString("en-US", { hour: "numeric", minute: "n
 
 const item0 = document.createElement('div')
 //item1.innerHTML = `<p style="margin-left:150px">${formattedTime}</p>`
-item0.innerHTML = `<p class="time">${formattedTime}</p>`
-messages.appendChild(item0)
+
 const item00 = document.createElement('div')
-item00.innerHTML = `<p>"Твоє ім'я":</p> <span id="my-messages"; ">Вітаємо вас у контактному центрі!</span>`
+item00.innerHTML = `<p>"Твоє ім'я":</p> <span id="server-messages"; ">Вітаємо вас у контактному центрі!</span>`
 messages.appendChild(item00)
 
 //////
