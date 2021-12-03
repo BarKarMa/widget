@@ -12,7 +12,7 @@ const time = new Date();
 const formattedTime = time.toLocaleString("en-US", { hour: "numeric", minute: "numeric", second: "numeric" });
 
 //nameBlock.innerHTML = `${userName}`
-const item00 = document.createElement('div style="margin-top:20%"')
+const item00 = document.createElement('div class="hello"')
 item00.innerHTML = `<span class="hello-messages" style="text-align: center; ">Вітаємо вас у контактному центрі! Для зв'язку з оператором надішліть повідомлення.</span>`
 messages.appendChild(item00)
 

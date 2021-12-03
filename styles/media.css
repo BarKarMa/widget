@@ -1,4 +1,9 @@
 @media (min-width: 600px) {
+
+  .hello {
+    margin-top:20%;
+  }
+
   .basic-flow {
     width: 30%;
     height: 80%;
