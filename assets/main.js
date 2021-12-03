@@ -13,7 +13,7 @@ const formattedTime = time.toLocaleString("en-US", { hour: "numeric", minute: "n
 
 //nameBlock.innerHTML = `${userName}`
 const item00 = document.createElement('div')
-item00.innerHTML = `<p style="text-align: right;">Оператор:</p> <span id="server-messages">Вітаємо вас у контактному центрі!</span>`
+item00.innerHTML = `<p style="text-align: center;">Оператор:</p> <span id="server-messages">Вітаємо вас у контактному центрі! Для зв'язку з оператором надішліть повідомлення.</span>`
 messages.appendChild(item00)
 
 //////
