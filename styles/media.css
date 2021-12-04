@@ -1,6 +1,6 @@
 @media (min-width: 600px) {
 
-  .hello {
+  .hell {
     margin-top:20%;
   }
 
@@ -26,6 +26,7 @@
   .messages {
     width: 30%;
     margin-left: 10px;
+    margin-bottom: 5%;
   }
 
   .my-messages {
