@@ -1,5 +1,9 @@
 const socket = io()
 const messages = document.querySelector('.messages')
+// ('#messages')
+// getByDataHook(dataHook) { return document.querySelector('[data-hook="ChatWindow.messagesWrapper"]'); }
+// ('[data-hook="ChatWindow.messagesWrapper"]')
+// <div data-hook="ChatWindow.messagesWrapper" class="messagesWrapper">..here will be allmessages + header..</div>
 const form = document.querySelector('.form')
 const input = document.querySelector('.input')
 const nameBlock = document.querySelector('.name')
@@ -14,6 +18,9 @@ const formattedTime = time.toLocaleString("en-US", { hour: "numeric", minute: "n
 //nameBlock.innerHTML = `${userName}`
 const item00 = document.createElement('div')
 item00.innerHTML = `<div><p class="hello-messages" style="text-align: center;">Вітаємо вас у контактному центрі! Для зв'язку з оператором надішліть повідомлення.</p></div>`
+
+  
+
 messages.appendChild(item00)
 
 //////
