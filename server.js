@@ -8,7 +8,7 @@ const cors = require('cors')
 const bodyParser = require('body-parser')
 const timeout = require('connect-timeout')
 
-//
+// hрауты АПИ
 const homeRoute = require('./src/routes.js')
 const chatRoute = require('./src/routes.js')
 
@@ -17,10 +17,10 @@ app.use('/newChat', chatRoute)
 
 //
 
-const { request } = require('http');
-const { urlencoded } = require('body-parser');
-const { send } = require('process');
-const { Console } = require('console');
+// const { request } = require('http');
+// const { urlencoded } = require('body-parser');
+// const { send } = require('process');
+// const { Console } = require('console');
 
 const port = 3000;
 
@@ -28,6 +28,10 @@ app.use(cors())
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json())
 
+
+app.use(express.static(__dirname + '/src'))
+app.use(express.static(path.join(__dirname)));
+app.use("/styles", express.static(__dirname + '/styles'));
 
 users = []
 let clients = []
@@ -80,12 +84,8 @@ io.on('typing', () => {
   })
 })
 
-// в индекс
-/// прописать сдесь пути
 
-app.use(express.static(__dirname + '/src'))
-app.use(express.static(path.join(__dirname)));
-app.use("/styles", express.static(__dirname + '/styles'));
+
 
 
 
