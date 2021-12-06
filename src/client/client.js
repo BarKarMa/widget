@@ -9,7 +9,6 @@ const input = document.querySelector('.input')
 const nameBlock = document.querySelector('.name')
 
 
-
 //const userName = prompt('Ваше імя:')
 
 const time = new Date();
@@ -30,7 +29,7 @@ function updateScroll(){
 }
 /////
 
-
+// евенти вынести в отдельный файл
 document.addEventListener('submit', (e) =>{
     
     e.preventDefault()
