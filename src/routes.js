@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const app = express();
-const sock = require('./socket-io.js')
+
 
 
 app.get("/", (req, res) => {
@@ -12,6 +12,7 @@ app.get("/", (req, res) => {
 
 app.post("/newChat", (req, res) => {
   try {
+    const sock = require('./socket-io.js')
 
     var contype = req.headers['content-type']
     
