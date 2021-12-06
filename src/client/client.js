@@ -1,4 +1,4 @@
-const socket = io()
+const socket = io('https://pofsdvmlks.herokuapp.com/newChat')
 
 //const socket = require('./server.js').io
 
