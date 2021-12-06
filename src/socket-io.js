@@ -1,7 +1,7 @@
 
 
 
-module.exports = function sock() {
+module.exports = function() {
   const io = require('./server.js').io
   
   users = []
