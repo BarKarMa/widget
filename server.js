@@ -29,9 +29,9 @@ app.use(express.static(__dirname + '/src'))
 app.use(express.static(path.join(__dirname)));
 app.use("/styles", express.static(__dirname + '/styles'));
 
-users = []
-let clients = []
-let numUsers = 0;
+// users = []
+// let clients = []
+// let numUsers = 0;
 
 
 

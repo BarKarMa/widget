@@ -2,6 +2,10 @@
 
 
 module.exports = function (http) {
+  users = []
+  let clients = []
+  let numUsers = 0;
+
 
   const io = require('socket.io')(http)
 
