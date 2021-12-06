@@ -1,6 +1,7 @@
-const socket = io('https://pofsdvmlks.herokuapp.com/newChat')
+//const socket = io()
 
-//const socket = require('./server.js').io
+
+const socket = require('./socket-io.js').socket
 
 const messages = document.querySelector('.messages')
 // ('#messages')
