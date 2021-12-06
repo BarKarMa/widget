@@ -1,7 +1,7 @@
 //const socket = io()
 
 
-const socket = require('./socket-io.js').socket
+
 
 const messages = document.querySelector('.messages')
 // ('#messages')
@@ -25,6 +25,7 @@ const item_hello = document.createElement('div')
 item_hello.innerHTML = `<div><p class="hello-messages" style="text-align: center;">Вітаємо вас у контактному центрі! Для зв'язку з оператором надішліть повідомлення.</p></div>`
 messages.appendChild(item_hello)
 
+const socket = require('./socket-io.js').socket
 
 //////
 function updateScroll(){
