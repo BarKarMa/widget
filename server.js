@@ -10,7 +10,7 @@ const timeout = require('connect-timeout')
 
 //
 const homeRoute = require('./src/routes.js')
-const testRoute = require('./src/routes.js')
+const chatRoute = require('./src/routes.js')
 
 //
 
