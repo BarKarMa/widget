@@ -15,7 +15,7 @@ const io = require('socket.io')(http)
 // app.use('/newChat', newRoute)
 
 // підключення сокетів
-const sock = require('/src/socket-io.js')
+const sock = require('./socket-io.js')
 
 // Use
 app.use(cors())
