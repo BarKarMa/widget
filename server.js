@@ -8,19 +8,15 @@ const cors = require('cors')
 const bodyParser = require('body-parser')
 const timeout = require('connect-timeout')
 
-// hрауты АПИ
+// раути АПИ
 const homeRoute = require('./src/routes.js')
 const chatRoute = require('./src/routes.js')
+
+require('./src/socket-io.js')(http);
 
 app.use('/', homeRoute)
 app.use('/newChat', chatRoute)
 
-//
-
-// const { request } = require('http');
-// const { urlencoded } = require('body-parser');
-// const { send } = require('process');
-// const { Console } = require('console');
 
 const port = 3000;
 
@@ -83,10 +79,6 @@ io.on('typing', () => {
     username: socket.username
   })
 })
-
-
-
-
 
 
 
