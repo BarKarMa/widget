@@ -2,8 +2,13 @@ const express = require('express');
 const router = express.Router();
 const app = express();
 
+app.get("/", (req, res) => {
+  console.log("1");
+  res.sendFile(path.join(__dirname, '/index.html'))
+});
 
-app.post("/test", (req, res) => {
+
+app.post("/newChat", (req, res) => {
   try {
 
   var contype = req.headers['content-type']

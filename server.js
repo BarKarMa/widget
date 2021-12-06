@@ -9,6 +9,7 @@ const bodyParser = require('body-parser')
 const timeout = require('connect-timeout')
 
 //
+const homeRoute = require('./src/routes.js')
 const testRoute = require('./src/routes.js')
 
 //
@@ -91,8 +92,8 @@ app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, '/index.html'))
 });
 
-
-app.use('/test', testRoute)
+app.use('/', homeRoute)
+app.use('/newChat', chatRoute)
 
 // app.post("/test", (req, res) => {
 //   try {
