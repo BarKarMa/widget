@@ -11,16 +11,19 @@ const nameBlock = document.querySelector('.name')
 
 //const userName = prompt('Ваше імя:')
 
+//
+import mesHello from './src/client/messages.js'
+
+
 const time = new Date();
-const formattedTime = time.toLocaleString("en-US", { hour: "numeric", minute: "numeric", second: "numeric" });
 
-//nameBlock.innerHTML = `${userName}`
-const item00 = document.createElement('div')
-item00.innerHTML = `<div><p class="hello-messages" style="text-align: center;">Вітаємо вас у контактному центрі! Для зв'язку з оператором надішліть повідомлення.</p></div>`
+mesHello();
 
-  
 
-messages.appendChild(item00)
+// const formattedTime = time.toLocaleString("en-US", { hour: "numeric", minute: "numeric", second: "numeric" });
+// const item_hello = document.createElement('div')
+// item_hello.innerHTML = `<div><p class="hello-messages" style="text-align: center;">Вітаємо вас у контактному центрі! Для зв'язку з оператором надішліть повідомлення.</p></div>`
+// messages.appendChild(item_hello)
 
 //////
 function updateScroll(){
@@ -82,15 +85,13 @@ socket.on('chat message', (data) => {
 
   // вынести звідси код в окремий файл - ключ
   if (data.channel_id === "DCA20883-F093-4DA4-8FDC-9EAE03A51E18"){
-    //div.className = "alert";
-    item.innerHTML = `<p class="operator-name" style="text-align: right;">Оператор:</p> <span id="server-messages">${data.content.text}</span>`
-    //item.innerHTML = `<p style="text-align: right;">${data.name}:</p> <span id="server-messages">${data.content.text}</span>`
+        item.innerHTML = `<p class="operator-name" style="text-align: right;">Оператор:</p> <span id="server-messages">${data.content.text}</span>`
     messages.appendChild(item)
     window.scrollTo(0,document.body.scrollHeight)
   }
   else {
     item.innerHTML = `<p>Твоє ім'я:</p> <span id="my-messages"; ">${data.message}</span>`
-    //item.innerHTML = `<p>${socket.id}:</p> <span id="my-messages"; ">${data.message}</span>`
+
     
     messages.appendChild(item)
     window.scrollTo(0,document.body.scrollHeight)
