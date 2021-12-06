@@ -6,6 +6,7 @@ const http = require('http').createServer(app)
 const cors = require('cors')
 const bodyParser = require('body-parser')
 //const timeout = require('connect-timeout')
+const io = require('socket.io')(http)
 
 // раути АПИ
 const homeRoute = require('./src/routes.js')
@@ -28,7 +29,7 @@ app.use("/styles", express.static(__dirname + '/styles'));
 
 // сама ініціалізація
 
-const io = require('socket.io')(http)
+
   
   users = []
   let clients = []
@@ -74,11 +75,6 @@ const io = require('socket.io')(http)
   
 })
 
-io.on('typing', () => {
-  socket.broadcast.emit('typing', {
-    username: socket.username
-  })
-}) 
 
 
 const port = 3000;
