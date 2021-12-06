@@ -12,19 +12,17 @@ const nameBlock = document.querySelector('.name')
 //const userName = prompt('Ваше імя:')
 
 //
-import mesHello from './src/client/messages.js'
+
 
 
 const time = new Date();
 
-course = new mesHello();
 
+const formattedTime = time.toLocaleString("en-US", { hour: "numeric", minute: "numeric", second: "numeric" });
+ const item_hello = document.createElement('div')
+item_hello.innerHTML = `<div><p class="hello-messages" style="text-align: center;">Вітаємо вас у контактному центрі! Для зв'язку з оператором надішліть повідомлення.</p></div>`
+messages.appendChild(item_hello)
 
-
-// const formattedTime = time.toLocaleString("en-US", { hour: "numeric", minute: "numeric", second: "numeric" });
-// const item_hello = document.createElement('div')
-// item_hello.innerHTML = `<div><p class="hello-messages" style="text-align: center;">Вітаємо вас у контактному центрі! Для зв'язку з оператором надішліть повідомлення.</p></div>`
-// messages.appendChild(item_hello)
 
 //////
 function updateScroll(){
