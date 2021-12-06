@@ -10,8 +10,8 @@ const bodyParser = require('body-parser')
 // раути АПИ
 const homeRoute = require('./src/routes.js')
 const chatRoute = require('./src/routes.js')
-app.use('/', homeRoute)
-app.use('/newChat', chatRoute)
+//app.use('/', homeRoute)
+//app.use('/newChat', chatRoute)
 
 // підключення сокетів
 require('./src/socket-io.js')(http);
