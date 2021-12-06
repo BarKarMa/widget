@@ -8,7 +8,10 @@ const cors = require('cors')
 const bodyParser = require('body-parser')
 const timeout = require('connect-timeout')
 
+//
+const testRoute = require('./src/routes.js')
 
+//
 
 const { request } = require('http');
 const { urlencoded } = require('body-parser');
@@ -82,32 +85,34 @@ app.use("/styles", express.static(__dirname + '/styles'));
 
 
 
-
-
+// перенос в SRC/routes
 app.get("/", (req, res) => {
   console.log("1");
   res.sendFile(path.join(__dirname, '/index.html'))
 });
 
-app.post("/test", (req, res) => {
-  try {
 
-  var contype = req.headers['content-type']
+app.use('/test', testRoute)
+
+// app.post("/test", (req, res) => {
+//   try {
+
+//   var contype = req.headers['content-type']
   
-  console.log('full output')
-  console.log(req.body)
+//   console.log('full output')
+//   console.log(req.body)
 
-  if(!contype)
-    return res.sendStatus(400)
-  if (contype.indexOf('application/x-www-form-urlencoded; charset=UTF-8') !== 0)
-    io.to('room'+req.body.receiver_id).emit('chat message', req.body)
-    console.log("2");
-    return res.sendStatus(200);
-  }  catch(error) {
+//   if(!contype)
+//     return res.sendStatus(400)
+//   if (contype.indexOf('application/x-www-form-urlencoded; charset=UTF-8') !== 0)
+//     io.to('room'+req.body.receiver_id).emit('chat message', req.body)
+//     console.log("2");
+//     return res.sendStatus(200);
+//   }  catch(error) {
     
-  }
+//   }
 
-});
+// });
 
 
 
