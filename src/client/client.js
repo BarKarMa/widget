@@ -1,6 +1,6 @@
-//const socket = io()
+const socket = io()
 
-const socket = require('./server.js').io
+
 
 
 const messages = document.querySelector('.messages')
