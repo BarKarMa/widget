@@ -8,8 +8,8 @@ const bodyParser = require('body-parser')
 //const timeout = require('connect-timeout')
 
 // раути АПИ
-const homeRoute = require('./src/routes.js')
-const chatRoute = require('./src/routes.js')
+const homeRoute = require('/src/routes.js')
+const chatRoute = require('/src/routes.js')
 app.use('/', homeRoute)
 app.use('/newChat', chatRoute)
 
