@@ -13,7 +13,7 @@ app.use('/', homeRoute)
 app.use('/newChat', homeRoute)
 
 // підключення сокетів
-const sock = require('/src/socket-io.js')(http);
+//const sock = require('/src/socket-io.js')(http);
 
 // Use
 app.use(cors())
