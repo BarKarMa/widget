@@ -2,12 +2,12 @@
 
 
 module.exports = function (http) {
+  const io = require('socket.io')(http)
+  
   users = []
   let clients = []
   let numUsers = 0;
 
-
-  const io = require('socket.io')(http)
 
   io.on('connection', (socket) => {
   console.log(`Client with id ${socket.id} connected`)
