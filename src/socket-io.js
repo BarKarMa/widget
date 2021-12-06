@@ -58,6 +58,6 @@ io.on('typing', () => {
 }
 
 module.exports = {
-  socket: socket
+  io: io
 }
 
