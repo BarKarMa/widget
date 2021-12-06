@@ -1,9 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const app = express();
-const sock = require('/socket-io.js')(http);
+const sock = require('./src/socket-io.js')(http);
 
-app.use(express.static(__dirname + '/src'))
 
 app.get("/", (req, res) => {
   console.log("1");
