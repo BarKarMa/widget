@@ -1,7 +1,7 @@
 //const socket = io()
 
 
-const socket = require('./socket-io.js').io
+const socket = require('./socket-io.js').data
 
 const messages = document.querySelector('.messages')
 // ('#messages')

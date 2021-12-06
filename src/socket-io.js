@@ -56,7 +56,7 @@ io.on('typing', () => {
 })
   
   module.exports = {
-  io: io
+  io: data
 }
 
 }
