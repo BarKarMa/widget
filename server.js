@@ -1,4 +1,4 @@
-
+// все в индекс
 const express = require('express')
 const app = express();
 const path = require('path');
@@ -10,7 +10,6 @@ const timeout = require('connect-timeout')
 
 
 
-const { connect, connection, connections } = require('mongoose');
 const { request } = require('http');
 const { urlencoded } = require('body-parser');
 const { send } = require('process');
@@ -26,7 +25,7 @@ app.use(bodyParser.json())
 users = []
 let clients = []
 let numUsers = 0;
-//connections = [];
+
 
 
 io.on('connection', (socket) => {
@@ -74,9 +73,10 @@ io.on('typing', () => {
   })
 })
 
+// в индекс
 /// прописать сдесь пути
 
-app.use(express.static(__dirname + '/assets'))
+app.use(express.static(__dirname + '/src'))
 app.use(express.static(path.join(__dirname)));
 app.use("/styles", express.static(__dirname + '/styles'));
 
@@ -110,6 +110,8 @@ app.post("/test", (req, res) => {
 });
 
 
+
+/// перенос в Індекс
 http.listen(process.env.PORT || 3000, () => {
 
   console.log(`server launched on port ${port}`);
