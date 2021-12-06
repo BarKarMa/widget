@@ -53,11 +53,13 @@ io.on('typing', () => {
   socket.broadcast.emit('typing', {
     username: socket.username
   })
-})  
-
-}
-
-module.exports = {
+})
+  
+  module.exports = {
   io: io
 }
+
+}
+
+
 
