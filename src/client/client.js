@@ -17,7 +17,7 @@ import mesHello from './src/client/messages.js'
 
 const time = new Date();
 
-mesHello();
+mesHello
 
 
 // const formattedTime = time.toLocaleString("en-US", { hour: "numeric", minute: "numeric", second: "numeric" });
