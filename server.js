@@ -14,7 +14,7 @@ const chatRoute = require('./src/routes.js')
 //app.use('/newChat', chatRoute)
 
 // підключення сокетів
-require('./src/socket-io.js')(http);
+const sock = require('./src/socket-io.js')(http);
 
 // Use
 app.use(cors())
@@ -47,7 +47,7 @@ app.post("/newChat", (req, res) => {
     if(!contype)
       return res.sendStatus(400)
     if (contype.indexOf('application/x-www-form-urlencoded; charset=UTF-8') !== 0)
-      io.to('room'+req.body.receiver_id).emit('chat message', req.body)
+      sock.io.to('room'+req.body.receiver_id).emit('chat message', req.body)
       console.log("2");
       return res.sendStatus(200);
     }  catch(error) {
