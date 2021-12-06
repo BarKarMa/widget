@@ -2,6 +2,7 @@
 
 
 module.exports = function() {
+  
   const io = require('./server.js').io
   
   users = []
@@ -54,4 +55,9 @@ io.on('typing', () => {
   })
 })  
 
+}
+
+module.exports = {
+    
+    socket: socket
 }

@@ -1,4 +1,5 @@
 const socket = io()
+
 const messages = document.querySelector('.messages')
 // ('#messages')
 // getByDataHook(dataHook) { return document.querySelector('[data-hook="ChatWindow.messagesWrapper"]'); }
