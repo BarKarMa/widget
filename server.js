@@ -8,8 +8,8 @@ const bodyParser = require('body-parser')
 //const timeout = require('connect-timeout')
 
 // раути АПИ
-const homeRoute = require('/src/routes.js')
-const chatRoute = require('/src/routes.js')
+const homeRoute = require('./src/routes.js')
+const chatRoute = require('./src/routes.js')
 app.use('/', homeRoute)
 app.use('/newChat', chatRoute)
 
@@ -22,8 +22,8 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json())
 
 
-app.use(express.static(__dirname + '/src'))
-app.use(express.static(__dirname + '/src/client'))
+app.use("/src", express.static(__dirname + '/src'))
+app.use("/src/client", express.static(__dirname + '/src/client'))
 app.use(express.static(path.join(__dirname)));
 app.use("/styles", express.static(__dirname + '/styles'));
 
