@@ -23,8 +23,9 @@ app.use(bodyParser.json())
 
 app.use("/src", express.static(__dirname + '/src'))
 app.use("/src/client", express.static(__dirname + '/src/client'))
-app.use(express.static(path.join(__dirname)));
 app.use("/styles", express.static(__dirname + '/styles'));
+app.use(express.static(path.join(__dirname)));
+
 
 // сама ініціалізація
 
