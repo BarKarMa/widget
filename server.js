@@ -20,7 +20,7 @@ app.use(cors())
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json())
 
-
+app.use("/", express.static(__dirname + '/'))
 app.use("/src", express.static(__dirname + '/src'))
 app.use("/src/client", express.static(__dirname + '/src/client'))
 app.use(express.static(path.join(__dirname)));
