@@ -11,15 +11,14 @@ const nameBlock = document.querySelector('.name')
 const socket = io()
 //const userName = prompt('Ваше імя:')
 
+require('/app/src/clients/messages.js')
 
+// const time = new Date();
 
-const time = new Date();
-
-
-const formattedTime = time.toLocaleString("en-US", { hour: "numeric", minute: "numeric", second: "numeric" });
-const item_hello = document.createElement('div')
-item_hello.innerHTML = `<div><p class="hello-messages" style="text-align: center;">Вітаємо вас у контактному центрі! Для зв'язку з оператором надішліть повідомлення.</p></div>`
-messages.appendChild(item_hello)
+// const formattedTime = time.toLocaleString("en-US", { hour: "numeric", minute: "numeric", second: "numeric" });
+// const item_hello = document.createElement('div')
+// item_hello.innerHTML = `<div><p class="hello-messages" style="text-align: center;">Вітаємо вас у контактному центрі! Для зв'язку з оператором надішліть повідомлення.</p></div>`
+// messages.appendChild(item_hello)
 
 
 
@@ -70,7 +69,6 @@ document.addEventListener('submit', (e) =>{
     }
     
 })
-
 
 socket.on('chat message', (data) => {
 
