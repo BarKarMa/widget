@@ -1,4 +1,4 @@
-const io = require('/server.js').io;
+const io = require('./server').io;
 
 
 function sock() {
