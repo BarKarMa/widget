@@ -1,4 +1,4 @@
-exports = module.exports = function (app) {
+exports = module.exports = function (app, path) {
 
   app.get("/", (req, res) => {
     console.log("1");
