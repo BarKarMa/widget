@@ -17,7 +17,7 @@ const io = require('socket.io')(http)
 
 
 // підключення сокетів
-//const sock = require('./src/socket_io.js')(io)
+const sock = require('./src/socket_io.js')(io)
 
 
 
