@@ -15,7 +15,6 @@ exports = module.exports = function(io) {
     
     socket.join("room"+socket.id)
   
-  
     socket.on('chat message', (data) =>{
       
       console.log(data)

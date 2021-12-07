@@ -7,7 +7,6 @@ exports = module.exports = function (app) {
 
 
 
-
   app.post("/newChat", (req, res) => {
     try {      
       var contype = req.headers['content-type']  
