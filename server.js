@@ -13,7 +13,7 @@ const bodyParser = require('body-parser')
   const homeRoute = require('/app/src/routes.js')
 //  const newRoute = require('./src/routes.js')
   app.use('/', homeRoute)
-//  app.use('/newChat', newRoute)
+  app.use('/newChat', newRoute)
 
 
 // підключення сокетів
