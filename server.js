@@ -52,7 +52,7 @@ app.post("/newChat", (req, res) => {
         
       }
 
-  });
+});
 
 
 const port = 3000;
