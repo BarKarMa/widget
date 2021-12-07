@@ -37,7 +37,7 @@ app.use("/styles", express.static(__dirname + '/styles'));
 
 // сама ініціалізація
 
-require('/app/src/client/client.js')(app)
+require('/app/src/routes.js')(app)
 
 // app.get("/", (req, res) => {
 //   console.log("1");
