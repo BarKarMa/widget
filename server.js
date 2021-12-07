@@ -29,8 +29,6 @@ app.use("/styles", express.static(__dirname + '/styles'));
 // сама ініціалізація
 
 
-
-
 const port = 3000;
 
 http.listen(process.env.PORT || 3000, () => {
