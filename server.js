@@ -10,7 +10,7 @@ const bodyParser = require('body-parser')
 
 
 // раути АПИ
-  const homeRoute = require('/app/src/routes.js')
+  const homeRoute = require('/app/src/routes.js')(http)
 //  const newRoute = require('./src/routes.js')
 app.use('/', homeRoute)
 app.use('/newChat', homeRoute)
