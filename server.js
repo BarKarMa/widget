@@ -12,7 +12,7 @@ const sock = require('/app/src/socket_io.js')(io)
 
 
 // раути АПИ
-require('/app/src/routes.js')(app, path)
+require('/app/src/routes.js')(app)
 
 
 // Use
