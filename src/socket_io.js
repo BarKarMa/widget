@@ -1,4 +1,4 @@
-const { io } = require('/app/server.js')
+const io = require('/app/server.js').io;
 
 module.exports = function Sock() {
 
