@@ -1,6 +1,6 @@
-export default { Sock }
+module.exports = { Sock }
 
-import { io } from '/app/server.js';
+const io = require('/app/server.js').io;
 
 
 function Sock() {
