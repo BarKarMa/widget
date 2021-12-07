@@ -4,7 +4,7 @@ const app = express();
 
 const http = require('/app/server.js').http
 const io = require('socket.io')(http)
-const sock = require('./src/socket_io.js')(io)
+const sock = require('/app/src/socket_io.js')(io)
 
 
 app.get("/", (req, res) => {
