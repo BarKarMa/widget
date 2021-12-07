@@ -2,10 +2,7 @@
 
 
 module.exports = function() {
-  
-  const io = require('socket.io')
- 
-  
+
   users = []
   let clients = []
   let numUsers = 0;
