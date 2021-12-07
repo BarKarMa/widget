@@ -17,7 +17,7 @@ const io = require('socket.io')(http)
 
 
 // підключення сокетів
-const sock = require('./src/socket_io.js')(io)
+
 
 
 
@@ -43,8 +43,9 @@ app.use("/styles", express.static(__dirname + '/styles'));
 
 app.post("/newChat", (req, res) => {
   try {
-    //const sock = require('/socket-io.js')
-
+    
+    const sock = require('./src/socket_io.js')(io)
+    
     var contype = req.headers['content-type']
     
     console.log('full output')
