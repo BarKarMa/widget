@@ -44,6 +44,7 @@ document.addEventListener('submit', (e) =>{
         numbers
       }
 
+
       $.ajax({
         type:"POST",
         url: "https://balance.beesender.com/api/v1.0/sendmessage/5673e2ff-da23-4db4-8da1-963abfdf1395/dca20883-f093-4da4-8fdc-9eae03a51e18",
@@ -75,22 +76,19 @@ socket.on('chat message', (data) => {
   //item1.innerHTML = `<p style="margin-left:150px">${formattedTime}</p>`
   item1.innerHTML = `<p class="time">${formattedTime}</p>`
   messages.appendChild(item1)
-  
+  const item = document.createElement('div')
 
   // вынести звідси код в окремий файл - ключ
   if (data.channel_id === "DCA20883-F093-4DA4-8FDC-9EAE03A51E18"){
-    const item3 = document.createElement('div')
-    
-    item3.innerHTML = `<p class="operator-name" style="text-align: right;">Оператор:</p> <span id="server-messages">${data.content.text}</span>`
-    messages.appendChild(item3)
+    item.innerHTML = `<p class="operator-name" style="text-align: right;">Оператор:</p> <span id="server-messages">${data.content.text}</span>`
+    messages.appendChild(item)
     window.scrollTo(0,document.body.scrollHeight)
   }
   else {
-    const item4 = document.createElement('div')
-    item4.innerHTML = `<p>Ви:</p> <span id="my-messages"; ">${data.message}</span>`
+    item.innerHTML = `<p>Твоє ім'я:</p> <span id="my-messages"; ">${data.message}</span>`
 
     
-    messages.appendChild(item4)
+    messages.appendChild(item)
     window.scrollTo(0,document.body.scrollHeight)
   }
   
@@ -98,10 +96,3 @@ socket.on('chat message', (data) => {
 
 }
 )
-
-// socket.on('typing', (data) => {
-//   const item1 = document.createElement('div')
-//   item1.innerHTML = `<p class="typing">${data.username}</p> is typing a message...`
-//   messages.appendChild(item1)
-
-// })
