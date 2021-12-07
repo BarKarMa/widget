@@ -18,7 +18,6 @@ exports = module.exports = function(io) {
   
     socket.on('chat message', (data) =>{
       
-      
       console.log(data)
       io.to("room"+socket.id).emit('chat message', {
         message: data.message,
