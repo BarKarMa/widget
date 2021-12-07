@@ -75,20 +75,22 @@ socket.on('chat message', (data) => {
   //item1.innerHTML = `<p style="margin-left:150px">${formattedTime}</p>`
   item1.innerHTML = `<p class="time">${formattedTime}</p>`
   messages.appendChild(item1)
-  const item = document.createElement('div')
+  
 
   // вынести звідси код в окремий файл - ключ
   if (data.channel_id === "DCA20883-F093-4DA4-8FDC-9EAE03A51E18"){
+    const item3 = document.createElement('div')
     
-    item.innerHTML = `<p class="operator-name" style="text-align: right;">Оператор:</p> <span id="server-messages">${data.content.text}</span>`
-    messages.appendChild(item)
+    item3.innerHTML = `<p class="operator-name" style="text-align: right;">Оператор:</p> <span id="server-messages">${data.content.text}</span>`
+    messages.appendChild(item3)
     window.scrollTo(0,document.body.scrollHeight)
   }
   else {
-    item.innerHTML = `<p>Ви:</p> <span id="my-messages"; ">${data.message}</span>`
+    const item4 = document.createElement('div')
+    item4.innerHTML = `<p>Ви:</p> <span id="my-messages"; ">${data.message}</span>`
 
     
-    messages.appendChild(item)
+    messages.appendChild(item4)
     window.scrollTo(0,document.body.scrollHeight)
   }
   
