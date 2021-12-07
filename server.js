@@ -6,7 +6,7 @@ const http = require('http').createServer(app)
 const cors = require('cors')
 const bodyParser = require('body-parser')
 //const timeout = require('connect-timeout')
-const io = require('socket.io')(http)
+let io = require('socket.io')(http)
 
 
 // раути АПИ
@@ -17,7 +17,7 @@ const io = require('socket.io')(http)
 
 
 // підключення сокетів
-const sock = require('./socket_io.js')
+const sock = require('./src/socket_io.js')
 
 
 // Use
