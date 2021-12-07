@@ -1,7 +1,3 @@
-const socket = io()
-
-
-
 
 const messages = document.querySelector('.messages')
 // ('#messages')
