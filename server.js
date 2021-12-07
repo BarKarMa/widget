@@ -33,10 +33,8 @@ app.get("/", (req, res) => {
 
 
 app.post("/newChat", (req, res) => {
-    try {
-
-        
-      var contype = req.headers['content-type']
+  try {
+    var contype = req.headers['content-type']
       
       console.log('full output')
       console.log(req.body)
