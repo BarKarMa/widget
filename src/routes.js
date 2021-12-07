@@ -1,8 +1,8 @@
-exports = module.exports = function (app, path) {
+exports = module.exports = function (app) {
 
   app.get("/", (req, res) => {
     console.log("1");
-    res.sendFile(path.join(__dirname, './index.html'))
+    res.sendFile(path.join(__dirname, '/index.html'))
   });
 
 
