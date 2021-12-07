@@ -32,7 +32,7 @@ app.get("/", (req, res) => {
 });
 
 
-pp.post("/newChat", (req, res) => {
+app.post("/newChat", (req, res) => {
     try {
 
         
