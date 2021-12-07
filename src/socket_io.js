@@ -1,7 +1,9 @@
+module.exports = { Sock }
+
 const io = require('/app/server.js').io;
 
 
-function sock() {
+function Sock() {
 
   users = []
   let clients = []
@@ -56,5 +58,5 @@ io.on('typing', () => {
 
 }
 
-module.exports = sock;
+//module.exports = Sock;
 

@@ -17,7 +17,7 @@ const io = require('socket.io')(http)
 
 
 // підключення сокетів
-const sock = require('./src/socket_io.js')
+const sock = require('../src/socket_io.js')
 
 
 // Use
@@ -98,7 +98,7 @@ app.post("/newChat", (req, res) => {
       return res.sendStatus(400)
     if (contype.indexOf('application/x-www-form-urlencoded; charset=UTF-8') !== 0)
       //socket.to('room'+req.body.receiver_id).emit('chat message', req.body)
-      sock.sock.to('room'+req.body.receiver_id).emit('chat message', req.body)
+      sock.sock().to('room'+req.body.receiver_id).emit('chat message', req.body)
       console.log("2");
       return res.sendStatus(200);
     }  catch(error) {
