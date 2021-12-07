@@ -97,9 +97,9 @@ socket.on('chat message', (data) => {
 }
 )
 
-socket.on('typing', (data) => {
-  const item1 = document.createElement('div')
-  item1.innerHTML = `<p class="typing">${data.username}</p> is typing a message...`
-  messages.appendChild(item1)
+// socket.on('typing', (data) => {
+//   const item1 = document.createElement('div')
+//   item1.innerHTML = `<p class="typing">${data.username}</p> is typing a message...`
+//   messages.appendChild(item1)
 
-})
+// })
