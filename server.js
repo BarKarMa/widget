@@ -75,5 +75,5 @@ http.listen(process.env.PORT || 3000, () => {
 module.exports = {
     app: app,
     http: http,
-    io: io
+    //io: io
 }
