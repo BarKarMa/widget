@@ -13,8 +13,7 @@ router.get("/", (req, res) => {
 });
 
 
-exports = module.exports = function post(app){
-  app.post("/newChat", (req, res) => {
+app.post("/newChat", (req, res) => {
     try {
 
         
@@ -35,7 +34,7 @@ exports = module.exports = function post(app){
 
   });
 
-}
+
 
 module.exports = router;
 
