@@ -6,7 +6,7 @@ const http = require('http').createServer(app)
 const cors = require('cors')
 const bodyParser = require('body-parser')
 //const timeout = require('connect-timeout')
-let io = require('socket.io')(http)
+const io = require('socket.io')(http)
 
 
 // раути АПИ
@@ -18,6 +18,12 @@ let io = require('socket.io')(http)
 
 // підключення сокетів
 const sock = require('./src/socket_io.js')
+
+module.exports = {
+  app: app,
+  http: http,
+  io: io
+}
 
 
 // Use
@@ -117,8 +123,3 @@ http.listen(process.env.PORT || 3000, () => {
   console.log(`server launched on port ${port}`);
 });
 
-module.exports = {
-    app: app,
-    http: http,
-    io: io
-}
