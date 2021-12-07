@@ -12,16 +12,7 @@ const sock = require('/app/src/socket_io.js')(io)
 
 
 // раути АПИ
-// const homeRoute = require('/app/src/routes.js')
-//  const newRoute = require('./src/routes.js')
-//app.use('/', homeRoute)
-//app.use('/newChat', homeRoute)
-
-
-// підключення сокетів
-// const io = require('socket.io')(http)
-// const sock = require('./src/socket_io.js')(io)
-
+require('/app/src/routes.js')(app)
 
 
 // Use
@@ -37,7 +28,7 @@ app.use("/styles", express.static(__dirname + '/styles'));
 
 // сама ініціалізація
 
-require('/app/src/routes.js')(app)
+
 
 
 const port = 3000;
