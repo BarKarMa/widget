@@ -1,4 +1,4 @@
-module.exports = function() {
+exports = module.exports = function() {
   const messages = document.querySelector('.messages')
 
   const time = new Date();
