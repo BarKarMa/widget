@@ -12,7 +12,7 @@ const sock = require('/app/src/socket_io.js')(io)
 
 
 // раути АПИ
-require('/app/src/routes.js')(app)
+require('/app/src/routes.js')(app, path)
 
 
 // Use
@@ -40,6 +40,7 @@ http.listen(process.env.PORT || 3000, () => {
 
 module.exports = {
     app: app,
+    path: path,
     http: http,
     //io: io
 }
