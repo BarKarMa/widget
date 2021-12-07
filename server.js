@@ -14,7 +14,7 @@ const sock = require('/app/src/socket_io.js')(io)
 // раути АПИ
   const homeRoute = require('/app/src/routes.js')
 //  const newRoute = require('./src/routes.js')
-route.use('/', homeRoute)
+app.use('/', homeRoute)
 
 require('/app/src/routes')(app)
 //app.use('/newChat', homeRoute)
