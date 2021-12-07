@@ -54,5 +54,4 @@ io.on('typing', () => {
 
 }
 
-//module.exports = Sock;
 
