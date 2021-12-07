@@ -2,10 +2,9 @@
 
 
 module.exports = function() {
-  const http = require('./server.js').http
-  //const io = require('./server.js').io
-  const io = require('socket.io')(http)
-  //const io = require('./server.js').io
+  
+  const io = require('socket.io')
+ 
   
   users = []
   let clients = []
