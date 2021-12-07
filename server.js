@@ -8,6 +8,7 @@ const bodyParser = require('body-parser')
 //const timeout = require('connect-timeout')
 const io = require('socket.io')(http)
 
+
 // раути АПИ
 // const homeRoute = require('./src/routes.js')
 // const newRoute = require('./src/routes.js')
@@ -16,7 +17,7 @@ const io = require('socket.io')(http)
 
 
 // підключення сокетів
-//const sock = require('./src/socket-io.js')
+const sock = require('./src/socket-io.js')
 
 
 // Use
@@ -34,48 +35,48 @@ app.use("/styles", express.static(__dirname + '/styles'));
 
 
 //const io = require('socket.io')(http)
-users = []
-let clients = []
-let numUsers = 0;
+// users = []
+// let clients = []
+// let numUsers = 0;
 
 
-io.on('connection', (socket) => {
-console.log(`Client with id ${socket.id} connected`)
-console.log(`/////////////////////////////////////////`)
-clients.push(socket.id)
-++numUsers;
-console.log(`Num of users: ${numUsers}`)
+// io.on('connection', (socket) => {
+// console.log(`Client with id ${socket.id} connected`)
+// console.log(`/////////////////////////////////////////`)
+// clients.push(socket.id)
+// ++numUsers;
+// console.log(`Num of users: ${numUsers}`)
   
-socket.join("room"+socket.id)
+// socket.join("room"+socket.id)
   
   
-socket.on('chat message', (data) =>{
+// socket.on('chat message', (data) =>{
     
     
-  console.log(data)
-  io.to("room"+socket.id).emit('chat message', {
-    message: data.message,
-    name: data.name,
-  })
+//   console.log(data)
+//   io.to("room"+socket.id).emit('chat message', {
+//     message: data.message,
+//     name: data.name,
+//   })
       
-})
+// })
 
-socket.on('disconnect', (data) => {
-  --numUsers;
-  console.log(`User disconnected. On server are: ${numUsers}`)
-  io.emit('user-disconnected', users[socket.id])
-  delete users[socket.id]
-  console.log(`'user-disconnected',  ${socket.id}`)
-  socket.leave("room"+socket.id);
-  })
+// socket.on('disconnect', (data) => {
+//   --numUsers;
+//   console.log(`User disconnected. On server are: ${numUsers}`)
+//   io.emit('user-disconnected', users[socket.id])
+//   delete users[socket.id]
+//   console.log(`'user-disconnected',  ${socket.id}`)
+//   socket.leave("room"+socket.id);
+//   })
 
-socket.on('typing', () => {
-  socket.emit('typing', {
-    username: socket.username
-  })
-})
+// socket.on('typing', () => {
+//   socket.emit('typing', {
+//     username: socket.username
+//   })
+// })
   
-})
+// })
 
 
 app.get("/", (req, res) => {
@@ -96,7 +97,8 @@ app.post("/newChat", (req, res) => {
     if(!contype)
       return res.sendStatus(400)
     if (contype.indexOf('application/x-www-form-urlencoded; charset=UTF-8') !== 0)
-      socket.to('room'+req.body.receiver_id).emit('chat message', req.body)
+      //socket.to('room'+req.body.receiver_id).emit('chat message', req.body)
+      socket-io.sock(io).to('room'+req.body.receiver_id).emit('chat message', req.body)
       console.log("2");
       return res.sendStatus(200);
     }  catch(error) {

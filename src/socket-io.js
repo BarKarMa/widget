@@ -1,7 +1,7 @@
 
 
 
-module.exports = function() {
+module.exports = function sock(io) {
 
   users = []
   let clients = []
@@ -53,11 +53,9 @@ io.on('typing', () => {
   })
 })
   
-  module.exports = {
-  socket: socket
-}
 
 }
 
+module.exports = sock;
 
 
