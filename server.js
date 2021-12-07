@@ -10,9 +10,9 @@ const io = require('socket.io')(http)
 
 
 // раути АПИ
-//  const homeRoute = require('./src/routes.js')
+  const homeRoute = require('/app/src/routes.js')
 //  const newRoute = require('./src/routes.js')
-//  app.use('/', homeRoute)
+  app.use('/', homeRoute)
 //  app.use('/newChat', newRoute)
 
 
@@ -35,10 +35,10 @@ app.use("/styles", express.static(__dirname + '/styles'));
 // сама ініціалізація
 
 
-app.get("/", (req, res) => {
-  console.log("1");
-  res.sendFile(path.join(__dirname, '/index.html'))
-});
+// app.get("/", (req, res) => {
+//   console.log("1");
+//   res.sendFile(path.join(__dirname, '/index.html'))
+// });
 
 
 app.post("/newChat", (req, res) => {
