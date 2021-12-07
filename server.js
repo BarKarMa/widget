@@ -19,12 +19,6 @@ const io = require('socket.io')(http)
 // підключення сокетів
 const sock = require('./src/socket_io.js')
 
-module.exports = {
-  app: app,
-  http: http,
-  io: io
-}
-
 
 // Use
 app.use(cors())
@@ -114,8 +108,6 @@ app.post("/newChat", (req, res) => {
 });
 
 
-
-
 const port = 3000;
 
 http.listen(process.env.PORT || 3000, () => {
@@ -123,3 +115,8 @@ http.listen(process.env.PORT || 3000, () => {
   console.log(`server launched on port ${port}`);
 });
 
+module.exports = {
+    app: app,
+    http: http,
+    io: io
+}
