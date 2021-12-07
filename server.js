@@ -9,10 +9,7 @@ const bodyParser = require('body-parser')
 const io = require('socket.io')(http)
 const sock = require('/app/src/socket_io.js')(io)
 
-
-
 // раути АПИ
-require('/app/src/routes.js')(app, path)
 
 
 // Use
@@ -20,13 +17,15 @@ app.use(cors())
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json())
 
-app.use("/", express.static(__dirname + '/'))
+
 app.use("/src", express.static(__dirname + '/src'))
 app.use("/src/client", express.static(__dirname + '/src/client'))
 app.use(express.static(path.join(__dirname)));
 app.use("/styles", express.static(__dirname + '/styles'));
 
 // сама ініціалізація
+require('/app/src/routes.js')(app, path)
+
 
 
 const port = 3000;
