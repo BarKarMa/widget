@@ -7,7 +7,6 @@ const messages = document.querySelector('.messages')
 const form = document.querySelector('.form')
 const input = document.querySelector('.input')
 const nameBlock = document.querySelector('.name')
-
 const socket = io()
 //const userName = prompt('Ваше імя:')
 
