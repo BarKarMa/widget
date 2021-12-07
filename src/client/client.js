@@ -1,4 +1,4 @@
-const socket = io('https://pofsdvmlks.herokuapp.com:3000')
+const socket = io()
 
 
 
