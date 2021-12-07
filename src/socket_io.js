@@ -1,7 +1,7 @@
+const io = require('./server.js').io;
 
 
-
-function sock(io) {
+function sock() {
 
   users = []
   let clients = []
