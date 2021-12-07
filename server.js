@@ -6,7 +6,7 @@ const http = require('http').createServer(app)
 const cors = require('cors')
 const bodyParser = require('body-parser')
 //const timeout = require('connect-timeout')
-const io = require('socket.io')(http)
+
 
 
 // раути АПИ
@@ -17,7 +17,8 @@ const io = require('socket.io')(http)
 
 
 // підключення сокетів
-
+// const io = require('socket.io')(http)
+// const sock = require('./src/socket_io.js')(io)
 
 
 
@@ -43,9 +44,8 @@ app.use("/styles", express.static(__dirname + '/styles'));
 
 app.post("/newChat", (req, res) => {
   try {
-    
-    const sock = require('./src/socket_io.js')(io)
-    
+    //const sock = require('/socket-io.js')
+
     var contype = req.headers['content-type']
     
     console.log('full output')
