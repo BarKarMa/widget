@@ -7,13 +7,13 @@ const io = require('socket.io')(http)
 const sock = require('/app/src/socket_io.js')(io)
 
 
-app.get("/", (req, res) => {
+router.get("/", (req, res) => {
   console.log("1");
   res.sendFile(path.join(__dirname, '/index.html'))
 });
 
 
-app.post("/newChat", (req, res) => {
+router.post("/newChat", (req, res) => {
   try {
 
       
