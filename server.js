@@ -25,43 +25,43 @@ app.use("/styles", express.static(__dirname + '/styles'));
 
 
 users = []
-  let clients = []
-  let numUsers = 0;
+let clients = []
+let numUsers = 0;
 
 
-  io.on('connection', (socket) => {
-    console.log(`Client with id ${socket.id} connected`)
-    console.log(`/////////////////////////////////////////`)
-    clients.push(socket.id)
-    ++numUsers;
-    console.log(`Num of users: ${numUsers}`)
-    
-    socket.join("room"+socket.id)
+io.on('connection', (socket) => {
+  console.log(`Client with id ${socket.id} connected`)
+  console.log(`/////////////////////////////////////////`)
+  clients.push(socket.id)
+  ++numUsers;
+  console.log(`Num of users: ${numUsers}`)
   
-    socket.on('chat message', (data) =>{
+  socket.join("room"+socket.id)
+
+  socket.on('chat message', (data) =>{
+    
+    console.log(data)
+    io.to("room"+socket.id).emit('chat message', {
+      message: data.message,
+      name: data.name,
+    })
       
-      console.log(data)
-      io.to("room"+socket.id).emit('chat message', {
-        message: data.message,
-        name: data.name,
-      })
-        
+  })
+
+  socket.on('disconnect', (data) => {
+    --numUsers;
+    console.log(`User disconnected. On server are: ${numUsers}`)
+    io.emit('user-disconnected', users[socket.id])
+    delete users[socket.id]
+    console.log(`'user-disconnected',  ${socket.id}`)
+    socket.leave("room"+socket.id);
     })
 
-    socket.on('disconnect', (data) => {
-      --numUsers;
-      console.log(`User disconnected. On server are: ${numUsers}`)
-      io.emit('user-disconnected', users[socket.id])
-      delete users[socket.id]
-      console.log(`'user-disconnected',  ${socket.id}`)
-      socket.leave("room"+socket.id);
-      })
-
-    socket.on('typing', () => {
-      socket.emit('typing', {
-        username: socket.username
-      })
+  socket.on('typing', () => {
+    socket.emit('typing', {
+      username: socket.username
     })
+  })
 })
 // сама ініціалізація
 //require('/app/src/routes.js')(app)
@@ -83,6 +83,7 @@ app.post("/newChat", (req, res) => {
       return res.sendStatus(400)
     if (contype.indexOf('application/x-www-form-urlencoded; charset=UTF-8') !== 0)
       socket.to('room'+req.body.receiver_id).emit('chat message', req.body)
+      
       console.log("2");
       return res.sendStatus(200);
     }  catch(error) {
