@@ -1,4 +1,4 @@
-const socket = io('./server.js')
+const socket = io()
 
 
 
@@ -43,7 +43,7 @@ document.addEventListener('submit', (e) =>{
     // частина де відправляються дані на сервер через експрес
     //const name = userName;
   const name = socket.id;
-    const numbers = $("#numbers").val();
+  const numbers = $("#numbers").val();
 
     const data = {
         name,
