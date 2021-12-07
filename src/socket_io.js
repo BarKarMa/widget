@@ -1,9 +1,6 @@
-module.exports = { Sock }
-
 const { io } = require('/app/server.js')
 
-
-function Sock() {
+module.exports = function Sock() {
 
   users = []
   let clients = []
