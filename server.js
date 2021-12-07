@@ -43,11 +43,7 @@ io.on('connection', (socket) => {
     socket.leave("room"+socket.id);
     })
 
-  socket.on('typing', () => {
-    socket.emit('typing', {
-      username: socket.username
-    })
-  })
+  
 })
 
 // Use
@@ -98,9 +94,9 @@ http.listen(process.env.PORT || 3000, () => {
   console.log(`server launched on port ${port}`);
 });
 
-module.exports = {
-    app: app,
-    path: path,
-    http: http,
-    //io: io
-}
+// module.exports = {
+//     app: app,
+//     path: path,
+//     http: http,
+//     //io: io
+// }
