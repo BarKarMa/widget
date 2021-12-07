@@ -1,6 +1,6 @@
-const io = require('/app/server.js').io;
 
-module.exports = function Sock() {
+
+exports = module.exports = function(io) {
 
   users = []
   let clients = []
