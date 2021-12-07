@@ -42,27 +42,27 @@ app.use("/styles", express.static(__dirname + '/styles'));
 // });
 
 
-app.post("/newChat", (req, res) => {
-  try {
-    //const sock = require('/socket-io.js')
+// app.post("/newChat", (req, res) => {
+//   try {
+//     //const sock = require('/socket-io.js')
 
-    var contype = req.headers['content-type']
+//     var contype = req.headers['content-type']
     
-    console.log('full output')
-    console.log(req.body)
+//     console.log('full output')
+//     console.log(req.body)
 
-    if(!contype)
-      return res.sendStatus(400)
-    if (contype.indexOf('application/x-www-form-urlencoded; charset=UTF-8') !== 0)
-      //socket.to('room'+req.body.receiver_id).emit('chat message', req.body)
-      sock.to('room'+req.body.receiver_id).emit('chat message', req.body)
-      console.log("2");
-      return res.sendStatus(200);
-    }  catch(error) {
+//     if(!contype)
+//       return res.sendStatus(400)
+//     if (contype.indexOf('application/x-www-form-urlencoded; charset=UTF-8') !== 0)
+//       //socket.to('room'+req.body.receiver_id).emit('chat message', req.body)
+//       sock.to('room'+req.body.receiver_id).emit('chat message', req.body)
+//       console.log("2");
+//       return res.sendStatus(200);
+//     }  catch(error) {
       
-    }
+//     }
 
-});
+// });
 
 
 const port = 3000;
