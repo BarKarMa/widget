@@ -10,7 +10,7 @@ const nameBlock = document.querySelector('.name')
 const socket = io()
 //const userName = prompt('Ваше імя:')
 
-require('./messages.js')
+require('./messages.js')(messages)
 
 // const time = new Date();
 
