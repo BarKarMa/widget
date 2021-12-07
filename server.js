@@ -32,7 +32,6 @@ app.get("/", (req, res) => {
 });
 
 
-
 app.post("/newChat", (req, res) => {
     try {
 
