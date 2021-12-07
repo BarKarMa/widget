@@ -3,7 +3,7 @@ const router = express.Router();
 const app = express();
 const io = require('/app/server.js')
 
-const sock = require('./src/socket_io.js')(io)
+const sock = require('/app/src/socket_io.js')(io)
 
 
 
