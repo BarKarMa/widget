@@ -6,8 +6,8 @@ const http = require('http').createServer(app)
 const cors = require('cors')
 const bodyParser = require('body-parser')
 //const timeout = require('connect-timeout')
-const io = require('socket.io')(http)
-const sock = require('/app/src/socket_io.js')(io)
+const io = require('socket.io')//(http)
+//const sock = require('/app/src/socket_io.js')(io)
 
 // раути АПИ
 
@@ -82,7 +82,7 @@ app.post("/newChat", (req, res) => {
     if(!contype)
       return res.sendStatus(400)
     if (contype.indexOf('application/x-www-form-urlencoded; charset=UTF-8') !== 0)
-      sock.to('room'+req.body.receiver_id).emit('chat message', req.body)
+      socket.to('room'+req.body.receiver_id).emit('chat message', req.body)
       console.log("2");
       return res.sendStatus(200);
     }  catch(error) {
