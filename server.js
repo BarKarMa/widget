@@ -7,6 +7,7 @@ const cors = require('cors')
 const bodyParser = require('body-parser')
 //const timeout = require('connect-timeout')
 const io = require('socket.io')(http)
+const sock = require('/app/src/socket_io.js')(io)
 
 
 

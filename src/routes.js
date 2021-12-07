@@ -4,7 +4,7 @@ const app = express();
 
 //const http = require('/app/server.js')
 //const io = require('socket.io')(http)
-const sock = require('/app/src/socket_io.js')(io)
+// const sock = require('/app/src/socket_io.js')(io)
 
 
 router.get("/", (req, res) => {
