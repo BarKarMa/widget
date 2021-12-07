@@ -6,6 +6,7 @@ const http = require('http').createServer(app)
 const cors = require('cors')
 const bodyParser = require('body-parser')
 //const timeout = require('connect-timeout')
+const io = require('socket.io')(http)
 
 
 
