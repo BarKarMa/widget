@@ -1,6 +1,9 @@
 const express = require('express');
 const router = express.Router();
 const app = express();
+const io = require('./server.js')
+
+const sock = require('./src/socket_io.js')(io)
 
 
 
@@ -12,8 +15,6 @@ app.get("/", (req, res) => {
 
 app.post("/newChat", (req, res) => {
   try {
-    //const sock = require('/socket-io.js')
-
     var contype = req.headers['content-type']
     
     console.log('full output')
@@ -22,7 +23,7 @@ app.post("/newChat", (req, res) => {
     if(!contype)
       return res.sendStatus(400)
     if (contype.indexOf('application/x-www-form-urlencoded; charset=UTF-8') !== 0)
-      io.to('room'+req.body.receiver_id).emit('chat message', req.body)
+      sock.to('room'+req.body.receiver_id).emit('chat message', req.body)
       console.log("2");
       return res.sendStatus(200);
     }  catch(error) {
