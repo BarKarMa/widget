@@ -1,7 +1,7 @@
 
 
 
-function sock(io) {
+module.exports = function sock(io) {
 
   users = []
   let clients = []
@@ -55,7 +55,5 @@ io.on('typing', () => {
   
 
 }
-
-module.exports = sock;
 
 
