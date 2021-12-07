@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const app = express();
-const io = require('./app/server.js')
+const io = require('/app/server.js')
 
 const sock = require('./src/socket_io.js')(io)
 
