@@ -38,7 +38,7 @@ document.addEventListener('submit', (e) =>{
     // частина де відправляються дані на сервер через експрес
     //const name = userName;
   const name = socket.id;
-    const numbers = $("#numbers").val();
+    const numbers = $("#widget-inp-1").val();
 
     const data = {
         name,
