@@ -44,6 +44,8 @@
 
   #li {
     right: 1%;
+    height: 60%;
+    bottom: 12%;
   }
 
   .operator-name {
