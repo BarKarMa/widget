@@ -60,7 +60,7 @@ app.use("/styles", express.static(__dirname + '/styles'));
 
 
 // сама ініціалізація
-require('/app/src/routes.js')(app)
+require('/app/src/routes.js')(app, sock)
 
 
 // app.get("/", (req, res) => {
@@ -94,9 +94,9 @@ http.listen(process.env.PORT || 3000, () => {
   console.log(`server launched on port ${port}`);
 });
 
-// module.exports = {
-//     app: app,
-//     path: path,
-//     http: http,
-//     //io: io
-// }
+module.exports = {
+    app: app,
+    path: path,
+    http: http,
+    //io: io
+}
