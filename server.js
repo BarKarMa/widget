@@ -8,6 +8,8 @@ const bodyParser = require('body-parser')
 //const timeout = require('connect-timeout')
 const io = require('socket.io')(http)
 //const sock = require('/app/src/socket_io.js')(io)
+const sock = require('/app/src/socket_io.js')(io)
+
 
 // раути АПИ
 users = []
@@ -60,7 +62,7 @@ app.use("/styles", express.static(__dirname + '/styles'));
 
 
 // сама ініціалізація
-require('/app/src/routes.js')(app, io)
+require('/app/src/routes.js')(app)
 
 
 // app.get("/", (req, res) => {
