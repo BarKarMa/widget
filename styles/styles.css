@@ -11,6 +11,13 @@
   display: flex;
 }
 
+.click-box1 {
+  bottom: 20px;
+  right: 40px;
+  position: fixed;
+  display: flex;
+}
+
 .bi-messenger {
   width: 32px;
   height: 32px;
