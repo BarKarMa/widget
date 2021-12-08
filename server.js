@@ -60,7 +60,7 @@ app.use("/styles", express.static(__dirname + '/styles'));
 
 
 // сама ініціалізація
-require('/app/src/routes.js')(app, sock)
+require('/app/src/routes.js')(app, io)
 
 
 // app.get("/", (req, res) => {
