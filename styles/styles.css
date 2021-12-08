@@ -2,6 +2,7 @@
   bottom: 20px;
   right: 20px;
   position: fixed;
+  display: flex;
 }
 
 .bi-messenger {
@@ -65,6 +66,8 @@
 
 .operator-name {
   margin-right: 1%;
+  margin-top: 10%;
+  margin-bottom: 0;
 }
 
 #server-messages {
@@ -81,7 +84,7 @@
 }
 
 .messages {
-  margin-bottom: 20%;;
+  margin-bottom: 20%;
   max-width: 100%;
   margin-left: 10px;
   word-wrap: break-word;
@@ -92,10 +95,10 @@
   position: fixed;
   border-radius: 8px;
   /* right: 5%; */
-  bottom: 130px;
+  bottom: 150px;
   overflow: auto;
   overflow-x: hidden;
-  height: 54%;
+  height: 45%;
 }
 
 .chat-log {
