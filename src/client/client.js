@@ -1,8 +1,6 @@
 const socket = io()
 
 
-
-
 const messages = document.querySelector('.messages')
 // ('#messages')
 // getByDataHook(dataHook) { return document.querySelector('[data-hook="ChatWindow.messagesWrapper"]'); }
@@ -87,7 +85,7 @@ socket.on('chat message', (data) => {
 
   // вынести звідси код в окремий файл - ключ
   if (data.channel_id === "DCA20883-F093-4DA4-8FDC-9EAE03A51E18"){
-        item.innerHTML = `<p class="operator-name" style="text-align: right;">Оператор:</p> <span id="server-messages">${data.content.text}</span>`
+    item.innerHTML = `<p class="operator-name" style="text-align: right;">Оператор:</p> <span id="server-messages">${data.content.text}</span>`
     messages.appendChild(item)
     window.scrollTo(0,document.body.scrollHeight)
   }
