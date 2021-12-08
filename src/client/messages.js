@@ -1,4 +1,4 @@
-exports = module.exports = function(messages) {
+exports = module.exports = function(messages, time) {
   const time = new Date();
   const formattedTime = time.toLocaleString("en-US", { hour: "numeric", minute: "numeric", second: "numeric" });
   const item_hello = document.createElement('div')
