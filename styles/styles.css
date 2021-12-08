@@ -52,6 +52,7 @@
   height: 85%;
   border-radius: 6px;
   font-family: "Open Sans Condensed", sans-serif;
+  box-shadow: inset 0px 0px 10px #ffffff;
 }
 
 .time {
@@ -135,7 +136,7 @@
   bottom: 130px;
   height: 75px;
   width: 91%;
-  border-radius: 8px;
+  border-radius: 4px;
 }
 
 #nub {
