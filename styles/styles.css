@@ -84,7 +84,7 @@
 }
 
 .messages {
-  margin-bottom: 20%;
+  margin-bottom: 30%;
   max-width: 100%;
   margin-left: 10px;
   word-wrap: break-word;
@@ -95,7 +95,7 @@
   position: fixed;
   border-radius: 8px;
   /* right: 5%; */
-  bottom: 150px;
+  bottom: 10%;
   overflow: auto;
   overflow-x: hidden;
   height: 45%;
