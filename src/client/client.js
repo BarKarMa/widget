@@ -102,6 +102,8 @@ socket.on('chat message', (data) => {
 
 
 }
+  
+  
 )
 
 socket.on('typing', (data) => {
