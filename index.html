@@ -63,13 +63,15 @@
         </form>
             
     </div>
-        <div class="click-box" onclick="darkmessage()">
-            <svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" fill="rgb(119,190,252)" class="bi bi-messenge1" viewBox="0 0 16 16">
-                <path d="M0 7.76C0 3.301 3.493 0 8 0s8 3.301 8 7.76-3.493 7.76-8 7.76c-.81 0-1.586-.107-2.316-.307a.639.639 0 0 0-.427.03l-1.588.702a.64.64 0 0 1-.898-.566l-.044-1.423a.639.639 0 0 0-.215-.456C.956 12.108 0 10.092 0 7.76zm5.546-1.459-2.35 3.728c-.225.358.214.761.551.506l2.525-1.916a.48.48 0 0 1 .578-.002l1.869 1.402a1.2 1.2 0 0 0 1.735-.32l2.35-3.728c.226-.358-.214-.761-.551-.506L9.728 7.381a.48.48 0 0 1-.578.002L7.281 5.98a1.2 1.2 0 0 0-1.735.32z"/>
-              </svg>
-        <!-- <button  class="btn_primary" id="btn_open" hidden>ЧАТ</button> -->
+        <div class="click-box-chat" onclick="darkmessage()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(119,190,252)" class="bi bi-chat-dots"
+                viewBox="0 0 16 16">
+                <path d="M5 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" />
+                <path
+                    d="m2.165 15.803.02-.004c1.83-.363 2.948-.842 3.468-1.105A9.06 9.06 0 0 0 8 15c4.418 0 8-3.134 8-7s-3.582-7-8-7-8 3.134-8 7c0 1.76.743 3.37 1.97 4.6a10.437 10.437 0 0 1-.524 2.318l-.003.011a10.722 10.722 0 0 1-.244.637c-.079.186.074.394.273.362a21.673 21.673 0 0 0 .693-.125zm.8-3.108a1 1 0 0 0-.287-.801C1.618 10.83 1 9.468 1 8c0-3.192 3.004-6 7-6s7 2.808 7 6c0 3.193-3.004 6-7 6a8.06 8.06 0 0 1-2.088-.272 1 1 0 0 0-.711.074c-.387.196-1.24.57-2.634.893a10.97 10.97 0 0 0 .398-2z" />
+            </svg>
         </div>
-        <div class="click-box1" onclick="darkmessage()">
+        <div class="click-telegram" href="https://t.me/windrose_telegram_bot" onclick="darkmessage()">
             <svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" fill="rgb(119,190,252)" class="bi bi-telegram"
                 viewBox="0 0 16 16">
                 <path
@@ -77,6 +79,12 @@
             </svg>
             <!-- <button  class="btn_primary" id="btn_open" hidden>ЧАТ</button> -->
         </div>
+        <div class="click-box-messanger" onclick="darkmessage()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" fill="rgb(119,190,252)" class="bi bi-messenge1" viewBox="0 0 16 16">
+                <path d="M0 7.76C0 3.301 3.493 0 8 0s8 3.301 8 7.76-3.493 7.76-8 7.76c-.81 0-1.586-.107-2.316-.307a.639.639 0 0 0-.427.03l-1.588.702a.64.64 0 0 1-.898-.566l-.044-1.423a.639.639 0 0 0-.215-.456C.956 12.108 0 10.092 0 7.76zm5.546-1.459-2.35 3.728c-.225.358.214.761.551.506l2.525-1.916a.48.48 0 0 1 .578-.002l1.869 1.402a1.2 1.2 0 0 0 1.735-.32l2.35-3.728c.226-.358-.214-.761-.551-.506L9.728 7.381a.48.48 0 0 1-.578.002L7.281 5.98a1.2 1.2 0 0 0-1.735.32z"/>
+              </svg>
+        <!-- <button  class="btn_primary" id="btn_open" hidden>ЧАТ</button> -->
+        </div>>
     
 
 
@@ -93,10 +101,7 @@
 
         right: 20%;
     }
-    /* .click-box1 {
-            padding-left: 82%;
-            padding-top: 111%;
-    }      */
+    
 </style>
 
 <script>

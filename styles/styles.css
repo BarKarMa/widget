@@ -4,16 +4,22 @@
   padding-left: 3%;
 }
 
-.click-box {
+.click-box-chat {
   bottom: 20px;
   right: 20px;
   position: fixed;
   display: flex;
 }
 
-.click-box1 {
+.click-box-telegram {
   bottom: 20px;
-  right: 40px;
+  right: 95px;
+  position: fixed;
+  display: flex;
+}
+.click-box-messanger {
+  bottom: 20px;
+  right: 95px;
   position: fixed;
   display: flex;
 }
