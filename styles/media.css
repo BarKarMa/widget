@@ -23,8 +23,10 @@
   }
 
   .time {
-    margin-top: 5%;
+    margin-top: 15%;
     text-align: center;
+    margin-bottom: -10%;
+    margin-right: 10%;
   }
 
   .messages {
@@ -44,7 +46,7 @@
 
   #li {
     right: 1%;
-    height: 60%;
+    height: 50%;
     bottom: 12%;
   }
 
