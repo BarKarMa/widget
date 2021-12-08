@@ -1,3 +1,7 @@
+const socket = io()
+
+
+
 
 const messages = document.querySelector('.messages')
 // ('#messages')
@@ -7,12 +11,14 @@ const messages = document.querySelector('.messages')
 const form = document.querySelector('.form')
 const input = document.querySelector('.input')
 const nameBlock = document.querySelector('.name')
-const socket = io()
+
+
 //const userName = prompt('Ваше імя:')
 
-//require('./messages.js')(messages)
+
 
 const time = new Date();
+
 
 const formattedTime = time.toLocaleString("en-US", { hour: "numeric", minute: "numeric", second: "numeric" });
 const item_hello = document.createElement('div')
@@ -37,7 +43,7 @@ document.addEventListener('submit', (e) =>{
     // частина де відправляються дані на сервер через експрес
     //const name = userName;
   const name = socket.id;
-  const numbers = $("#numbers").val();
+    const numbers = $("#numbers").val();
 
     const data = {
         name,
@@ -69,6 +75,7 @@ document.addEventListener('submit', (e) =>{
     
 })
 
+
 socket.on('chat message', (data) => {
 
 
@@ -80,7 +87,7 @@ socket.on('chat message', (data) => {
 
   // вынести звідси код в окремий файл - ключ
   if (data.channel_id === "DCA20883-F093-4DA4-8FDC-9EAE03A51E18"){
-    item.innerHTML = `<p class="operator-name" style="text-align: right;">Оператор:</p> <span id="server-messages">${data.content.text}</span>`
+        item.innerHTML = `<p class="operator-name" style="text-align: right;">Оператор:</p> <span id="server-messages">${data.content.text}</span>`
     messages.appendChild(item)
     window.scrollTo(0,document.body.scrollHeight)
   }
@@ -96,3 +103,10 @@ socket.on('chat message', (data) => {
 
 }
 )
+
+socket.on('typing', (data) => {
+  const item1 = document.createElement('div')
+  item1.innerHTML = `<p class="typing">${data.username}</p> is typing a message...`
+  messages.appendChild(item1)
+
+})
