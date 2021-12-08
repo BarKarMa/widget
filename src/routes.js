@@ -1,4 +1,4 @@
-exports = module.exports = function (app, sock) {
+exports = module.exports = function (app, io) {
 
   app.get("/", (req, res) => {
     console.log("1");
@@ -8,7 +8,9 @@ exports = module.exports = function (app, sock) {
 
 
   app.post("/newChat", (req, res) => {
-    try {      
+    try {
+      
+      const sock = require('/app/src/socket_io.js')(io)
       var contype = req.headers['content-type']  
       console.log('full output')
       console.log(req.body)
