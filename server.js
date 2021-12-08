@@ -62,7 +62,6 @@ app.use("/styles", express.static(__dirname + '/styles'));
 // сама ініціалізація
 require('/app/src/routes.js')(app)
 
- const port = 3000;
 
 // app.get("/", (req, res) => {
 //   console.log("1");
@@ -88,6 +87,7 @@ require('/app/src/routes.js')(app)
 
 // });
 
+const port = 3000;
 
 http.listen(process.env.PORT || 3000, () => {
 
