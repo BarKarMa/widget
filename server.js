@@ -7,47 +7,9 @@ const cors = require('cors')
 const bodyParser = require('body-parser')
 //const timeout = require('connect-timeout')
 const io = require('socket.io')(http)
-//const sock = require('/app/src/socket_io.js')(io)
 
 
-
-// раути АПИ
-// users = []
-// let clients = []
-// let numUsers = 0;
-
-
-// io.on('connection', (socket) => {
-//   console.log(`Client with id ${socket.id} connected`)
-//   console.log(`/////////////////////////////////////////`)
-//   clients.push(socket.id)
-//   ++numUsers;
-//   console.log(`Num of users: ${numUsers}`)
-  
-//   socket.join("room"+socket.id)
-
-//   socket.on('chat message', (data) =>{
-    
-//     console.log(data)
-//     io.to("room"+socket.id).emit('chat message', {
-//       message: data.message,
-//       name: data.name,
-//     })
-      
-//   })
-
-//   socket.on('disconnect', (data) => {
-//     --numUsers;
-//     console.log(`User disconnected. On server are: ${numUsers}`)
-//     io.emit('user-disconnected', users[socket.id])
-//     delete users[socket.id]
-//     console.log(`'user-disconnected',  ${socket.id}`)
-//     socket.leave("room"+socket.id);
-//     })
-
-  
-// })
-
+//socket
 require('/app/src/socket_io.js')(io)
 
 
@@ -63,34 +25,9 @@ app.use(express.static(path.join(__dirname)));
 app.use("/styles", express.static(__dirname + '/styles'));
 
 
-
-// сама ініціалізація
+// сама раути
 require('/app/src/routes.js')(app, io)
 
-
-// app.get("/", (req, res) => {
-//   console.log("1");
-//   res.sendFile(path.join(__dirname, '/index.html'))
-// });
-
-// app.post("/newChat", (req, res) => {
-//   try {      
-//     var contype = req.headers['content-type']  
-//     console.log('full output')
-//     console.log(req.body)
-
-//     if(!contype)
-//       return res.sendStatus(400)
-//     if (contype.indexOf('application/x-www-form-urlencoded; charset=UTF-8') !== 0)
-//       io.to('room'+req.body.receiver_id).emit('chat message', req.body)
-      
-//       console.log("2");
-//       return res.sendStatus(200);
-//     }  catch(error) {
-        
-//     }
-
-// });
 
 const port = 3000;
 

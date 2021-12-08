@@ -29,5 +29,3 @@ exports = module.exports = function (app, io) {
 
 }
 
-//module.exports = router;
-
