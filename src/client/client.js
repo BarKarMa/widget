@@ -104,6 +104,3 @@ socket.on('chat message', (data) => {
 }
   
 )
-
-export const messages = messages
-export const item_hello = item_hello
