@@ -1,4 +1,8 @@
 @media (min-width: 600px) {
+  #myfile {
+    right: 30%;
+    padding-left: 3%;
+  }
   .hello-messages {
     width: 87%;
     font-size: 16px;
