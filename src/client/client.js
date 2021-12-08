@@ -15,11 +15,9 @@ const nameBlock = document.querySelector('.name')
 
 const time = new Date();
 const formattedTime = time.toLocaleString("en-US", { hour: "numeric", minute: "numeric", second: "numeric" });
-const item_hello = document.createElement('div')
 
 
-
-require('/app/src/client/messages.js')(messages, item_hello)
+require('/app/src/client/messages.js')
 
   // const formattedTime = time.toLocaleString("en-US", { hour: "numeric", minute: "numeric", second: "numeric" });
   // const item_hello = document.createElement('div')
@@ -107,8 +105,5 @@ socket.on('chat message', (data) => {
   
 )
 
-module.exports = {
-  messages: messages,
-  item_hello: item_hello
-  
-}
+export const messages = messages
+export const item_hello = item_hello
