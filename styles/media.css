@@ -22,6 +22,17 @@
     display: flex;
   }
 
+  .click-box-chat {
+    right: 3%;
+  }
+
+  .click-telegram {
+    right: 8%;
+  }
+  .click-box-messanger {
+    right: 13%;
+  }
+
   .input {
     width: 26%;
   }

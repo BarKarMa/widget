@@ -5,20 +5,20 @@
 }
 
 .click-box-chat {
-  bottom: 20px;
+  bottom: 4%;
   right: 30px;
   position: fixed;
   display: flex;
 }
 
 .click-telegram {
-  bottom: 20px;
+  bottom: 4%;
   right: 105px;
   position: fixed;
   display: none;
 }
 .click-box-messanger {
-  bottom: 20px;
+  bottom: 4%;
   right: 180px;
   position: fixed;
   display: none;
@@ -47,7 +47,7 @@
   position: fixed;
   right: 3%;
   top: auto;
-  bottom: 80px;
+  bottom: 10%;
   width: 95%;
   height: 85%;
   border-radius: 6px;
