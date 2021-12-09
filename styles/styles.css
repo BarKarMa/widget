@@ -110,10 +110,10 @@
   position: fixed;
   border-radius: 8px;
   /* right: 5%; */
-  bottom: 10%;
+  bottom: 20%;
   overflow: auto;
   overflow-x: hidden;
-  height: 60%;
+  height: 50%;
 }
 
 .chat-log {
