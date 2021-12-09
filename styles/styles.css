@@ -52,7 +52,7 @@
   height: 85%;
   border-radius: 6px;
   font-family: "Open Sans Condensed", sans-serif;
-  box-shadow: inset 0px 0px 10px #ffffff;
+  box-shadow: inset 0px 65px 0px #0ae;
 }
 
 .time {
@@ -201,7 +201,7 @@ label {
   top: 15px;
   width: 32px;
   height: 32px;
-  opacity: 0.3;
+  opacity: 0.8;
 }
 .close:hover {
   opacity: 1;
