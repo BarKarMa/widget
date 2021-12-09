@@ -138,6 +138,15 @@
   border-radius: 4px;
 }
 
+.bi-messenger1 {
+  top: 32%;
+  left: 32%;
+}
+
+#telegram {
+  right: 20%;
+}
+
 #nub {
   position: fixed;
   right: 40px;
