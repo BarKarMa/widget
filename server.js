@@ -11,7 +11,7 @@ const io = require('socket.io')(http)
 
 //socket
 require('/app/src/socket_io.js')(io)
-require('/app/src/client/client.js')(this.BEESENDER_URL)
+
 
 
 // Use
