@@ -23,7 +23,8 @@ If you want to use it on your site U need to:
  where "AppId" – your secret key,
  and "ChannelId" – guid, from test hook: 
 
- `$.ajax({
+ ```
+ $.ajax({
         type:"POST",
         url: "here your beesender part",
         data: JSON.stringify({'sender': { 'id': socket.id, "name": data.name, 'avatar': ''}, 'message': {'type': 'text', 'text': data.numbers}}),
@@ -31,7 +32,7 @@ If you want to use it on your site U need to:
         contentType: "application/json",
         success: function(){ }
       })
- `     
+ ```     
 
 
 ## 4. install and update dependences from package.json from the root of the project 
