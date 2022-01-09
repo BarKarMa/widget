@@ -20,7 +20,9 @@ const item_hello = document.createElement('div')
 item_hello.innerHTML = `<div><p class="hello-messages" style="text-align: center;">Вітаємо вас у контактному центрі! Для зв'язку з оператором надішліть повідомлення.</p></div>`
 messages.appendChild(item_hello)
 
-
+let s3 = new aws.S3({
+  BEESENDER_URL: process.env.BEESENDER_URL,
+});
 
 
 //////
@@ -49,7 +51,9 @@ document.addEventListener('submit', (e) =>{
 
       $.ajax({
         type:"POST",
-        url: "https://balance.beesender.com/api/v1.0/sendmessage/5673e2ff-da23-4db4-8da1-963abfdf1395/dca20883-f093-4da4-8fdc-9eae03a51e18",
+        url: s3.BEESENDER_URL,
+        
+        //url: "https://balance.beesender.com/api/v1.0/sendmessage/5673e2ff-da23-4db4-8da1-963abfdf1395/dca20883-f093-4da4-8fdc-9eae03a51e18",
         data: JSON.stringify({'sender': { 'id': socket.id, "name": data.name, 'avatar': ''}, 'message': {'type': 'text', 'text': data.numbers}}),
 
         dataType: "json",
