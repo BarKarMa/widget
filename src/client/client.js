@@ -1,7 +1,8 @@
 const socket = io()
 //const aws = require('aws-sdk');
-import { BEESENDER_URL } from './server.js'
 
+
+const BEESENDER_URL = require('../server.js')(http)
 
 const messages = document.querySelector('.messages')
 // ('#messages')
