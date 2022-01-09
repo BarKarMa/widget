@@ -1,4 +1,5 @@
 const socket = io()
+const aws = require('aws-sdk');
 
 
 const messages = document.querySelector('.messages')
