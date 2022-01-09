@@ -1,4 +1,4 @@
-# widget
+# Chat widget
 
 Based on Node.js + HTML5 + CSS5 widget for Creatio CRM integration. Sessions maked using socket.io.
 It will work easily only if you have the Beesender chat plugin.
