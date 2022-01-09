@@ -34,6 +34,7 @@ const port = 3000;
 http.listen(process.env.PORT || 3000, () => {
 
   console.log(`server launched on port ${port}`);
+  console.log(`env var ${process.env.BEESENDER_URL}`);
 });
 
 module.exports = {
