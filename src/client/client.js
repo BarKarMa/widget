@@ -1,5 +1,4 @@
 const socket = io()
-const aws = require('aws-sdk');
 
 
 const messages = document.querySelector('.messages')
@@ -21,9 +20,6 @@ item_hello.innerHTML = `<div><p class="hello-messages" style="text-align: center
 messages.appendChild(item_hello)
 
 
-let s3 = new aws.S3({
-  BEESENDER_URL: process.env.BEESENDER_URL,
-});
 
 
 //////
