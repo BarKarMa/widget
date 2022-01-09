@@ -1,4 +1,4 @@
-const BEESENDER_URL = require('./server.js')(BEESENDER_URL)
+const BEESENDER_URL = require('../server.js')(BEESENDER_URL)
 
 const socket = io()
 
