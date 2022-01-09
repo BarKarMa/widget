@@ -3,6 +3,7 @@
 Based on Node.js + HTML5 + CSS5 widget for Creatio CRM integration. Sessions maked using socket.io.
 It will work easily only if you have the Beesender chat plugin.
 This widget would not work with build in Creatio chat plugin.
+My own example is up on Heroku server you can access it by https://pofsdvmlks.herokuapp.com/
 
 ### Plans to do:
 - update project structure for NPM upload;
