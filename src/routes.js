@@ -27,5 +27,10 @@ exports = module.exports = function (app, io) {
 
   });
 
+  app.get('/site.js', function(req, res){
+    res.send("var BEESENDER_URL='"+process.env.BEESENDER_URL+"'");
+  });
+  
+
 }
 
