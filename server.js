@@ -39,7 +39,6 @@ http.listen(process.env.PORT || 3000, () => {
 module.exports = {
     app: app,
     path: path,
-    http: http,
-    BEESENDER_URL: process.env.BEESENDER_URL
+    http: http
     //io: io
 }
