@@ -1,18 +1,12 @@
 const socket = io()
 
 const messages = document.querySelector('.messages')
-
-// ('#messages')
-// getByDataHook(dataHook) { return document.querySelector('[data-hook="ChatWindow.messagesWrapper"]'); }
-// ('[data-hook="ChatWindow.messagesWrapper"]')
-// <div data-hook="ChatWindow.messagesWrapper" class="messagesWrapper">..here will be allmessages + header..</div>
 const form = document.querySelector('.form')
 const input = document.querySelector('.input')
 const nameBlock = document.querySelector('.name')
-const beesender_url  = BEESENDER_URL
 
-
-//const userName = prompt('Ваше імя:')
+const beesender_url = BEESENDER_URL
+const Ch_Id = CHANNEL_ID
 
 const time = new Date();
 const formattedTime = time.toLocaleString("en-US", { hour: "numeric", minute: "numeric", second: "numeric" });
@@ -36,7 +30,6 @@ document.addEventListener('submit', (e) =>{
     setInterval(updateScroll,2000);
 
     // частина де відправляються дані на сервер через експрес
-    //const name = userName;
     const name = socket.id;
     const numbers = $("#widget-inp-1").val();  // поменять переменную
 
@@ -82,7 +75,7 @@ socket.on('chat message', (data) => {
   const item = document.createElement('div')
 
   // вынести звідси код в окремий файл - ключ
-  if (data.channel_id === "DCA20883-F093-4DA4-8FDC-9EAE03A51E18"){
+  if (data.channel_id === Ch_Id){
     item.innerHTML = `<p class="operator-name" style="text-align: right;">Оператор:(Online)</p> <span id="server-messages">${data.content.text}</span>`
     messages.appendChild(item)
     window.scrollTo(0,document.body.scrollHeight)
