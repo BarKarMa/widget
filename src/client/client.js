@@ -1,4 +1,4 @@
-//import {BEESENDER_URL} from "../server.js"
+import {BEESENDER_URL} from "/site.js"
 
 const socket = io()
 
