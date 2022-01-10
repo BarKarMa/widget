@@ -9,7 +9,7 @@ const messages = document.querySelector('.messages')
 const form = document.querySelector('.form')
 const input = document.querySelector('.input')
 const nameBlock = document.querySelector('.name')
-import BEESENDER_URL from "/site.js"
+const BEESENDER_URL =require("/site.js")
 
 
 //const userName = prompt('Ваше імя:')
