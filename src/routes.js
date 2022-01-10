@@ -28,8 +28,9 @@ exports = module.exports = function (app, io) {
   });
 
   app.get('/site.js', function(req, res){
-    res.send("var BEESENDER_URL='" + process.env.BEESENDER_URL + "'");
-    res.send("var CHANNEL_ID='" + process.env.CHANNEL_ID + "'");
+    res.write("var BEESENDER_URL='" + process.env.BEESENDER_URL + "'");
+    res.write("var CHANNEL_ID='" + process.env.CHANNEL_ID + "'");
+    res.end();
     console.log(process.env.BEESENDER_URL);
     console.log(process.env.CHANNEL_ID);
   });
