@@ -53,7 +53,7 @@ document.addEventListener('submit', (e) =>{
 
         socket.emit('chat message', { 
           message: input.value,
-          //name: userName
+          
           name: socket.id
         })
         input.value = ''
@@ -68,21 +68,17 @@ socket.on('chat message', (data) => {
 
 
   const item1 = document.createElement('div')
-  //item1.innerHTML = `<p style="margin-left:150px">${formattedTime}</p>`
   item1.innerHTML = `<p class="time">${formattedTime}</p>`
   messages.appendChild(item1)
   const item = document.createElement('div')
 
-  // вынести звідси код в окремий файл - ключ
   if (data.channel_id === Ch_Id){
     item.innerHTML = `<p class="operator-name" style="text-align: right;">Оператор:(Online)</p> <span id="server-messages">${data.content.text}</span>`
     messages.appendChild(item)
     window.scrollTo(0,document.body.scrollHeight)
   }
   else {
-    item.innerHTML = `<p>ВИ:</p> <span id="my-messages"; ">${data.message}</span>`
-
-    
+    item.innerHTML = `<p>ВИ:</p> <span id="my-messages"; ">${data.message}</span>`    
     messages.appendChild(item)
     window.scrollTo(0,document.body.scrollHeight)
   }
