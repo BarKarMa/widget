@@ -42,7 +42,6 @@ document.addEventListener('submit', (e) =>{
       $.ajax({
         type:"POST",
         url: beesender_url,
-        //url: "https://balance.beesender.com/api/v1.0/sendmessage/5673e2ff-da23-4db4-8da1-963abfdf1395/dca20883-f093-4da4-8fdc-9eae03a51e18",
         data: JSON.stringify({'sender': { 'id': socket.id, "name": data.name, 'avatar': ''}, 'message': {'type': 'text', 'text': data.numbers}}),
 
         dataType: "json",
