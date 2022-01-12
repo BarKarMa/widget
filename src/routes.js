@@ -1,4 +1,4 @@
-exports = module.exports = function (app, io, transport) {
+exports = module.exports = function (app, io) {
 
   app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, '/index.html'))
