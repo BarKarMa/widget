@@ -59,11 +59,11 @@ exports = module.exports = function (app, io) {
     }
     });
         
-  var mailMessage = {
-    from: 'addeee@bigmir.net',
-    to: 'bezuhlov2andrii@gmail.com',
-    subject: 'You have a new message on Terrasoft',
-    text: 'Перейди за посиланням: https://windrose.terrasoft.ua/'
+    var mailMessage = {
+      from: 'addeee@bigmir.net',
+      to: 'bezuhlov2andrii@gmail.com',
+      subject: 'You have a new message on Terrasoft',
+      text: 'Перейди за посиланням: https://windrose.terrasoft.ua/'
     };
           
     transport.sendMail(mailMessage, function (error, info) {

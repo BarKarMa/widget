@@ -30,7 +30,7 @@ app.use("/src/client", express.static(__dirname + '/src/client'))
 app.use(express.static(path.join(__dirname)));
 app.use("/styles", express.static(__dirname + '/styles'));
 
-require('/app/src/routes.js')(app, io, nodemailer, transport, mailMessage)
+require('/app/src/routes.js')(app, io, nodemailer)
 
 
 const port = 3000;
