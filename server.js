@@ -8,6 +8,10 @@ const bodyParser = require('body-parser')
 const io = require('socket.io')(http)
 
 
+///
+const nodemailer = require('nodemailer')
+
+
 //socket
 require('/app/src/socket_io.js')(io)
 
@@ -22,7 +26,7 @@ app.use("/src/client", express.static(__dirname + '/src/client'))
 app.use(express.static(path.join(__dirname)));
 app.use("/styles", express.static(__dirname + '/styles'));
 
-require('/app/src/routes.js')(app, io)
+require('/app/src/routes.js')(app, io, nodemailer)
 
 
 const port = 3000;
@@ -33,7 +37,8 @@ http.listen(process.env.PORT || 3000, () => {
 });
 
 module.exports = {
-    app: app,
-    path: path,
-    http: http
+  app: app,
+  path: path,
+  http: http,
+  nodemailer: nodemailer
 }
