@@ -37,7 +37,7 @@ exports = module.exports = function (app, io, nodemailer) {
   app.get('/site.js', function(req, res){
     res.write("var BEESENDER_URL='" + process.env.BEESENDER_URL + "';");
     res.write(" var CHANNEL_ID='" + process.env.CHANNEL_ID + "';");
-    res.write("var MAIL_MY='" + process.env.MAIL_MY + "';");
+    res.write(" var MAIL_MY='" + process.env.MAIL_MY + "';");
     res.write(" var PASS_MY='" + process.env.PASS_MY + "';");
     res.end();
   });
@@ -73,7 +73,7 @@ exports = module.exports = function (app, io, nodemailer) {
         console.log('Email was sent successfully: ' + info.response);
       }
     });
-    res.send('mail-form', { title: 'Send Mail with nodejs' });
+    res.send( 'Send Mail with nodejs' );
   })
 
 
