@@ -18,7 +18,7 @@ var nodemailer = require('nodemailer')
 
     
 //socket
-require('/app/src/socket_io.js')(io)
+require('/app/src/socket_io.js')(io, nodemailer)
 
 // Use
 app.use(cors())
