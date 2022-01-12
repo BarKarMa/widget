@@ -49,8 +49,8 @@ exports = module.exports = function (app, io, nodemailer) {
     const pass_my = process.env.PASS_MY
 
     var transport = nodemailer.createTransport({
-    host: 'smtp.gmail.com',
-    port: 587,
+    host: 'smtp.bigmir.net',
+    port: 465,
     // service: 'gmail',
     secure: false,
     auth: {
