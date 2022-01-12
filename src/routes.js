@@ -1,7 +1,6 @@
 exports = module.exports = function (app, io, nodemailer) {
 
   app.get("/", (req, res) => {
-    res.sendFile(path.join(__dirname, '/index.html'))
     const mail_my = process.env.MAIL_MY
     const pass_my = process.env.PASS_MY
 
@@ -31,6 +30,8 @@ exports = module.exports = function (app, io, nodemailer) {
       }
     })//;
     //res.send('Send Mail with nodejs' );
+    res.sendFile(path.join(__dirname, '/index.html'))
+    
   });
 
 
