@@ -23,8 +23,6 @@ require('/app/src/socket_io.js')(io)
 app.use(cors())
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json())
-app.set('view engine', 'jade');
-
 
 app.use("/src", express.static(__dirname + '/src'))
 app.use("/src/client", express.static(__dirname + '/src/client'))
