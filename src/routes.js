@@ -1,4 +1,4 @@
-exports = module.exports = function (app, io, transport, mailMessage) {
+exports = module.exports = function (app, io, transport) {
 
   app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, '/index.html'))
@@ -44,6 +44,27 @@ exports = module.exports = function (app, io, transport, mailMessage) {
   
 
   app.post('/send-email', function (req, res) {
+
+    const mail_my = MAIL_MY
+    const pass_my = PASS_MY
+
+    var transport = nodemailer.createTransport({
+    host: 'smtp@gmail.com',
+    port: 465,
+    secure: false,
+    requireTLS: true,
+    auth: {
+      user: mail_my,
+      pass: pass_my
+    }
+    });
+        
+  var mailMessage = {
+    from: 'addeee@bigmir.net',
+    to: 'bezuhlov2andrii@gmail.com',
+    subject: 'You have a new message on Terrasoft',
+    text: 'Перейди за посиланням: https://windrose.terrasoft.ua/'
+    };
           
     transport.sendMail(mailMessage, function (error, info) {
       if (error) {

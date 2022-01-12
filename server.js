@@ -14,23 +14,7 @@ const io = require('socket.io')(http)
 ///
 var nodemailer = require('nodemailer')
 
-var transport = nodemailer.createTransport({
-    host: 'smtp@gmail.com',
-    port: 465,
-    secure: false,
-    requireTLS: true,
-    auth: {
-      user: process.env.MAIL_MY,
-      pass: process.env.PASS_MY
-    }
-  });
-        
-  var mailMessage = {
-    from: 'addeee@bigmir.net',
-    to: 'bezuhlov2andrii@gmail.com',
-    subject: 'You have a new message on Terrasoft',
-    text: 'Перейди за посиланням: https://windrose.terrasoft.ua/'
-  };
+
     
 //socket
 require('/app/src/socket_io.js')(io)
