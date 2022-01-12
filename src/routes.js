@@ -1,4 +1,4 @@
-exports = module.exports = function (app, io) {
+exports = module.exports = function (app, io, nodemailer) {
 
   app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, '/index.html'))
