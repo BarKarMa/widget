@@ -1,6 +1,4 @@
-
 const socket = io()
-const nodemailer = nodemailer()
 
 const messages = document.querySelector('.messages')
 const form = document.querySelector('.form')
