@@ -44,31 +44,32 @@ exports = module.exports = function (app, io, nodemailer) {
     var message = 'message';
     
     var transporter = nodemailer.createTransport({
-        host: 'smtp.gmail.com',
-        port: 465,
-        secure:false,
-        requireTLS:true,
-        auth: {
-          user: mail_my, // enter your email address
-          pass: pass_my  // enter your visible/encripted password
-        }
-      });
+      host: 'smtp.gmail.com',
+      port: 465,
+      secure: false,
+      requireTLS: true,
+      auth: {
+        user: mail_my, // enter your email address
+        pass: pass_my  // enter your visible/encripted password
+      }
+    });
       
-      var mailOptions = {
-        from: 'addeee@bigmir.net',
-        to: 'bezuhlov2andrii@gmail.com',
-        subject: 'sub',
-        text: 'mess'
-      };
+    var mailOptions = {
+      from: 'addeee@bigmir.net',
+      to: 'bezuhlov2andrii@gmail.com',
+      subject: 'sub',
+      text: 'mess'
+    };
       
-      transporter.sendMail(mailOptions, function(error, info){
-        if (error) {
-          console.log(error);
-        } else {
-          console.log('Email was sent successfully: ' + info.response);
-        }
-      });
-      res.render('mail-form', { title: 'Send Mail with nodejs' });
+    transporter.sendMail(mailOptions, function (error, info) {
+      if (error) {
+        console.log(error);
+      } else {
+        console.log('Email was sent successfully: ' + info.response);
+      }
+    });
+    res.render('mail-form', { title: 'Send Mail with nodejs' });
+  })
 
 
 }
