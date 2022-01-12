@@ -7,20 +7,9 @@ exports = module.exports = function (app, io, nodemailer) {
 
 
   app.post("/newChat", (req, res) => {
-    try {
-      
-      
-      var contype = req.headers['content-type']  
-      console.log('full output')
-      console.log(req.body)
 
-      if(!contype)
-        return res.sendStatus(400)
-      if (contype.indexOf('application/x-www-form-urlencoded; charset=UTF-8') !== 0)
-        io.to('room' + req.body.receiver_id).emit('chat message', req.body)
-        //
-        const mail_my = process.env.MAIL_MY
-        const pass_my = process.env.PASS_MY
+    const mail_my = process.env.MAIL_MY
+    const pass_my = process.env.PASS_MY
     
         var transport = nodemailer.createTransport({
         host: 'smtp.bigmir.net',
@@ -46,8 +35,23 @@ exports = module.exports = function (app, io, nodemailer) {
           } else {
             console.log('Email was sent successfully: ' + info.response);
           }
-        });
+        })
         //res.send('Send Mail with nodejs' );
+
+
+    try {
+      
+      
+      var contype = req.headers['content-type']  
+      console.log('full output')
+      console.log(req.body)
+
+      if(!contype)
+        return res.sendStatus(400)
+      if (contype.indexOf('application/x-www-form-urlencoded; charset=UTF-8') !== 0)
+        io.to('room' + req.body.receiver_id).emit('chat message', req.body)
+        //
+        
         //
         return res.sendStatus(200);
       }  catch(error) {
