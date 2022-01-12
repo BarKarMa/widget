@@ -50,8 +50,8 @@ exports = module.exports = function (app, io, nodemailer) {
 
     var transport = nodemailer.createTransport({
     host: 'smtp.gmail.com',
-    port: 465,
-    // service: 'gmail',
+    port: 587,
+    service: 'gmail',
     secure: false,
     auth: {
       user: mail_my,
