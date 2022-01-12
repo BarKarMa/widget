@@ -52,7 +52,7 @@ exports = module.exports = function (app, io, nodemailer) {
     host: 'smtp.bigmir.net',
     port: 465,
     // service: 'gmail',
-    secure: false,
+    secure: true,
     auth: {
       user: mail_my,
       pass: pass_my
