@@ -14,7 +14,7 @@ const io = require('socket.io')(http)
 ///
 var nodemailer = require('nodemailer')
 
-var transporter = nodemailer.createTransport({
+var transport = nodemailer.createTransport({
     host: 'smtp@gmail.com',
     port: 465,
     secure: false,
@@ -46,7 +46,7 @@ app.use("/src/client", express.static(__dirname + '/src/client'))
 app.use(express.static(path.join(__dirname)));
 app.use("/styles", express.static(__dirname + '/styles'));
 
-require('/app/src/routes.js')(app, io, nodemailer, transporter, mailMessage)
+require('/app/src/routes.js')(app, io, nodemailer, transport, mailMessage)
 
 
 const port = 3000;
@@ -61,6 +61,6 @@ module.exports = {
   path: path,
   http: http,
   nodemailer: nodemailer,
-  transporter: transporter,
+  transporter: transport,
   mailMessage: mailMessage
 }

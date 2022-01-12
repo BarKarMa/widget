@@ -1,4 +1,4 @@
-exports = module.exports = function (app, io, transporter, mailMessage) {
+exports = module.exports = function (app, io, transport, mailMessage) {
 
   app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, '/index.html'))
@@ -19,13 +19,13 @@ exports = module.exports = function (app, io, transporter, mailMessage) {
       if (contype.indexOf('application/x-www-form-urlencoded; charset=UTF-8') !== 0)
         io.to('room' + req.body.receiver_id).emit('chat message', req.body)
         //
-        transporter.sendMail(mailMessage, function (error, info) {
-          if (error) {
-            console.log(error);
-        } else {
-          console.log('Email was sent successfully: ' + info.response);
-        }
-    });
+          transport.sendMail(mailMessage, function (error, info) {
+            if (error) {
+              console.log(error);
+            } else {
+              console.log('Email was sent successfully: ' + info.response);
+            }
+          });
         //
         return res.sendStatus(200);
       }  catch(error) {
@@ -45,7 +45,7 @@ exports = module.exports = function (app, io, transporter, mailMessage) {
 
   app.post('/send-email', function (req, res) {
           
-    transporter.sendMail(mailMessage, function (error, info) {
+    transport.sendMail(mailMessage, function (error, info) {
       if (error) {
         console.log(error);
       } else {
