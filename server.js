@@ -44,7 +44,5 @@ module.exports = {
   app: app,
   path: path,
   http: http,
-  nodemailer: nodemailer,
-  transporter: transport,
-  mailMessage: mailMessage
+  nodemailer: nodemailer
 }
