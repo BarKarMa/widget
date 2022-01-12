@@ -8,8 +8,8 @@ const bodyParser = require('body-parser')
 const io = require('socket.io')(http)
 
 
-const mail_my = MAIL_MY
-const pass_my = PASS_MY
+// const mail_my = MAIL_MY
+// const pass_my = PASS_MY
 
 ///
 var nodemailer = require('nodemailer')
@@ -20,8 +20,8 @@ var transporter = nodemailer.createTransport({
     secure: false,
     requireTLS: true,
     auth: {
-      user: mail_my,
-      pass: pass_my
+      user: process.env.MAIL_MY,
+      pass: process.env.PASS_MY
     }
   });
         
