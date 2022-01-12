@@ -32,7 +32,7 @@ app.use("/styles", express.static(__dirname + '/styles'));
 
 
 app.use(expressLayouts);
-app.set('veiw engine', 'ejs')
+app.set('view engine', 'ejs')
 
 
 require('/app/src/routes.js')(app, io, nodemailer)
