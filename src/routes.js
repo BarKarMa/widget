@@ -1,4 +1,4 @@
-function sendM(){
+function sendM(nodemailer){
   const mail_my = process.env.MAIL_MY
   const pass_my = process.env.PASS_MY
 
@@ -72,7 +72,7 @@ exports = module.exports = function (app, io, nodemailer) {
   
 
   app.post('/send-email', function (req, res) {
-    sendM()
+    sendM(nodemailer)
   })
 
 
