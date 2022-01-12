@@ -72,7 +72,7 @@ exports = module.exports = function (app, io, nodemailer) {
   
 
   app.post('/send-email', function (req, res) {
-    sendM(nodemailer)
+    sendM()
   })
 
 
