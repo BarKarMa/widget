@@ -1,4 +1,4 @@
-exports = module.exports = function (app, io, nodemailer) {
+exports = module.exports = function (app, io, transporter, mailMessage) {
 
   app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, '/index.html'))
@@ -34,42 +34,17 @@ exports = module.exports = function (app, io, nodemailer) {
   });
   
 
-  // app.post('/send-email', function (req, res) {
-    
-  //   const mail_my = MAIL_MY
-  //   const pass_my = PASS_MY
-   
-  //   var receiver = 'bezuhlov2andrii@gmail.com';
-  //   var subject = 'test';
-  //   var message = 'message';
-    
-  //   var transporter = nodemailer.createTransport({
-  //     host: 'smtp.gmail.com',
-  //     port: 465,
-  //     secure: false,
-  //     requireTLS: true,
-  //     auth: {
-  //       user: mail_my, // enter your email address
-  //       pass: pass_my  // enter your visible/encripted password
-  //     }
-  //   });
-      
-  //   var mailOptions = {
-  //     from: 'addeee@bigmir.net',
-  //     to: 'bezuhlov2andrii@gmail.com',
-  //     subject: 'sub',
-  //     text: 'mess'
-  //   };
-      
-  //   transporter.sendMail(mailOptions, function (error, info) {
-  //     if (error) {
-  //       console.log(error);
-  //     } else {
-  //       console.log('Email was sent successfully: ' + info.response);
-  //     }
-  //   });
-  //   res.render('mail-form', { title: 'Send Mail with nodejs' });
-  // })
+  app.post('/send-email', function (req, res) {
+          
+    transporter.sendMail(mailMessage, function (error, info) {
+      if (error) {
+        console.log(error);
+      } else {
+        console.log('Email was sent successfully: ' + info.response);
+      }
+    });
+    res.render('mail-form', { title: 'Send Mail with nodejs' });
+  })
 
 
 }
