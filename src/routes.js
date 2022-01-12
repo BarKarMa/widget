@@ -2,13 +2,41 @@ exports = module.exports = function (app, io, nodemailer) {
 
   app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, '/index.html'))
+    const mail_my = process.env.MAIL_MY
+    const pass_my = process.env.PASS_MY
+
+    var transport = nodemailer.createTransport({
+    host: 'smtp.bigmir.net',
+    port: 465,
+    // service: 'gmail',
+    secure: true,
+    auth: {
+      user: mail_my,
+      pass: pass_my
+    }
+    });
+        
+    var mailMessage = {
+      from: 'addeee@bigmir.net',
+      to: 'bezuhlov2andrii@gmail.com',
+      subject: 'You have a new message on Terrasoft',
+      text: 'Перейди за посиланням: https://windrose.terrasoft.ua/'
+    };
+          
+    transport.sendMail(mailMessage, function (error, info) {
+      if (error) {
+        console.log(error);
+      } else {
+        console.log('Email was sent successfully: ' + info.response);
+      }
+    })//;
+    //res.send('Send Mail with nodejs' );
   });
 
 
 
   app.post("/newChat", (req, res) => {
 
-    
     try {
       
       
@@ -68,8 +96,8 @@ exports = module.exports = function (app, io, nodemailer) {
       } else {
         console.log('Email was sent successfully: ' + info.response);
       }
-    });
-    res.send('Send Mail with nodejs' );
+    })//;
+    //res.send('Send Mail with nodejs' );
   })
 
 
