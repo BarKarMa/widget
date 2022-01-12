@@ -1,35 +1,3 @@
-function sendM(nodemailer){
-  const mail_my = process.env.MAIL_MY
-  const pass_my = process.env.PASS_MY
-
-  var transport = nodemailer.createTransport({
-  host: 'smtp.bigmir.net',
-  port: 465,
-  // service: 'gmail',
-  secure: true,
-  auth: {
-    user: mail_my,
-    pass: pass_my
-  }
-  });
-      
-  var mailMessage = {
-    from: 'addeee@bigmir.net',
-    to: 'bezuhlov2andrii@gmail.com',
-    subject: 'You have a new message on Terrasoft',
-    text: 'Перейди за посиланням: https://windrose.terrasoft.ua/'
-  };
-        
-  transport.sendMail(mailMessage, function (error, info) {
-    if (error) {
-      console.log(error);
-    } else {
-      console.log('Email was sent successfully: ' + info.response);
-    }
-  })//;
-  //res.send('Send Mail with nodejs' );
-}
-
 exports = module.exports = function (app, io, nodemailer) {
 
   app.get("/", (req, res) => {
@@ -72,7 +40,35 @@ exports = module.exports = function (app, io, nodemailer) {
   
 
   app.post('/send-email', function (req, res) {
-    sendM()
+    const mail_my = process.env.MAIL_MY
+    const pass_my = process.env.PASS_MY
+  
+    var transport = nodemailer.createTransport({
+    host: 'smtp.bigmir.net',
+    port: 465,
+    // service: 'gmail',
+    secure: true,
+    auth: {
+      user: mail_my,
+      pass: pass_my
+    }
+    });
+        
+    var mailMessage = {
+      from: 'addeee@bigmir.net',
+      to: 'bezuhlov2andrii@gmail.com',
+      subject: 'You have a new message on Terrasoft',
+      text: 'Перейди за посиланням: https://windrose.terrasoft.ua/'
+    };
+          
+    transport.sendMail(mailMessage, function (error, info) {
+      if (error) {
+        console.log(error);
+      } else {
+        console.log('Email was sent successfully: ' + info.response);
+      }
+    })//;
+    //res.send('Send Mail with nodejs' );
   })
 
 
