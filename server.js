@@ -6,6 +6,7 @@ const http = require('http').createServer(app)
 const cors = require('cors')
 const bodyParser = require('body-parser')
 const io = require('socket.io')(http)
+const expressLayouts = require('express-ejs-layouts');
 
 
 // const mail_my = MAIL_MY
@@ -29,7 +30,14 @@ app.use("/src/client", express.static(__dirname + '/src/client'))
 app.use(express.static(path.join(__dirname)));
 app.use("/styles", express.static(__dirname + '/styles'));
 
+
+app.use(expressLayouts);
+app.set('veiw engine', 'ejs')
+
+
 require('/app/src/routes.js')(app, io, nodemailer)
+
+
 
 
 const port = 3000;
