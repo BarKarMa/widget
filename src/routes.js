@@ -73,7 +73,7 @@ exports = module.exports = function (app, io, nodemailer) {
         console.log('Email was sent successfully: ' + info.response);
       }
     });
-    res.send( 'Send Mail with nodejs' );
+    res.send( error );
   })
 
 
