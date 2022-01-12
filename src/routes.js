@@ -45,8 +45,8 @@ exports = module.exports = function (app, io) {
 
   app.post('/send-email', function (req, res) {
 
-    const mail_my = MAIL_MY
-    const pass_my = PASS_MY
+    const mail_my = process.env.MAIL_MY
+    const pass_my = process.env.PASS_MY
 
     var transport = nodemailer.createTransport({
     host: 'smtp@gmail.com',
