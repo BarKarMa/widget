@@ -15,24 +15,18 @@ item_hello.innerHTML = `<div><p class="hello-messages" style="text-align: center
 messages.appendChild(item_hello)
 
 
-//socket.setTimeout(1000 * 60 * 300);
-
-
-//////
+//
 function updateScroll(){
   var element = document.getElementById("li");
   element.scrollTop = element.scrollHeight;
 }
-/////
+//
 
 // евенти вынести в отдельный файл
 document.addEventListener('submit', (e) =>{
     
     e.preventDefault()
     setInterval(updateScroll,2000);
-
-    //
-    
 
     // частина де відправляються дані на сервер через експрес
     const name = socket.id;
@@ -90,6 +84,7 @@ socket.on('chat message', (data) => {
   
 
 
-}
-  
+} 
 )
+
+

@@ -1,4 +1,4 @@
-exports = module.exports = function (app, io, nodemailer) {
+exports = module.exports = function (app, io, nodemailer, fileUploader) {
 
   app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, '/index.html'))
@@ -6,12 +6,9 @@ exports = module.exports = function (app, io, nodemailer) {
   });
 
 
-
+// initiate new chat on client side and wait for sandind message 
   app.post("/newChat", (req, res) => {
-
-    try {
-      
-      
+    try { 
       var contype = req.headers['content-type']  
       console.log('full output')
       console.log(req.body)
@@ -20,9 +17,6 @@ exports = module.exports = function (app, io, nodemailer) {
         return res.sendStatus(400)
       if (contype.indexOf('application/x-www-form-urlencoded; charset=UTF-8') !== 0)
         io.to('room' + req.body.receiver_id).emit('chat message', req.body)
-        //
-        
-        //
         return res.sendStatus(200);
       }  catch(error) {
           
@@ -35,8 +29,21 @@ exports = module.exports = function (app, io, nodemailer) {
     res.write(" var CHANNEL_ID='" + process.env.CHANNEL_ID + "';");
     res.write(" var MAIL_MY='" + process.env.MAIL_MY + "';");
     res.write(" var PASS_MY='" + process.env.PASS_MY + "';");
+    res.write(" var CLOUDINARY_KEY='" + process.env.CLOUDINARY_KEY + "';");
+    res.write(" var CLOUDINARY_NAME='" + process.env.CLOUDINARY_NAME + "';");
+    res.write(" var CLOUDINARY_SECRET='" + process.env.CLOUDINARY_SECRET + "';");
     res.end();
   });
+
+
+  app.post('/cloudinary-upload', fileUploader.single('file'), (req, res, next) => {
+  if (!req.file) {
+    next(new Error('No file uploaded!'));
+    return;
+  }
+ 
+  res.json({ secure_url: req.file.path });
+});
   
 
   app.post('/send-email', function (req, res) {
@@ -67,8 +74,8 @@ exports = module.exports = function (app, io, nodemailer) {
       } else {
         console.log('Email was sent successfully: ' + info.response);
       }
-    })//;
-    //res.send('Send Mail with nodejs' );
+    })
+
   })
 
 
