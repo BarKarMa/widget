@@ -8,4 +8,4 @@ cloudinaryUpload = (fileToUpload) => {
     .catch(err => console.log(err))
 }
 
-modules.exports = { cloudinaryUpload: cloudinaryUpload }
+module.exports = { cloudinaryUpload: cloudinaryUpload }
