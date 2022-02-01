@@ -21,7 +21,7 @@ const handleFileUpload = (e) => {
     cloudinaryUpload(uploadData)
 }
 
-const item_hello = document.createElement('div')
+const item_hello9 = document.createElement('div')
 item_hello9.innerHTML = `<div style={container}>
       <div style={{ margin: 10 }}>
         <label style={{ margin: 10 }}>Cloudinary:</label>
