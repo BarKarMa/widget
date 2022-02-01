@@ -29,7 +29,7 @@ function updateScroll(){
 //
 
 const item_hello9 = document.createElement('div')
-    item_hello9.innerHTML = `<div><div><label>Cloudinary:</label><input type="file" onChange=handleFileUpload(e)/></div> </div>`
+    item_hello9.innerHTML = `<div><div><label>Cloudinary:</label><input type="file" onChange="handleFileUpload(e)" /></div> </div>`
 messages.appendChild(item_hello9)
     
 
