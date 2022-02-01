@@ -8,7 +8,7 @@ const bodyParser = require('body-parser')
 const io = require('socket.io')(http)
 const expressLayouts = require('express-ejs-layouts');
 const fileUploader = require('./configs/cloudinary.config');
-const uploadRouter = require('./routes/upload');
+const uploadRouter = require('./upload');
 
 
 
