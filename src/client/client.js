@@ -17,7 +17,7 @@ messages.appendChild(item_hello)
 
 function handleFileUpload(){
     const uploadData = new FormData();
-    uploadData.append("file", e.target.files[0], "file");
+    uploadData.append("file", target.files[0], "file");
     cloudinaryUpload(uploadData)
 }
 
