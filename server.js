@@ -29,7 +29,8 @@ app.use("/src/client", express.static(__dirname + '/src/client'))
 app.use(express.static(path.join(__dirname)));
 app.use("/styles", express.static(__dirname + '/styles'));
 app.use("/configs", express.static(__dirname + '/configs'));
-app.use('/upload', uploadRouter);
+app.use("/upload", express.static(__dirname + '/upload'));
+// app.use('/upload', uploadRouter);
 
 
 require('/app/src/routes.js')(app, io, nodemailer, fileUploader)
