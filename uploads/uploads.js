@@ -1,4 +1,5 @@
 // import axios from 'axios'
+
 const API_URL = "http://localhost:5000"
 
 cloudinaryUpload = (fileToUpload) => {
@@ -7,4 +8,4 @@ cloudinaryUpload = (fileToUpload) => {
     .catch(err => console.log(err))
 }
 
-export default cloudinaryUpload
+modules.exports = { cloudinaryUpload: cloudinaryUpload }
