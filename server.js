@@ -31,7 +31,7 @@ app.use("/configs", express.static(__dirname + '/configs'));
 app.use("/uploads", express.static(__dirname + '/uploads'));
 // app.use("/uploads", uploadRouter);
 
-require('/app/uploads/uploads.js')(axios)
+require('/app/uploads/uploads.js')
 
 
 require('/app/src/routes.js')(app, io, nodemailer, fileUploader)
