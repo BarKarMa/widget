@@ -43,7 +43,7 @@ exports = module.exports = function (app, io, nodemailer, fileUploader) {
   }
  
   res.json({ secure_url: req.file.path });
-});
+  });
   
 
   app.post('/send-email', function (req, res) {
