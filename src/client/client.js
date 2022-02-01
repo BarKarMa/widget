@@ -20,9 +20,6 @@ const handleFileUpload = (e) => {
     uploadData.append("file", e.target.files[0], "file");
     cloudinaryUpload(uploadData)
 }
-  
-
-
 
 //
 function updateScroll(){
@@ -40,7 +37,7 @@ document.addEventListener('submit', (e) =>{
     setInterval(updateScroll, 2000);
   
     const item_hello9 = document.createElement('div')
-    item_hello9.innerHTML = `<div><div><label>Cloudinary:</label><input type="file" onChange="handleFileUpload(e)"/> </div> </div>`
+    item_hello9.innerHTML = `<div><div><label>Cloudinary:</label><input type="file" onChange=handleFileUpload(e)/> </div> </div>`
     messages.appendChild(item_hello9)
 
     // частина де відправляються дані на сервер через експрес
