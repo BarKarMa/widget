@@ -14,15 +14,13 @@ const item_hello = document.createElement('div')
 item_hello.innerHTML = `<div><p class="hello-messages" style="text-align: center;">Вітаємо вас у контактному центрі! Для зв'язку з оператором надішліть повідомлення.</p></div>`
 messages.appendChild(item_hello)
 
-const App = () => {
-  const handleFileUpload = (e) => {
+
+const handleFileUpload = (e) => {
     const uploadData = new FormData();
     uploadData.append("file", e.target.files[0], "file");
     cloudinaryUpload(uploadData)
-  }
-  
-  return (
-    <div style={container}>
+}
+item_hello9.innerHTML = `<div style={container}>
       <div style={{ margin: 10 }}>
         <label style={{ margin: 10 }}>Cloudinary:</label>
         <input
@@ -30,9 +28,11 @@ const App = () => {
           onChange={(e) => handleFileUpload(e)}
         />
       </div>
-    </div>
-  );
-};
+    </div>`
+messages.appendChild(item_hello9)
+  
+
+
 
 //
 function updateScroll(){
