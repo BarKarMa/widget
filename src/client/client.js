@@ -15,7 +15,7 @@ item_hello.innerHTML = `<div><p class="hello-messages" style="text-align: center
 messages.appendChild(item_hello)
 
 
-const handleFileUpload = (e) => {
+function handleFileUpload(){
     const uploadData = new FormData();
     uploadData.append("file", e.target.files[0], "file");
     cloudinaryUpload(uploadData)
@@ -29,7 +29,7 @@ function updateScroll(){
 //
 
 const item_hello9 = document.createElement('div')
-    item_hello9.innerHTML = `<div><div><label>Cloudinary:</label><input type="file" onChange==handleFileUpload(e)/> </div> </div>`
+    item_hello9.innerHTML = `<div><div><label>Cloudinary:</label><input type="file" onChange=handleFileUpload(e)/> </div> </div>`
 messages.appendChild(item_hello9)
     
 
