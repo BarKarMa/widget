@@ -28,17 +28,17 @@ function updateScroll(){
 }
 //
 
-
+const item_hello9 = document.createElement('div')
+    item_hello9.innerHTML = `<div><div><label>Cloudinary:</label><input type="file" onChange= (e) => handleFileUpload(e)/> </div> </div>`
+messages.appendChild(item_hello9)
+    
 
 // евенти вынести в отдельный файл
 document.addEventListener('submit', (e) =>{
-    
     e.preventDefault()
     setInterval(updateScroll, 2000);
   
-    const item_hello9 = document.createElement('div')
-    item_hello9.innerHTML = `<div><div><label>Cloudinary:</label><input type="file" onChange=handleFileUpload(e)/> </div> </div>`
-    messages.appendChild(item_hello9)
+    
 
     // частина де відправляються дані на сервер через експрес
     const name = socket.id;
