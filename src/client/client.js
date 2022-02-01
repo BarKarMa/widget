@@ -23,11 +23,11 @@ const handleFileUpload = (e) => {
 
 const item_hello9 = document.createElement('div')
 item_hello9.innerHTML = `<div style={container}>
-      <div style={{ margin: 10 }}>
-        <label style={{ margin: 10 }}>Cloudinary:</label>
+      <div>
+        <label>Cloudinary:</label>
         <input
           type="file"
-          onChange={(e) => handleFileUpload(e)}
+          onChange= handleFileUpload(e)
         />
       </div>
     </div>`
