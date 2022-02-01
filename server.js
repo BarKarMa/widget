@@ -9,7 +9,6 @@ const io = require('socket.io')(http)
 const expressLayouts = require('express-ejs-layouts');
 const fileUploader = require('./configs/cloudinary.config');
 const uploadRouter = require('./uploads/uploads');
-import axios from 'axios'
 
 
 var nodemailer = require('nodemailer')
@@ -29,7 +28,8 @@ app.use("/src/client", express.static(__dirname + '/src/client'))
 app.use(express.static(path.join(__dirname)));
 app.use("/styles", express.static(__dirname + '/styles'));
 app.use("/configs", express.static(__dirname + '/configs'));
-app.use("/uploads", uploadRouter);
+app.use("/uploads", express.static(__dirname + '/uploads'));
+// app.use("/uploads", uploadRouter);
 
 require('/app/uploads/uploads.js')(axios)
 
