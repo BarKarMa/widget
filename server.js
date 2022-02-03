@@ -11,6 +11,7 @@ const fileUploader = require('./configs/cloudinary.config');
 const uploadRouter = require('./uploads/uploads');
 const cloudinary = require("cloudinary").v2;
 const fs = require('fs')
+var multer  = require('multer')
 
 
 var nodemailer = require('nodemailer')
