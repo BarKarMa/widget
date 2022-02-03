@@ -23,7 +23,7 @@ messages.appendChild(item_hello)
 // }
 
 const item_hello9 = document.createElement('div')
-    item_hello9.innerHTML = `<div><div><input type="file" id="send_file" onChange="handleUploadId(e)"  /></div> </div>`
+    item_hello9.innerHTML = `<div><div><input type="file" id="send_file" onChange="handleUploadId()"  /></div> </div>`
     messages.appendChild(item_hello9)
 
 //
@@ -33,9 +33,9 @@ function updateScroll(){
 }
 //
 
-document.addEventListener("handleFileUpload", (e) => {
+document.addEventListener("handleFileUpload", () => {
   const uploadData = new FormData();
-    uploadData.append("file", e.target.files[0], "file");
+    uploadData.append("file", target.files[0], "file");
     cloudinaryUpload(uploadData)
 
 
