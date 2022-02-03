@@ -33,13 +33,14 @@ function updateScroll(){
 }
 //
 
-document.addEventListener("handleUploadId", () => {
+// document.addEventListener("handleUploadId", () => {
+function handleUploadId() {
   const uploadData = new FormData();
     uploadData.append("file", target.files[0], "file");
     cloudinaryUpload(uploadData)
 
 
-})
+}
 
     
 
