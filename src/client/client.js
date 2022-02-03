@@ -23,7 +23,7 @@ messages.appendChild(item_hello)
 // }
 
 const item_hello9 = document.createElement('div')
-    item_hello9.innerHTML = `<div><div><input type="file" id="send_file" onChange=handleFileUpload(e)  /></div> </div>`
+    item_hello9.innerHTML = `<div><div><input type="file" id="send_file" onChange="handleFileUpload(e)"  /></div> </div>`
     messages.appendChild(item_hello9)
 
 //
