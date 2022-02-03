@@ -4,7 +4,7 @@ const messages = document.querySelector('.messages')
 const form = document.querySelector('.form')
 const input = document.querySelector('.input')
 const nameBlock = document.querySelector('.name')
-const handleUpload = document.getElementById('.handleFileUpload')
+const handleUploadId = document.getElementById('.handleFileUpload')
 
 const beesender_url = BEESENDER_URL
 const Ch_Id = CHANNEL_ID
@@ -23,7 +23,7 @@ messages.appendChild(item_hello)
 // }
 
 const item_hello9 = document.createElement('div')
-    item_hello9.innerHTML = `<div><div><input type="file" id="send_file" onChange="handleFileUpload(e)"  /></div> </div>`
+    item_hello9.innerHTML = `<div><div><input type="file" id="send_file" onChange="handleUploadId(e)"  /></div> </div>`
     messages.appendChild(item_hello9)
 
 //
