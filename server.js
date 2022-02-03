@@ -9,6 +9,8 @@ const io = require('socket.io')(http)
 const expressLayouts = require('express-ejs-layouts');
 const fileUploader = require('./configs/cloudinary.config');
 const uploadRouter = require('./uploads/uploads');
+const cloudinary = require("cloudinary").v2;
+const fs = require('fs')
 
 
 var nodemailer = require('nodemailer')
@@ -55,8 +57,6 @@ var storage = multer.diskStorage({
 })
 var upload = multer({ storage: storage })
 
-const cloudinary = require("cloudinary").v2;
-const fs = require('fs')
 
 
 async function uploadToCloudinary(locaFilePath) {
