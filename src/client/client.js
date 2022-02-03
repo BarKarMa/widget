@@ -4,7 +4,7 @@ const messages = document.querySelector('.messages')
 const form = document.querySelector('.form')
 const input = document.querySelector('.input')
 const nameBlock = document.querySelector('.name')
-const handleUpload = document.getElementById('.send_file')
+const handleUpload = document.getElementById('.handleFileUpload')
 
 const beesender_url = BEESENDER_URL
 const Ch_Id = CHANNEL_ID
@@ -33,7 +33,7 @@ function updateScroll(){
 }
 //
 
-document.addEventListener("send_file", (e) => {
+document.addEventListener("handleFileUpload", (e) => {
   const uploadData = new FormData();
     uploadData.append("file", e.target.files[0], "file");
     cloudinaryUpload(uploadData)
