@@ -4,6 +4,7 @@ const messages = document.querySelector('.messages')
 const form = document.querySelector('.form')
 const input = document.querySelector('.input')
 const nameBlock = document.querySelector('.name')
+const handleUpload = document.querySelector('.handleFileUpload')
 
 const beesender_url = BEESENDER_URL
 const Ch_Id = CHANNEL_ID
