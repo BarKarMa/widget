@@ -100,6 +100,32 @@ function buildSuccessMsg(urlList){
   return response  
 }
 
+
+app.post('/profile-upload-single', upload.single('profile-file'), async (req, res, next) => {
+  // req.file is the `profile-file` file
+  // req.body will hold the text fields, if there were any
+  var locaFilePath = req.file.path
+  var result = await uploadToCloudinary(locaFilePath)
+  var response = buildSuccessMsg([result.url])
+
+  return res.send(response)
+})
+
+app.post('/profile-upload-multiple', upload.array('profile-files', 12), async (req, res, next) => {
+    // req.files is array of `profile-files` files
+    // req.body will contain the text fields, if there were any
+    var imageUrlList = []
+    
+    for(var i=0;i<req.files.length;i++){
+      var locaFilePath = req.files[i].path
+      var result = await uploadToCloudinary(locaFilePath)
+      imageUrlList.push(result.url)
+    }
+    var response = buildSuccessMsg(imageUrlList)
+    
+    return res.send(response)
+})
+
 ///
 
 
