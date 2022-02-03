@@ -36,6 +36,19 @@ exports = module.exports = function (app, io, nodemailer, fileUploader) {
   });
 
   
+  app.post('/api/upload', async (req, res) => {
+    try {
+        const fileStr = req.body.data;
+        const uploadResponse = await cloudinary.uploader.upload(fileStr, {});
+        console.log(uploadResponse);
+        res.json({ msg: 'yaya' });
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ err: 'Something went wrong' });
+    }
+});
+
+  
 
   app.post('/send-email', function (req, res) {
     const mail_my = process.env.MAIL_MY
