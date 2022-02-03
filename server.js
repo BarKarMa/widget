@@ -56,7 +56,6 @@ var storage = multer.diskStorage({
 var upload = multer({ storage: storage })
 
 const cloudinary = require("cloudinary").v2;
-const bodyParser = require('body-parser');
 const fs = require('fs')
 
 
