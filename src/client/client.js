@@ -15,11 +15,15 @@ item_hello.innerHTML = `<div><p class="hello-messages" style="text-align: center
 messages.appendChild(item_hello)
 
 
-function handleFileUpload(e){
-    const uploadData = new FormData();
-    uploadData.append("file", e.target.files[0], "file");
-    cloudinaryUpload(uploadData)
-}
+// function handleFileUpload(e){
+//     const uploadData = new FormData();
+//     uploadData.append("file", e.target.files[0], "file");
+//     cloudinaryUpload(uploadData)
+// }
+
+const item_hello9 = document.createElement('div')
+    item_hello9.innerHTML = `<div><div><input type="file" id="send_file" onChange=handleFileUpload(e)  /></div> </div>`
+    messages.appendChild(item_hello9)
 
 //
 function updateScroll(){
@@ -28,6 +32,13 @@ function updateScroll(){
 }
 //
 
+document.addEventListener("send_file", (e) => {
+  const uploadData = new FormData();
+    uploadData.append("file", e.target.files[0], "file");
+    cloudinaryUpload(uploadData)
+
+
+})
 
     
 
@@ -36,9 +47,7 @@ document.addEventListener('submit', (e) =>{
     e.preventDefault()
     setInterval(updateScroll, 2000);
   
-    const item_hello9 = document.createElement('div')
-    item_hello9.innerHTML = `<div><div><label>Cloudinary:</label><input type="file" onChange=handleFileUpload(e)  /></div> </div>`
-    messages.appendChild(item_hello9)
+    
 
     // частина де відправляються дані на сервер через експрес
     const name = socket.id;

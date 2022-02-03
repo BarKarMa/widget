@@ -41,7 +41,6 @@ exports = module.exports = function (app, io, nodemailer, fileUploader) {
     next(new Error('No file uploaded!'));
     return;
   }
- 
   res.json({ secure_url: req.file.path });
   });
   
