@@ -37,6 +37,72 @@ require('/app/uploads/uploads.js')
 require('/app/src/routes.js')(app, io, nodemailer, fileUploader)
 
 
+///
+
+cloudinary.config({
+  cloud_name: process.env.CLOUDINARY_NAME,
+  api_key: process.env.CLOUDINARY_KEY,
+  api_secret: process.env.CLOUDINARY_SECRET
+});
+
+var storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+      cb(null, './uploads')
+    },
+    filename: function (req, file, cb) {
+      cb(null, file.originalname)
+    }
+})
+var upload = multer({ storage: storage })
+
+const cloudinary = require("cloudinary").v2;
+const bodyParser = require('body-parser');
+const fs = require('fs')
+
+
+async function uploadToCloudinary(locaFilePath) {
+  // locaFilePath :
+  // path of image which was just uploaded to "uploads" folder
+
+  var mainFolderName = "main"
+  // filePathOnCloudinary :
+  // path of image we want when it is uploded to cloudinary
+  var filePathOnCloudinary = mainFolderName + "/" + locaFilePath
+
+  return cloudinary.uploader.upload(locaFilePath,{"public_id":filePathOnCloudinary})
+  .then((result) => {
+    // Image has been successfully uploaded on cloudinary
+    // So we dont need local image file anymore
+    // Remove file from local uploads folder 
+    fs.unlinkSync(locaFilePath)
+    
+    return {
+      message: "Success",
+      url:result.url
+    };
+  }).catch((error) => {
+    // Remove file from local uploads folder 
+    fs.unlinkSync(locaFilePath)
+    return {message: "Fail",};
+  });
+}
+
+function buildSuccessMsg(urlList){
+  // Building success msg
+  var response = '<h1><a href="/">Click to go to Home page</a><br></h1><hr>'
+  
+  for(var i=0;i<urlList.length;i++){
+    response += "File uploaded successfully.<br><br>"
+    response += `FILE URL: <a href="${urlList[i]}">${urlList[i]}</a>.<br><br>`
+    response += `<img src="${urlList[i]}" /><br><hr>`
+  }
+
+  response += `<br><p>Now you can store this url in database or do anything with it  based on use case.</p>`
+  return response  
+}
+
+///
+
 
 
 const port = 3000;

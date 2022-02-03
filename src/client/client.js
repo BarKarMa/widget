@@ -4,7 +4,6 @@ const messages = document.querySelector('.messages')
 const form = document.querySelector('.form')
 const input = document.querySelector('.input')
 const nameBlock = document.querySelector('.name')
-const handleUploadId = document.getElementById('.handleFileUpload')
 
 const beesender_url = BEESENDER_URL
 const Ch_Id = CHANNEL_ID
@@ -15,32 +14,12 @@ const item_hello = document.createElement('div')
 item_hello.innerHTML = `<div><p class="hello-messages" style="text-align: center;">Вітаємо вас у контактному центрі! Для зв'язку з оператором надішліть повідомлення.</p></div>`
 messages.appendChild(item_hello)
 
-
-// function handleFileUpload(e){
-//     const uploadData = new FormData();
-//     uploadData.append("file", e.target.files[0], "file");
-//     cloudinaryUpload(uploadData)
-// }
-
-const item_hello9 = document.createElement('div')
-    item_hello9.innerHTML = `<div><div><input type="file" id="send_file" onChange=document.getElementById('.handleFileUpload')  /></div> </div>`
-    messages.appendChild(item_hello9)
-
 //
 function updateScroll(){
   var element = document.getElementById("li");
   element.scrollTop = element.scrollHeight;
 }
 //
-
-// document.addEventListener("handleUploadId", () => {
-function handleFileUpload() {
-  const uploadData = new FormData();
-  uploadData.append("file", target.files[0], "file");
-  cloudinaryUpload(uploadData)
-
-
-}
 
     
 
