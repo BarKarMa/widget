@@ -18,7 +18,7 @@ var nodemailer = require('nodemailer')
 //initiate socket
 require('/app/src/socket_io.js')(io, nodemailer)
 
-// Use lubs
+// HERE WE WILL LET OUR APP TO GET ACCESS TO THE STATIC FOLDERS LIKE CSS, IMAGES.
 app.use(cors())
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json())

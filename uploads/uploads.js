@@ -1,6 +1,6 @@
 // import axios from 'axios'
 
-const API_URL = "https://pofsdvmlks.herokuapp.com"
+const API_URL = "http://localhost:5000"
 
 cloudinaryUpload = (fileToUpload) => {
     return axios.post(API_URL + '/cloudinary-upload', fileToUpload)
