@@ -35,7 +35,7 @@ exports = module.exports = function (app, io, nodemailer, fileUploader) {
     res.end();
   });
 
-  
+
   app.post('/api/upload', async (req, res) => {
     try {
         const fileStr = req.body.data;
