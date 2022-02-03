@@ -37,7 +37,7 @@ app.use("/uploads", express.static(__dirname + '/uploads'));
 require('/app/uploads/uploads.js')
 
 
-require('/app/src/routes.js')(app, io, nodemailer, fileUploader)
+require('/app/src/routes.js')(app, io, nodemailer, fileUploader, cloudinary)
 
 
 ///
